@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>給妹妹的雅思新手全攻略｜IELTS 教學 HTML 簡報</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-soft: #263449;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-warm: #fbbf24;
+      --accent-green: #34d399;
+      --accent-pink: #fb7185;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar */
+    .topbar {
+      height: 58px;
+      padding: 0 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 23, 42, 0.92);
+      z-index: 20;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .pill-badge {
+      font-size: 0.72rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      font-weight: 600;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary { background: var(--accent); color: #0f172a; border-color: var(--accent); font-weight: 700; }
+    .btn-primary:hover { background: #7dd3fc; color: #0f172a; }
+
+    /* Progress Bar */
+    .progress-track {
+      height: 4px;
+      background: var(--surface);
+      width: 100%;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-green));
+      width: 8.33%;
+      transition: width 0.25s ease;
+    }
+
+    /* Slide Stage */
+    .stage {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 960px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 44px 32px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      animation: fadeIn 0.25s ease;
+    }
+
+    .slide.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slide-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .slide h1 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .slide h2 {
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .slide-lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 26px;
+      line-height: 1.6;
+    }
+
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .cards-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      background: rgba(251, 191, 36, 0.14);
+      color: var(--accent-warm);
+    }
+
+    .card-tag.green { background: rgba(52, 211, 153, 0.14); color: var(--accent-green); }
+    .card-tag.blue { background: rgba(56, 189, 248, 0.14); color: var(--accent); }
+    .card-tag.pink { background: rgba(251, 113, 133, 0.14); color: var(--accent-pink); }
+
+    .card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .card p, .card li {
+      font-size: 0.93rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    .card ul, .card ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .quote-box {
+      background: rgba(15, 23, 42, 0.65);
+      border-left: 4px solid var(--accent-warm);
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 0.94rem;
+      color: #e2e8f0;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .slide-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .source-chip {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+    }
+
+    /* Bottom Controls */
+    .controls {
+      height: 64px;
+      padding: 0 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15, 23, 42, 0.94);
+    }
+
+    .slide-counter {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* TOC Drawer */
+    .toc-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      padding: 20px;
+    }
+    .toc-backdrop.open { display: flex; }
+    .toc-modal {
+      width: 100%;
+      max-width: 560px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .toc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .toc-item {
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      color: var(--text);
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .toc-item:hover, .toc-item.current { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 820px) {
+      .slide { padding: 24px 20px; }
+      .cards-3, .cards-2 { grid-template-columns: 1fr; }
+      .topbar-left span:not(.pill-badge) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="pill-badge">LLM Wiki 教學簡報</span>
+      <span>給妹妹的雅思新手全攻略（寫作 × 口說 × 聽力地圖）</span>
+    </div>
+    <div class="topbar-actions">
+      <button type="button" class="btn" id="tocBtn">📑 章節目錄</button>
+      <a class="btn" href="../index.html">← 回 Wiki 總覽</a>
+    </div>
+  </header>
+
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <main class="stage">
+    <!-- Slide 1 -->
+    <section class="slide active" data-title="01｜給妹妹的雅思新手村">
+      <p class="slide-kicker">Slide 01 · Welcome</p>
+      <h1>給妹妹的雅思（IELTS）新手全攻略</h1>
+      <p class="slide-lead">
+        完全沒考過雅思也不用慌！這份簡報從我們的個人 <strong>LLM Wiki</strong> 整理而出，用白話拆解寫作、口說與聽力地圖題的核心套路，讓你第一次準備就抓對方向。
+      </p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag blue">模組一</span>
+          <h3>寫作 Task 1 & 2</h3>
+          <p>看懂圖表小作文四段式公式，以及大作文四大必考題型與擴寫秘訣。</p>
+        </div>
+        <div class="card">
+          <span class="card-tag green">模組二</span>
+          <h3>口說 Part 1 & 2</h3>
+          <p>掌握快問快答 10 種套路，與 1 分鐘寫出 4 個關鍵字講好故事的技巧。</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">模組三</span>
+          <h3>聽力 Part 2 地圖題</h3>
+          <p>學會分辨三種地圖場景與高頻方位詞，聽導覽再也不迷路。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>提示：可使用鍵盤左右鍵 ← → 切換投影片</span>
+        <span class="source-chip">Source: wiki/topics/ielts-overview.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide" data-title="02｜新手必懂術語翻譯機">
+      <p class="slide-kicker">Slide 02 · Terminology</p>
+      <h2>先把考場黑話翻成白話（零基礎不卡關）</h2>
+      <p class="slide-lead">聽到 Task 1、Cue Card 先別被嚇到，其實它們對應的就是這三件事：</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag blue">Writing Task 1 & 2</span>
+          <h3>小作文 vs. 大作文</h3>
+          <ul>
+            <li><strong>小作文 (20 分)</strong>：看圖說故事，客觀報告數據（至少 150 字）。</li>
+            <li><strong>大作文 (40 分)</strong>：社會議題議論文，占分重 2/3（至少 250 字）。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag green">Speaking Part 1 & 2</span>
+          <h3>聊天 vs. 獨白短講</h3>
+          <ul>
+            <li><strong>Part 1</strong>：像朋友快問快答（住哪、戴耳機），每題答 2–4 句。</li>
+            <li><strong>Part 2 (Cue Card)</strong>：給 1 分鐘寫筆記，接著自己講 1–2 分鐘故事。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag">Listening Part 2</span>
+          <h3>聽力地圖題 (Map)</h3>
+          <p>聽一段單人導覽錄音，在地圖上找出各個設施位置，考的是「方向感＋定位詞」。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>BEGINNER_CHECK：所有術語均附白話對照</span>
+        <span class="source-chip">Source: wiki/topics/ielts-overview.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide" data-title="03｜小作文 Task 1：萬用四段式">
+      <p class="slide-kicker">Slide 03 · Writing Task 1</p>
+      <h2>小作文核心：只報事實、不寫個人意見</h2>
+      <p class="slide-lead">無論題目給折線圖、柱狀圖、表格或圓餅圖，通通套用這個 4 段黃金結構：</p>
+      <div class="cards-2">
+        <div class="card">
+          <span class="card-tag blue">前兩段（抓大方向）</span>
+          <ul>
+            <li><strong>1. Introduction（開頭）</strong>：用同義字改寫題目（把 shows 換成 illustrates），交代對象與時間。</li>
+            <li><strong>2. Overview（總趨勢｜關鍵！）</strong>：不寫數字！只講「誰最高、誰漲最多、整體趨勢」。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag green">後兩段（細節對比）</span>
+          <ul>
+            <li><strong>3. Body 1</strong>：把上升組（或第一張圖）放一起，加上具體數字。</li>
+            <li><strong>4. Body 2</strong>：把下降組（或第二張圖）放一起，做跨組高低對比。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quote-box">
+        💡 <strong>新手地雷提醒</strong>：2025 真題範文裡「絕對不會」推測原因（例如不能自己腦補「因為經濟不好所以買氣下降」），只寫圖上看得到的變化！
+      </div>
+      <div class="slide-footer">
+        <span>建議時間：20 分鐘 ｜ 字數：≥ 150 字</span>
+        <span class="source-chip">Source: wiki/topics/writing-task1.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" data-title="04｜小作文高分替換詞＆特殊圖">
+      <p class="slide-kicker">Slide 04 · Writing Task 1 Toolkit</p>
+      <h2>告別只會寫 increase：三大加分工具</h2>
+      <p class="slide-lead">把簡單動詞換成精準詞彙，再記住「流程圖／平面圖」的專用句型：</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag green">升級動詞庫</span>
+          <ul>
+            <li><strong>暴增</strong>：rocket / surge / soar</li>
+            <li><strong>暴跌</strong>：plummet / plunge / halve</li>
+            <li><strong>平穩／波動</strong>：remain stable / fluctuate around</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag blue">with 複合句型</span>
+          <p>一句同時塞進兩個數據：<br/><em>"..., <strong>with</strong> China producing 218m tons, <strong>followed by</strong> Japan's 124m tons."</em></p>
+        </div>
+        <div class="card">
+          <span class="card-tag">流程圖 ＆ 平面圖</span>
+          <ul>
+            <li><strong>流程圖</strong>：多用被動語態＋階段詞（Initially → Subsequently）。</li>
+            <li><strong>平面圖變遷</strong>：用 <em>transformed into</em>（改建為）、<em>left unchanged</em>（維持不變）。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>整理自小作文萬能句式與 2025 真題</span>
+        <span class="source-chip">Source: wiki/topics/writing-task1.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" data-title="05｜大作文 Task 2：四大必考題型">
+      <p class="slide-kicker">Slide 05 · Writing Task 2</p>
+      <h2>大作文先看懂「題目怎麼問」，再下筆</h2>
+      <p class="slide-lead">從 2025 年 20 多篇真題整理出四種固定問法，每種結構都不一樣：</p>
+      <div class="cards-2">
+        <div class="card">
+          <span class="card-tag blue">題型 1 & 2（立場與討論）</span>
+          <ul>
+            <li><strong>同意與否（Opinion）</strong>：開頭直接站隊，後面給 2 個理由（可加一小段反駁）。</li>
+            <li><strong>雙邊討論（Discuss Both）</strong>：一段講正方、一段講反方（把自己立場放後面加強）。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag green">題型 3 & 4（利弊與解法）</span>
+          <ul>
+            <li><strong>利弊比較（Outweigh）</strong>：明確講「優點大於缺點」或反之，重點論證比較強那邊。</li>
+            <li><strong>原因與解法（Two-part）</strong>：Body 1 專答第一問（原因），Body 2 專答第二問（解法）。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>建議時間：40 分鐘 ｜ 字數：≥ 250 字（佔寫作 2/3 分數）</span>
+        <span class="source-chip">Source: wiki/topics/writing-task2.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" data-title="06｜大作文寫滿 250 字的 PEEL 公式">
+      <p class="slide-kicker">Slide 06 · Writing Task 2 Structure</p>
+      <h2>主體段總是寫太短？套用 PEEL 四步展開法</h2>
+      <p class="slide-lead">每個主體段只要依序寫完這四句，邏輯清楚又有說服力，字數自然達標：</p>
+      <div class="cards-2">
+        <div class="card">
+          <span class="card-tag">P ＋ E（論點與解釋）</span>
+          <ul>
+            <li><strong>P (Point)</strong>：第一句直接說出本段核心論點。</li>
+            <li><strong>E (Explain)</strong>：用白話解釋「為什麼會這樣？（因果鏈）」。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag green">E ＋ L（舉例與扣題）</span>
+          <ul>
+            <li><strong>E (Example)</strong>：給一個具體生活例子（如：快時尚推出舊衣回收折扣）。</li>
+            <li><strong>L (Link)</strong>：最後一句拉回題目問句做小結。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quote-box">
+        📌 <strong>實戰小提醒</strong>：寫完開頭段＋兩個 PEEL 主體段＋結論段，整篇通常會落在 260–320 字的黃金區間。
+      </div>
+      <div class="slide-footer">
+        <span>例證參考：2025 快時尚與永續環境真題</span>
+        <span class="source-chip">Source: wiki/topics/writing-task2.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" data-title="07｜口說 Part 1：十大萬能回答公式">
+      <p class="slide-kicker">Slide 07 · Speaking Part 1</p>
+      <h2>Part 1 快問快答：絕不只回 Yes / No</h2>
+      <p class="slide-lead">考官問日常生活問題時，只要照著題型套用「三明治公式」，立刻多出 3 句流暢內容：</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag blue">喜好題 (Preference)</span>
+          <p><strong>公式：</strong>直接回答 → 原因 → 頻率 → 種類 → 人物／回憶</p>
+        </div>
+        <div class="card">
+          <span class="card-tag green">重要性 (Importance)</span>
+          <p><strong>公式：</strong>回答 → 原因 → <strong>「沒有它會怎樣」</strong>→ 親身經歷</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">比較題 (Compare)</span>
+          <p><strong>公式：</strong>總結差異 → 物品 A 優點 → 物品 B 優缺點</p>
+        </div>
+      </div>
+      <div class="quote-box">
+        🎧 <strong>範例（Where/When 題）</strong>：被問什麼時候用耳機，不只能說 "on the MRT"，還可以加上「溯溪（river tracing）時為了安全與聽大自然聲音會拿下耳機」！
+      </div>
+      <div class="slide-footer">
+        <span>每題回答長度：2–4 句最自然</span>
+        <span class="source-chip">Source: wiki/topics/speaking-part1-part2.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 8 -->
+    <section class="slide" data-title="08｜口說實戰：自然版 vs 高分進階版">
+      <p class="slide-kicker">Slide 08 · Speaking Upgrade</p>
+      <h2>從個人筆記看怎麼把回答「微升級」</h2>
+      <p class="slide-lead">先講得出自然順口的話，再換上 1–2 個道地詞彙，考官聽起來就會覺得很專業：</p>
+      <div class="cards-2">
+        <div class="card">
+          <span class="card-tag green">自然順口版（先求穩）</span>
+          <p><em>"I always wear them during my <strong>commute</strong> so I don't have to hear the loud noises on the MRT. Listening to music puts me in a <strong>good mood</strong>."</em></p>
+        </div>
+        <div class="card">
+          <span class="card-tag">高分進階版（詞彙亮點）</span>
+          <p><em>"I usually put them on to <strong>block out the hustle and bustle of the city</strong>. Besides that, it really <strong>boosts my mood</strong> and keeps me motivated."</em></p>
+        </div>
+      </div>
+      <div class="quote-box">
+        ✨ <strong>升級秘訣</strong>：不用整句背艱深單字，只要把 <em>loud noises</em> 換成 <em>hustle and bustle</em>（城市喧囂），或把 <em>soft</em> 換成 <em>well-padded</em>（耳機軟墊很舒服）就夠加分！
+      </div>
+      <div class="slide-footer">
+        <span>取材自個人實戰筆記（耳機主題）</span>
+        <span class="source-chip">Source: wiki/topics/speaking-part1-part2.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 9 -->
+    <section class="slide" data-title="09｜口說 Part 2：說好一個故事">
+      <p class="slide-kicker">Slide 09 · Speaking Part 2</p>
+      <h2>Part 2 短講：別寫流水帳，要用故事轉折</h2>
+      <p class="slide-lead">要獨自講滿 1–2 分鐘，靠的不是背單字，而是「有畫面與轉折」的三段結構：</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag blue">1. Beginning</span>
+          <p>交代人物或地點的背景，以及你的<strong>第一印象</strong>（例如：面惡心善的咖啡廳阿姨）。</p>
+        </div>
+        <div class="card">
+          <span class="card-tag pink">2. Plot（關鍵轉折）</span>
+          <p>發生什麼小插曲或困難？加入<strong>對話、內心戲與動作</strong>，故事瞬間變生動。</p>
+        </div>
+        <div class="card">
+          <span class="card-tag green">3. Ending</span>
+          <p>事件怎麼收尾？講出你的<strong>真實感受（Feeling）與收穫（Gain）</strong>。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>四大題庫類別：People / Events / Place / Objects</span>
+        <span class="source-chip">Source: wiki/topics/speaking-part1-part2.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 10 -->
+    <section class="slide" data-title="10｜考場 1 分鐘神技：四階段記憶法">
+      <p class="slide-kicker">Slide 10 · Speaking Memory Trick</p>
+      <h2>進考場前 1 分鐘筆記：只記「4 個畫面」</h2>
+      <p class="slide-lead">筆記寫滿英文句子一定來不及！照這 4 個階段各寫 2–3 個關鍵字，看著講就不會卡住：</p>
+      <div class="cards-2">
+        <div class="card">
+          <span class="card-tag blue">前兩階段（畫面鋪陳）</span>
+          <ul>
+            <li><strong>1. Where（地點）</strong>：<code>2F / fried rice shop / busy</code></li>
+            <li><strong>2. Contrast（對比）</strong>：<code>13 yo / others play games / he helps</code></li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag green">後兩階段（動作與收尾）</span>
+          <ul>
+            <li><strong>3. Action（畫面）</strong>：<code>take orders / collect money / big smile</code></li>
+            <li><strong>4. Ending（轉折）</strong>：<code>mistakes → scolded → no anger → admire</code></li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>個人筆記實戰示範：樓下炒飯小吃店的國中生</span>
+        <span class="source-chip">Source: wiki/topics/speaking-part1-part2.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 11 -->
+    <section class="slide" data-title="11｜聽力 Part 2：地圖題不迷路">
+      <p class="slide-kicker">Slide 11 · Listening Map</p>
+      <h2>聽力地圖題（佔比近 3 成）：手指跟著路徑走</h2>
+      <p class="slide-lead">地圖題常出現在 Part 2，題目本身不難，只要先鎖定「場景＋方位詞」就能穩穩拿分：</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag blue">三大圖形場景</span>
+          <ul>
+            <li><strong>室內型</strong>：找門朝向與起點</li>
+            <li><strong>區域型</strong>：看形狀與盡頭</li>
+            <li><strong>街區型</strong>：圈出東南西北與路名</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag">必聽高頻標示詞</span>
+          <ul>
+            <li><em>sharp bend</em>（急轉彎）</li>
+            <li><em>side entrance</em>（側門）</li>
+            <li><em>branch off</em>（分岔路）</li>
+            <li><em>opposite / adjacent to</em></li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-tag green">精聽覆盤法</span>
+          <p>聽前先默念參照物發音；聽後針對連音與長句做「精聽」，單字辨識率衝到 80% 以上。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>劍橋真題 4–15 出現率 29.17%</span>
+        <span class="source-chip">Source: wiki/topics/listening-map.md</span>
+      </div>
+    </section>
+
+    <!-- Slide 12 -->
+    <section class="slide" data-title="12｜給妹妹的 3 步備考行動清單">
+      <p class="slide-kicker">Slide 12 · Action Plan</p>
+      <h2>總結：現在開始準備的三個第一步</h2>
+      <p class="slide-lead">不用一次把全部真題寫完，照著這三個步驟穩穩累積就夠了：</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="card-tag blue">Step 1｜寫作打底</span>
+          <p>先背熟小作文 4 段公式與 10 個上升／下降替換詞；大作文用 PEEL 架構練寫 2 篇。</p>
+        </div>
+        <div class="card">
+          <span class="card-tag green">Step 2｜打造個人故事庫</span>
+          <p>拿自己的生活經驗套進 Part 1 公式，並用「4 階段關鍵字」準備 2–3 個萬用故事。</p>
+        </div>
+        <div class="card">
+          <span class="card-tag">Step 3｜每日聽力精聽</span>
+          <p>每天至少做 1 個 Part 聽力＋精聽覆盤，特別把地圖題的方位詞練成直覺反應。</p>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>祝妹妹第一次考雅思就順利上手！</span>
+        <span class="source-chip">Source: wiki/topics/ielts-overview.md</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="controls">
+    <button type="button" class="btn" id="prevBtn">← 上一頁</button>
+    <span class="slide-counter" id="slideCounter">1 / 12</span>
+    <button type="button" class="btn btn-primary" id="nextBtn">下一頁 →</button>
+  </footer>
+
+  <!-- TOC Modal -->
+  <div class="toc-backdrop" id="tocModal">
+    <div class="toc-modal">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3>📑 簡報章節目錄（共 12 頁）</h3>
+        <button type="button" class="btn" id="closeTocBtn">✕ 關閉</button>
+      </div>
+      <div class="toc-list" id="tocList"></div>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const counterEl = document.getElementById("slideCounter");
+    const progressFill = document.getElementById("progressFill");
+    const tocModal = document.getElementById("tocModal");
+    const tocBtn = document.getElementById("tocBtn");
+    const closeTocBtn = document.getElementById("closeTocBtn");
+    const tocList = document.getElementById("tocList");
+
+    let currentIdx = 0;
+
+    function renderSlide(idx) {
+      currentIdx = Math.max(0, Math.min(slides.length - 1, idx));
+      slides.forEach((s, i) => s.classList.toggle("active", i === currentIdx));
+      counterEl.textContent = `${currentIdx + 1} / ${slides.length}`;
+      progressFill.style.width = `${((currentIdx + 1) / slides.length) * 100}%`;
+      prevBtn.disabled = currentIdx === 0;
+      nextBtn.textContent = currentIdx === slides.length - 1 ? "回到第 1 頁 ↺" : "下一頁 →";
+      renderToc();
+    }
+
+    function renderToc() {
+      tocList.innerHTML = "";
+      slides.forEach((s, i) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = `toc-item ${i === currentIdx ? "current" : ""}`;
+        btn.textContent = s.getAttribute("data-title") || `Slide ${i + 1}`;
+        btn.addEventListener("click", () => {
+          renderSlide(i);
+          tocModal.classList.remove("open");
+        });
+        tocList.appendChild(btn);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => renderSlide(currentIdx - 1));
+    nextBtn.addEventListener("click", () => {
+      if (currentIdx === slides.length - 1) renderSlide(0);
+      else renderSlide(currentIdx + 1);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") {
+        if (currentIdx < slides.length - 1) renderSlide(currentIdx + 1);
+      } else if (e.key === "ArrowLeft") {
+        if (currentIdx > 0) renderSlide(currentIdx - 1);
+      } else if (e.key === "Escape") {
+        tocModal.classList.remove("open");
+      }
+    });
+
+    tocBtn.addEventListener("click", () => tocModal.classList.add("open"));
+    closeTocBtn.addEventListener("click", () => tocModal.classList.remove("open"));
+    tocModal.addEventListener("click", (e) => {
+      if (e.target === tocModal) tocModal.classList.remove("open");
+    });
+
+    renderSlide(0);
+  </script>
+</body>
+</html>

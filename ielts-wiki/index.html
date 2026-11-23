@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS 新手全攻略｜LLM Wiki 知識庫與教學簡報</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #34d399;
+      --warm: #fbbf24;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .container { max-width: 1020px; margin: 0 auto; padding: 48px 20px; }
+    .badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      margin-bottom: 14px;
+    }
+    h1 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); margin-bottom: 12px; }
+    .lead { color: var(--muted); font-size: 1.02rem; max-width: 720px; margin-bottom: 24px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px; border-radius: 10px; font-weight: 700;
+      text-decoration: none; font-size: 0.95rem;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    }
+    .btn-primary { background: var(--accent); color: #0f172a; border-color: var(--accent); }
+    .btn:hover { border-color: var(--accent); }
+    .section-title { font-size: 1.3rem; margin: 32px 0 14px; color: var(--warm); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px;
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: #cbd5e1; margin-bottom: 10px; }
+    .card a { color: var(--accent); font-size: 0.88rem; text-decoration: none; font-weight: 600; }
+    .loop-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 14px; padding: 22px; font-size: 0.92rem; color: #cbd5e1;
+    }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--green); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="badge">Karpathy LLM Wiki Pattern · IELTS Beginner Guide</span>
+    <h1>給妹妹的雅思新手全攻略｜LLM Wiki ＆ 教學簡報</h1>
+    <p class="lead">
+      依據 <code>AGENTS.md</code> 規範，將 8 份雅思筆記、簡報與 2025 真題彙編透過 <code>/ingest</code> 編譯成結構化 Markdown Wiki，經過 <code>/lint</code> 健檢修正後，再由 <code>/build-slides</code> 生成給零基礎新手閱讀的教學型 HTML 簡報。
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="slides/index.html">🎬 立即開啟教學 HTML 簡報（12 頁）</a>
+      <a class="btn" href="wiki/index.md">📚 查看 Wiki 目錄 (index.md)</a>
+      <a class="btn" href="wiki/log.md">📝 查看執行與檢查紀錄 (log.md)</a>
+      <a class="btn" href="AGENTS.md">⚙️ 查看 AGENTS.md 規範</a>
+    </div>
+
+    <h2 class="section-title">1. Wiki 知識庫主題頁面（Layer 2）</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📘 雅思新手村總覽</h3>
+        <p>白話解釋 Task 1/2、Part 1/2、Cue Card 與推薦學習順序。</p>
+        <a href="wiki/topics/ielts-overview.md">wiki/topics/ielts-overview.md →</a>
+      </div>
+      <div class="card">
+        <h3>✍️ 小作文全攻略 (Task 1)</h3>
+        <p>四段式公式（Overview 關鍵）、高頻上升下降替換詞、流程與平面圖。</p>
+        <a href="wiki/topics/writing-task1.md">wiki/topics/writing-task1.md →</a>
+      </div>
+      <div class="card">
+        <h3>📝 大作文全攻略 (Task 2)</h3>
+        <p>2025 真題四大必考題型與 PEEL 段落展開法（輕鬆寫滿 250 字）。</p>
+        <a href="wiki/topics/writing-task2.md">wiki/topics/writing-task2.md →</a>
+      </div>
+      <div class="card">
+        <h3>🗣️ 口說 Part 1 & 2 攻略</h3>
+        <p>十大公式、自然版 vs. 高分版對比、三段故事與四階段關鍵字記憶法。</p>
+        <a href="wiki/topics/speaking-part1-part2.md">wiki/topics/speaking-part1-part2.md →</a>
+      </div>
+      <div class="card">
+        <h3>🗺️ 聽力 Part 2 地圖題</h3>
+        <p>三大圖形場景、高頻方位與路標詞、以及精聽覆盤法。</p>
+        <a href="wiki/topics/listening-map.md">wiki/topics/listening-map.md →</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">2. Loop / Graph 設計與檢查閘門</h2>
+    <div class="loop-box">
+      <p><strong>流程順序：</strong>取得 Raw 素材 → <code>/ingest</code> 寫入 <code>wiki/sources/</code> 與 <code>wiki/topics/</code> → 更新 <code>index.md</code> &amp; <code>log.md</code> → <strong>Gate 1 (<code>/lint</code>)</strong> 抓衝突與術語 → 退回 <code>[fix]</code> → 查詢 Wiki 整理教學大綱 → <strong>Gate 2 (<code>BEGINNER_CHECK</code> &amp; <code>SLIDE_DENSITY_LIMIT</code>)</strong> → 產出 <code>slides/index.html</code>。</p>
+    </div>
+  </div>
+</body>
+</html>

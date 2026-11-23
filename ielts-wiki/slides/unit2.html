@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 02｜聽力全攻略與地圖題（24 頁深度版）</title>
+  <link rel="stylesheet" href="assets/gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><span>UNIT 02 · 聽力全攻略與地圖題</span><a href="../home.html">← 返回單元總覽</a></div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.1 聽力全局</span>
+      <button class="btn-ghost" id="hintBtn" type="button">簡報工具提示</button>
+      <button class="btn-ghost" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="hint-popover" id="hintPopover">
+    <h4>互動教學工具說明</h4>
+    <ul>
+      <li><strong>查劍橋字典</strong>：在「游標 / 選字」模式下反白任意英文單字，點擊浮動氣泡即可直連劍橋字典。</li>
+      <li><strong>三色螢光筆</strong>：反白重點文字後，點氣泡上的柔黃、薄荷綠或淡藍圓點上色。</li>
+      <li><strong>雷射筆 ＆ 畫筆</strong>：從底部 Dock 切換雷射指示或自由板書，換頁自動清空。</li>
+    </ul>
+  </div>
+  <canvas id="drawCanvas"></canvas><div id="laserDot"></div>
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.25); padding-left:10px;">查劍橋字典：<strong id="cambridgeWord"></strong> ↗</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.1 聽力全局" data-title="Unit 02 封面：聽力全攻略與地圖題">
+      <div class="slide-inner"><div class="bg-num">01</div>
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="slide-kicker">UNIT 02 · IELTS LISTENING</div>
+            <h1 class="slide-title">聽力不只是靠語感：搶下地圖題與精聽實戰</h1>
+            <p class="slide-lead">音檔只播一次，卻也是最容易衝上 7.5+ 的科目。本單元收錄完整英文方位例句、地圖題 29.17% 出題實證、塔樓商店逐句拆解與精聽 SOP。</p>
+            <div class="chip-row"><span class="chip blue">30m · 40 Questions</span><span class="chip">Part 2 Map Labelling</span><span class="chip">Intensive Listening</span></div>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 210" width="100%" style="max-width:250px;" fill="none"><rect x="20" y="20" width="240" height="170" stroke="#111111" stroke-width="1.5"/><rect x="44" y="42" width="58" height="40" stroke="#111111" stroke-width="1.2"/><rect x="178" y="42" width="58" height="40" stroke="#002FA7" stroke-width="1.75" fill="rgba(0,47,167,0.08)"/><path d="M73 166 L73 114 L207 114 L207 82" stroke="#002FA7" stroke-width="2" stroke-dasharray="5 4"/><circle cx="73" cy="166" r="4.5" fill="#111111"/><circle cx="207" cy="82" r="4.5" fill="#002FA7"/><text x="48" y="180" fill="#111111" font-size="9" font-weight="700">ENTRANCE</text><text x="192" y="66" fill="#002FA7" font-size="9" font-weight="700">SHOP</text></svg>
+            <div class="art-caption">Circle the starting point &amp; compass before the audio starts</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 聽力全局" data-title="聽力 4 Parts 場景與難度階梯">
+      <div class="slide-inner"><div class="bg-num">02</div>
+        <div class="slide-kicker">CH.1 聽力全局</div>
+        <h2 class="slide-title">4 個部分難度遞增：從租屋聊天到大學講座</h2>
+        <p class="slide-lead">聽力共 40 題（每部分 10 題），前兩部分考日常實用資訊擷取，後兩部分考校園學術討論與筆記填空。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Part 1 &amp; Part 2（Everyday Social Context）</div><ul class="list-clean"><li><strong>Part 1 (Two-speaker dialogue)</strong>：租屋、訂飯店、健身房報名（Spelling, phone numbers, dates, prices）。</li><li><strong>Part 2 (Monologue)</strong>：博物館、農場、社區中心導覽。<strong>Map / Plan Labelling 最常考在這裡</strong>。</li></ul></div>
+          <div class="card"><div class="card-label">Part 3 &amp; Part 4（Academic Context）</div><ul class="list-clean"><li><strong>Part 3 (2–4 speakers discussion)</strong>：學生與教授討論報告或實驗，充滿 <code>agreement / disagreement</code> 干擾項。</li><li><strong>Part 4 (Academic lecture)</strong>：約 5 分鐘無中場停頓，一口氣唸完 10 題筆記填空，專考 <code>paraphrasing</code>。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 聽力全局" data-title="多國口音與只播一次的應考節奏">
+      <div class="slide-inner"><div class="bg-num">03</div>
+        <div class="slide-kicker">CH.1 聽力全局</div>
+        <h2 class="slide-title">英、澳、紐、北美口音隨機切換，且音檔只播一次</h2>
+        <p class="slide-lead">開播前約 20–30 秒讀題時間決定了你能不能「主動等答案」。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">多國口音適應重點</div><ul class="list-clean"><li><strong>British / Australian</strong>：常見 non-rhotic `r`（如 `car park` 不捲舌），澳洲腔 `a` 偏 `ai`（`mate / today`）。</li><li><strong>North American</strong>：`t` 在母音間弱化為輕 `d` 音（`water / better`）。</li></ul></div>
+          <div class="card-accent"><div class="card-title">利用讀題空檔做「詞性預判」</div><div class="quote-en">"The workshop will be held in the ______ (Noun / Place) and costs $______ (Number) per person."</div><p class="quote-zh">先標出空格要填名詞、數字還是形容詞，聽的時候直接抓該詞性。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 聽力全局" data-title="聽力十大高頻題型與拼字鐵則">
+      <div class="slide-inner"><div class="bg-num">04</div>
+        <div class="slide-kicker">CH.1 聽力全局</div>
+        <h2 class="slide-title">聽懂還不夠：拼錯一個字母或單複數就沒分</h2>
+        <p class="slide-lead">聽力答案在拼字、單複數與字數上限上必須 100% 精準。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">Singular vs. Plural</div><p class="card-body">注意名詞字尾 `-s` 氣音，以及題幹空白前是否有 `a / an / many / several` 或後面動詞為 `are / were`。</p></div>
+          <div class="card"><div class="card-title">Word Limit Red Line</div><p class="card-body">看清粗體規定：<code>ONE WORD ONLY</code> 與 <code>NO MORE THAN TWO WORDS AND/OR A NUMBER</code>。</p></div>
+          <div class="card-accent"><div class="card-title">Self-Correction Trap</div><div class="quote-en">"We originally booked for Tuesday, <strong>oh sorry, actually</strong> we moved it to <strong>Thursday</strong>."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="為什麼聽力要先攻「地圖題」？">
+      <div class="slide-inner"><div class="bg-num">05</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">劍橋 C4–C15 實證：地圖題出現率高達 29.17%</h2>
+        <p class="slide-lead">在劍橋 4–15 共 48 套真題中，地圖題出現了 <strong>14 次（29.17%）</strong>，幾乎每 3–4 場考試就考一次，且高度集中於 Part 2。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent"><div class="stat-big">29.17%</div><div class="card-title">投資報酬率最高的送分題型</div><p class="card-body">地圖題選項通常為字母 A–H，單字簡單（shop, library, café, reception），只要沒跟丟方位，一次就能穩拿 5–6 題。</p></div>
+          <div class="card"><div class="card-label">Cambridge Practice List</div><div class="card-title">C4-1-2, C7-2-2, C7-4-2, C8-2-2, C13-1-2, C16-1-2, C12-8-2</div><p class="card-body">備戰初期把這 7 回 Part 2 集中刷完，就能摸透 90% 的地圖動線套路。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="地圖題四大分類總覽">
+      <div class="slide-inner"><div class="bg-num">06</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">先認出地圖長相：四大題型分類</h2>
+        <p class="slide-lead">開播前 10 秒先判斷地圖類型，因為每一類的「關鍵定位錨點」完全不同。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">類型 1 &amp; 2</div><ul class="list-clean"><li><strong>室內型（Indoor Floor Plan）</strong>：圖書館、體育館、美術館樓層圖（看 `L/R/U/D`、參照物與門朝向）。</li><li><strong>區域型（Area / Park Map）</strong>：公園、農場、露營區全景圖（看方向標、形狀、盡頭與參照物）。</li></ul></div>
+          <div class="card"><div class="card-label blue">類型 3 &amp; 4</div><ul class="list-clean"><li><strong>街區型（Street / Town Map）</strong>：小鎮道路與社區街廓圖（看方向標、路名路長、交叉點與支路）。</li><li><strong>其他示意圖類（Diagram）</strong>：特殊動線或設施配置示意圖，依圖示箭頭追蹤。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="類型一：室內型地圖破題法">
+      <div class="slide-inner"><div class="bg-num">07</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">室內型地圖：鎖定 L/R/U/D、參照物與門的朝向</h2>
+        <p class="slide-lead">室內圖通常沒有東南西北，考官會以「進門後的左右上下」來引導視線。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">播音前必圈 3 個點</div><ul class="list-clean"><li><strong>起點與門朝向</strong>：找到 <code>Main Entrance</code> 或 <code>Reception</code>，確認人走進去時面朝哪一面牆。</li><li><strong>現有參照物</strong>：先默念已知房間（<code>Stairs / Lift / Foyer</code>）的英文發音。</li></ul></div>
+          <div class="card"><div class="card-title">高頻室內方位例句</div><div class="quote-en">"Go through the foyer and you'll see the cloakroom <strong>in the top-left corner</strong>, directly <strong>facing the main desk</strong>."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="類型二：區域型地圖破題法">
+      <div class="slide-inner"><div class="bg-num">08</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">區域型地圖：注意方向標、形狀、盡頭與參照物</h2>
+        <p class="slide-lead">公園或園區地圖常考空間幾何形狀（圓形廣場、L 型建築）與步道盡頭。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">先看圖上的「方向標」</div><div class="quote-en">"The picnic area is located <strong>to the north-west of</strong> the lake, right at the <strong>far end of the circular path</strong>."</div><p class="quote-zh">只要圖上印有 N/S/E/W，立刻標上中文「上北下南左西右東」防轉錯。</p></div>
+          <div class="card-accent"><div class="card-title">善用「形狀與盡頭」定位</div><p class="card-body">留意湖泊彎曲處、小路分岔、<code>dead end</code>（死胡同）、<code>curving path</code>（彎曲小徑）等形狀線索。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="類型三：街區型地圖破題法">
+      <div class="slide-inner"><div class="bg-num">09</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">街區型地圖：路名、交叉點、支路與 Starting Point</h2>
+        <p class="slide-lead">街區題就像聽語音導航，抓緊「起點＋路名＋第幾個轉彎」就不會跟丟。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">Street Names &amp; Length</div><p class="card-body">先掃一遍圖上所有 Street / Road / Avenue 名稱，聽到路名立刻把筆移到該條路上。</p></div>
+          <div class="card-accent"><div class="card-title">Junctions &amp; Branches</div><p class="card-body">留意 <code>junction / intersection</code>（交叉口）、<code>roundabout</code>（圓環）與 <code>branch off</code>（分岔路）。</p></div>
+          <div class="card"><div class="card-title">Starting Point</div><div class="quote-en">"Starting from the station, walk east along High Street and take the second turning on your left."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="考官的固定報路句型公式">
+      <div class="slide-inner"><div class="bg-num">10</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">出題固定公式：目標名稱 ＋ 方位 ＋ 補充介紹</h2>
+        <p class="slide-lead">錄音介紹每個地點時幾乎都按這個三步節奏走，最後的補充介紹是用來幫你二次確認的彩蛋。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">Step 1 · Target Name</div><div class="card-title">目標名稱</div><p class="card-body">先喊出這題要找的地點（<code>"Now, let's look at the café."</code>），提醒你準備填下一題。</p></div>
+          <div class="card-accent"><div class="card-label blue">Step 2 · Directions</div><div class="card-title">方位動線</div><p class="card-body">給出明確轉彎、相對位置與入口方向（這是決定填入哪個代號的核心線索）。</p></div>
+          <div class="card"><div class="card-label blue">Step 3 · Extra Detail</div><div class="card-title">補充介紹</div><p class="card-body">補充該地點的功能或特色（<code>"It's got lovely views of the garden."</code>），幫你確認沒看錯格。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 地圖題實戰" data-title="課堂真題原句逐字拆解（塔樓商店）">
+      <div class="slide-inner"><div class="bg-num">11</div>
+        <div class="slide-kicker">CH.2 地圖題專項攻略</div>
+        <h2 class="slide-title">真題實例逐句拆解（試著反白單字查劍橋字典）</h2>
+        <p class="slide-lead">把教材裡的塔樓商店真題原句拆開來看，感受考官怎麼設陷阱又怎麼給線索：</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">真題錄音原句</div><div class="quote-en">"And finally the shop. It’s actually inside one of the towers, but the way in is from the outside. Just take the first left after the main entrance, go down the path and take the first right. It’s got some lovely gifts and souvenirs."</div></div>
+          <div class="card"><div class="card-label blue">四步考點拆解</div><ul class="list-clean"><li><strong>目標名稱</strong>：the shop</li><li><strong>考官陷阱</strong>：在塔樓裡，但入口在外面（<code>from the outside</code>），別選到塔樓內部通道！</li><li><strong>關鍵動線</strong>：main entrance 後第一個左轉 → 沿路第一個右轉。</li><li><strong>收尾確認</strong>：賣禮物與紀念品（souvenirs）。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 方位詞彙庫" data-title="高頻方位詞彙（一）：行進與轉彎動詞">
+      <div class="slide-inner"><div class="bg-num">12</div>
+        <div class="slide-kicker">CH.3 高頻方位詞彙庫</div>
+        <h2 class="slide-title">聽懂路線怎麼走：核心行進動詞</h2>
+        <p class="slide-lead">反白不熟的英文詞彙，可以直接點「查劍橋字典」確認發音與介係詞搭配。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">直走與沿著</div><ul class="list-clean"><li><code>go straight ahead</code>（直走）</li><li><code>go along the river</code>（沿著河走）</li><li><code>head towards</code>（朝向…方向走）</li></ul></div>
+          <div class="card-accent"><div class="card-title">穿過與跨過</div><ul class="list-clean"><li><code>walk across the square</code>（橫跨廣場）</li><li><code>pass through the gate</code>（穿過大門）</li><li><code>go past the library</code>（經過圖書館）</li></ul></div>
+          <div class="card"><div class="card-title">轉彎表達</div><ul class="list-clean"><li><code>take the first left</code>（第一個路口左轉）</li><li><code>sharp bend</code>（急轉彎）</li><li><code>right-angle bend</code>（90 度直角轉彎）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 方位詞彙庫" data-title="高頻方位詞彙（二）：相對位置與鄰近關係">
+      <div class="slide-inner"><div class="bg-num">13</div>
+        <div class="slide-kicker">CH.3 高頻方位詞彙庫</div>
+        <h2 class="slide-title">建築物之間誰對誰？相對位置詞庫</h2>
+        <p class="slide-lead">考官常不講左右，改用「在某棟建築的對面或緊鄰」來考你相對定位。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">Opposite vs. Adjoin</div><ul class="list-clean"><li><code>opposite / face</code>（在…對面、面對著…，中間通常隔一條路或廣場）</li><li><code>adjoin / adjacent to</code>（緊鄰、相連，常替換 `next to`）</li></ul><div class="quote-en">"The new lab <strong>adjoins</strong> the main hall and sits directly <strong>opposite</strong> the café."</div></div>
+          <div class="card"><div class="card-title">Branch off &amp; Lead to</div><ul class="list-clean"><li><code>branch off</code>（從主幹道分岔出一條小路）</li><li><code>lead off / lead to</code>（通往某個設施或盡頭）</li></ul><div class="quote-en">"A narrow footpath <strong>branches off</strong> to the left and <strong>leads directly to</strong> the bird hide."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 方位詞彙庫" data-title="高頻方位詞彙（三）：出入口與道路名詞">
+      <div class="slide-inner"><div class="bg-num">14</div>
+        <div class="slide-kicker">CH.3 高頻方位詞彙庫</div>
+        <h2 class="slide-title">聽到這些名詞，代表你要看路或找門了</h2>
+        <p class="slide-lead">英國考題常混用英式與美式人行道說法，三個詞都要一眼認出。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">通道與出入口</div><ul class="list-clean"><li><code>corridor</code>（室內走廊）</li><li><code>main entrance / side entrance</code>（正門／側門）</li><li><code>rear exit</code>（後門出口）</li></ul></div>
+          <div class="card-accent"><div class="card-title">人行道三兄弟</div><ul class="list-clean"><li><code>footpath</code>（步道／小徑）</li><li><code>sidewalk</code>（美式：人行道）</li><li><code>pavement</code>（英式：人行道，雅思極高頻！）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 方位詞彙庫" data-title="地圖題常見同義替換陷阱">
+      <div class="slide-inner"><div class="bg-num">15</div>
+        <div class="slide-kicker">CH.3 高頻方位詞彙庫</div>
+        <h2 class="slide-title">圖上寫 A、音檔唸 B：常見同義替換</h2>
+        <p class="slide-lead">雅思聽力很少一字不漏唸出圖上的標籤，聽到替換詞反應要夠快。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">位置與空間替換</div><ul class="list-clean"><li>兩條路交會處 → 音檔唸 <code>at the corner of / at the junction</code></li><li>在正中間 → 音檔唸 <code>surrounded by</code> 或 <code>in the heart of</code></li></ul></div>
+          <div class="card-accent"><div class="card-title">設施名稱替換</div><ul class="list-clean"><li><code>car park</code> ↔ <code>parking lot / garage</code></li><li><code>washroom</code> ↔ <code>restroom / toilets / cloakroom</code></li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 精聽與語料庫" data-title="為什麼聽力練習總是停滯？泛聽 vs. 精聽">
+      <div class="slide-inner"><div class="bg-num">16</div>
+        <div class="slide-kicker">CH.4 精聽訓練與失分拆解</div>
+        <h2 class="slide-title">泛聽只是習慣背景音，精聽才抓得出漏洞</h2>
+        <p class="slide-lead">每天戴耳機播英文廣播卻沒進步，是因為大腦自動略過了沒聽清的音節。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 練習法（Extensive Listening）</div><div class="card-title">整篇播完對答案，錯了只看中文翻譯</div><p class="card-body">沒找出「這句到底哪個音沒聽到」，下次換一篇一樣在同個地方漏寫。</p></div>
+          <div class="card-accent"><div class="card-label blue">高分練習法（Intensive Listening）</div><div class="card-title">把錯題句反覆聽寫到每個音都清楚</div><p class="card-body">精聽能逼大腦辨識「原本以為會、其實聽不出來」的單字與連音現象，把模糊聽覺變清晰。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 精聽與語料庫" data-title="漏聽的三大根本原因拆解">
+      <div class="slide-inner"><div class="bg-num">17</div>
+        <div class="slide-kicker">CH.4 精聽訓練與失分拆解</div>
+        <h2 class="slide-title">你不是單字量不夠，而是卡在這三個原因</h2>
+        <p class="slide-lead">根據課堂簡報整理，考生聽不懂或漏寫答案主要來自以下三大瓶頸：</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">原因 1</div><div class="card-title">Pronunciation Gaps</div><p class="card-body">看文字認得出來，但自己從沒唸對過重音（如 <code>schedule / laboratory</code>），導致耳朵接不到訊號。</p></div>
+          <div class="card-accent"><div class="card-label blue">原因 2</div><div class="card-title">Connected Speech（連音／弱讀）</div><p class="card-body">子音接母音連讀（如 <code>first of all</code>、<code>not at all</code>）或字尾爆破音省略，聽起來像陌生長單字。</p></div>
+          <div class="card"><div class="card-label blue">原因 3</div><div class="card-title">Long Complex Sentences</div><p class="card-body">還在消化上一句的修飾語，答案已經在下一句閃過，導致注意力斷鏈。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 精聽與語料庫" data-title="王陸語料庫練習標準（70–80%+ 辨識率）">
+      <div class="slide-inner"><div class="bg-num">18</div>
+        <div class="slide-kicker">CH.4 精聽訓練與失分拆解</div>
+        <h2 class="slide-title">王陸語料庫怎麼練？目標辨識率 70%–80% 以上</h2>
+        <p class="slide-lead">語料庫專治「聽到單字卻來不及反應與拼錯字」，重點在提高反應速度與拼字自動化。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="stat-big">70–80%+</div><div class="card-title">單字聽寫辨識率及格線</div><p class="card-body">用 1.0x–1.2x 速度聽寫高頻考點詞彙，未達 70% 先重刷該章節，達標再往下一章推進。</p></div>
+          <div class="card"><div class="card-title">錯字本只記「聽不出的字」</div><p class="card-body">把拼錯或漏掉的詞整理成專屬小清單，跟著音檔大聲跟讀修正口腔發音習慣。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 精聽與語料庫" data-title="精聽標準四步驟（每日 30 分鐘）">
+      <div class="slide-inner"><div class="bg-num">19</div>
+        <div class="slide-kicker">CH.4 精聽訓練與失分拆解</div>
+        <h2 class="slide-title">每日 30 分鐘精聽四步驟 SOP</h2>
+        <p class="slide-lead">不需要整套 40 題都精聽，每天挑 1 個 Part（10 題）或錯題段落徹底做完這 4 步就很有感。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">Step 1 &amp; 2</div><ul class="list-clean"><li><strong>盲聽做題（Blind Test）</strong>：計時模擬真實考場，絕不暫停。</li><li><strong>重聽錯句（Dictation）</strong>：針對錯題所在句子反覆聽 3 遍，盡量聽寫出完整句子。</li></ul></div>
+          <div class="card-accent"><div class="card-label blue">Step 3 &amp; 4</div><ul class="list-clean"><li><strong>對照逐字稿（Transcript Check）</strong>：用紅筆圈出沒聽出的連音、弱讀與生字發音。</li><li><strong>跟讀模仿（Shadowing）</strong>：跟著音檔語速唸一遍，讓口腔記住連音節奏。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="實戰對比：迷路聽法 vs. 主動預判聽法">
+      <div class="slide-inner"><div class="bg-num">20</div>
+        <div class="slide-kicker">CH.5 實戰對比與考前檢核</div>
+        <h2 class="slide-title">考場表現落差：被動等字 vs. 主動追蹤</h2>
+        <p class="slide-lead">同樣聽一段 Part 2 地圖導覽，高分考生的腦袋在開播前就已經開始運作。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 聽法（被動迷路）</div><p class="card-body">只盯著選項字母 A/B/C，沒找起點也沒看方位標，一聽到修飾語就分心漏掉轉彎。</p></div>
+          <div class="card-accent"><div class="card-label blue">高分聽法（主動追蹤）</div><p class="card-body">開播前圈出 Entrance 與羅盤方向；播音時筆尖跟著 `left / past / opposite` 在圖上同步移動。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="考場急救：如果不小心漏掉一題怎麼辦？">
+      <div class="slide-inner"><div class="bg-num">21</div>
+        <div class="slide-kicker">CH.5 實戰對比與考前檢核</div>
+        <h2 class="slide-title">萬一這題沒聽到：千萬別停在原地想！</h2>
+        <p class="slide-lead">聽力最怕「連鎖車禍」——為了想上一題怎麼拼，結果後面三題全部沒聽到。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">立刻止損跳下一題</div><div class="quote-en">"Moving on to the next exhibit..." / "Now, turning to..."</div><p class="quote-zh">聽到這些路標詞，立刻把筆移到下一題空格。</p></div>
+          <div class="card"><div class="card-title">最後 2 分鐘再猜題</div><p class="card-body">全部播完後的檢查時間，再根據詞性與上下文猜測空白題，絕不留白。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="聽力各 Part 錯誤率檢查基準">
+      <div class="slide-inner"><div class="bg-num">22</div>
+        <div class="slide-kicker">CH.5 實戰對比與考前檢核</div>
+        <h2 class="slide-title">想衝 7.0+，四個部分錯題怎麼分配？</h2>
+        <p class="slide-lead">把簡單題守住，就能大幅減輕 Part 3 與 Part 4 學術題的壓力。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Part 1 &amp; Part 2 目標</div><p class="card-body">合計 20 題目標錯 <strong>≤ 2 題</strong>（地圖題務必全拿或最多錯 1 題）。</p></div>
+          <div class="card"><div class="card-title">Part 3 &amp; Part 4 目標</div><p class="card-body">合計 20 題錯 4–6 題內，總對題數 32+ 就能穩穩站上 7.5 區間。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="隨堂方位詞快問快答（3 題）">
+      <div class="slide-inner"><div class="bg-num">23</div>
+        <div class="slide-kicker">CH.5 實戰對比與考前檢核</div>
+        <h2 class="slide-title">考前暖身：這 3 個地圖詞你反應得過來嗎？</h2>
+        <p class="slide-lead">可反白單字點氣泡查劍橋字典確認發音與詞義。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-label blue">Q1</div><div class="card-title">adjoin</div><p class="card-body">意思：<strong>緊鄰、相連</strong>（常同義替換 `next to`）。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q2</div><div class="card-title">branch off</div><p class="card-body">意思：<strong>（道路）分岔出去</strong>。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q3</div><div class="card-title">pavement</div><p class="card-body">意思：<strong>英式「人行道」</strong>（同美式 `sidewalk`）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="Unit 02 課後行動檢核表">
+      <div class="slide-inner"><div class="bg-num">24</div>
+        <div class="slide-kicker">CH.5 單元總結</div>
+        <h2 class="slide-title">Unit 02 完成！接著前往 Unit 03 攻克閱讀</h2>
+        <p class="slide-lead">帶著精聽與地圖定位習慣，繼續把閱讀的掃讀策略建立起來。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent">
+            <div class="card-label blue">UNIT 02 CHECKLIST</div>
+            <label class="check-item"><input type="checkbox" /> 熟記四大類地圖破題重點（門朝向/方向標/路名）</label>
+            <label class="check-item"><input type="checkbox" /> 聽懂並能拼寫所有高頻方位詞與 `pavement / corridor`</label>
+            <label class="check-item"><input type="checkbox" /> 每天完成 30 分鐘精聽與語料庫檢核（目標 70–80%+）</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">NEXT UNIT</div>
+            <div class="card-title">前往 Unit 03：閱讀全攻略與高頻題型</div>
+            <p class="card-body">學習如何在 60 分鐘內搞定 3 篇長文與 T/F/NG 魔王題。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-ghost" href="unit3.html" style="background:var(--klein); color:#FFF; border-color:var(--klein); text-decoration:none; padding:9px 18px;">進入 Unit 03 →</a>
+              <a class="btn-ghost" href="../home.html" style="text-decoration:none; padding:9px 18px;">回單元總覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true"><div class="toc-panel"><div class="toc-header"><strong style="font-size:1rem;">Unit 02 目錄（24 頁）</strong><button class="btn-ghost" id="closeTocBtn" type="button">關閉</button></div><div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div></div></div>
+  <script src="assets/toolkit.js"></script>
+</body>
+</html>

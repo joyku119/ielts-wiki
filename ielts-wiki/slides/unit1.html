@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 01｜初學者基礎考情（24 頁深度版）</title>
+  <link rel="stylesheet" href="assets/gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><span>UNIT 01 · 初學者基礎考情</span><a href="../home.html">← 返回單元總覽</a></div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.1 認識雅思</span>
+      <button class="btn-ghost" id="hintBtn" type="button">簡報工具提示</button>
+      <button class="btn-ghost" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="hint-popover" id="hintPopover">
+    <h4>互動教學工具說明</h4>
+    <ul>
+      <li><strong>查劍橋字典</strong>：在「游標 / 選字」模式下反白任意英文單字，點擊浮動氣泡即可直連劍橋字典。</li>
+      <li><strong>三色螢光筆</strong>：反白重點文字後，點氣泡上的柔黃、薄荷綠或淡藍圓點上色。</li>
+      <li><strong>雷射筆 ＆ 畫筆</strong>：從底部 Dock 切換雷射指示或自由板書，換頁自動清空。</li>
+    </ul>
+  </div>
+  <canvas id="drawCanvas"></canvas><div id="laserDot"></div>
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.25); padding-left:10px;">查劍橋字典：<strong id="cambridgeWord"></strong> ↗</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.1 認識雅思" data-title="Unit 01 封面：雅思零基礎入門全貌">
+      <div class="slide-inner"><div class="bg-num">01</div>
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="slide-kicker">UNIT 01 · IELTS FUNDAMENTALS</div>
+            <h1 class="slide-title">第一次準備雅思：先看懂規則，再開始刷題</h1>
+            <p class="slide-lead">本單元用 24 頁深入拆解考試時長、0–9 分制官方標準、Academic 與 General Training 的真實題型差異，並附上必備英文考場術語（可反白直連劍橋字典）。</p>
+            <div class="chip-row"><span class="chip blue">2 Hours 45 Minutes</span><span class="chip">Band 0–9 Scale</span><span class="chip">Academic vs. GT</span></div>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 220" width="100%" style="max-width:260px;" fill="none"><rect x="20" y="20" width="240" height="180" stroke="#111111" stroke-width="1.5"/><circle cx="140" cy="110" r="64" stroke="#002FA7" stroke-width="1.75"/><line x1="140" y1="30" x2="140" y2="190" stroke="#111111" stroke-width="1.2"/><line x1="60" y1="110" x2="220" y2="110" stroke="#111111" stroke-width="1.2"/><circle cx="140" cy="110" r="5" fill="#002FA7"/><text x="135" y="42" fill="#111111" font-size="10" font-weight="700">L</text><text x="208" y="114" fill="#111111" font-size="10" font-weight="700">R</text><text x="135" y="185" fill="#111111" font-size="10" font-weight="700">W</text><text x="66" y="114" fill="#111111" font-size="10" font-weight="700">S</text></svg>
+            <div class="art-caption">Listening · Reading · Writing · Speaking</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 認識雅思" data-title="為什麼全球都在考雅思（IELTS）？">
+      <div class="slide-inner"><div class="bg-num">02</div>
+        <div class="slide-kicker">CH.1 認識雅思</div>
+        <h2 class="slide-title">雅思不是背單字比賽，而是「真實溝通檢定」</h2>
+        <p class="slide-lead">IELTS（International English Language Testing System）評估你在真實英語環境中學習、工作與生活的能力。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">REAL-WORLD COMMUNICATION</div><div class="card-title">貼近海外校園與職場</div><ul class="list-clean"><li><strong>多國口音聽力</strong>：包含 British, Australian, New Zealand and North American accents。</li><li><strong>真人面對面口說</strong>：Face-to-face interview with a certified IELTS Examiner，測試真實臨場互動。</li></ul><div class="quote-en">"IELTS assesses your practical ability to communicate effectively in real-life academic and workplace contexts."</div></div>
+          <div class="card"><div class="card-label">GLOBAL RECOGNITION</div><div class="card-title">留學與移民雙軌通用</div><ul class="list-clean"><li><strong>Higher Education</strong>：英、港、澳、加、紐、歐陸與多數美國大學皆採認。</li><li><strong>Migration &amp; Visas</strong>：澳洲、加拿大、紐西蘭與英國移民局共同認可之語言檢定。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 認識雅思" data-title="總時長 2 小時 45 分鐘的四科結構">
+      <div class="slide-inner"><div class="bg-num">03</div>
+        <div class="slide-kicker">CH.1 認識雅思</div>
+        <h2 class="slide-title">2 小時 45 分鐘的四項全能體檢</h2>
+        <p class="slide-lead">聽、讀、寫筆試連續進行約 2 小時 30 分鐘；口說獨立安排 11–14 分鐘。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">RECEPTIVE SKILLS（各 40 題 · 每題 1 分）</div><ul class="list-clean"><li><strong>Listening（約 30m）</strong>：4 Parts / 40 Questions，音檔只播放一次（played once only）。</li><li><strong>Reading（60m）</strong>：3 Sections / 2,150–2,750 words / 40 Questions，無額外謄卡時間。</li></ul></div>
+          <div class="card-accent"><div class="card-label blue">PRODUCTIVE SKILLS（真人考官評分）</div><ul class="list-clean"><li><strong>Writing（60m）</strong>：Task 1 (≥150 words) + Task 2 (≥250 words)，<strong>Task 2 權重是 Task 1 的兩倍</strong>。</li><li><strong>Speaking（11–14m）</strong>：Part 1 (4–5m) → Part 2 (3–4m) → Part 3 (4–5m)。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 認識雅思" data-title="聽說讀寫各自考什麼？（詳細任務拆解）">
+      <div class="slide-inner"><div class="bg-num">04</div>
+        <div class="slide-kicker">CH.1 認識雅思</div>
+        <h2 class="slide-title">用具體考場任務看懂四個科目</h2>
+        <p class="slide-lead">每科測試的能力截然不同，先看懂英文核心指令，刷題才不會抓錯重點。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Listening &amp; Reading（資訊定位與同義替換）</div><ul class="list-clean"><li><strong>Listening</strong>：抓出對話中的自我修正（self-correction）與導覽方位動線。</li><li><strong>Reading</strong>：辨識 <code>paraphrasing</code>（同義改寫）與邏輯真偽（True / False / Not Given）。</li></ul><div class="quote-en">"Answers must be taken directly from words in the text without exceeding the word limit."</div></div>
+          <div class="card-accent"><div class="card-title">Writing &amp; Speaking（邏輯組織與流暢表達）</div><ul class="list-clean"><li><strong>Writing</strong>：Task 1 客觀描述視覺數據（summarize key features）；Task 2 進行議論文論證。</li><li><strong>Speaking</strong>：從日常問答、1–2 分鐘故事獨白，自然延伸到抽象社會討論。</li></ul><div class="quote-en">"In Writing, Task 2 contributes twice as much as Task 1 to your overall Writing band score."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 0–9 分制" data-title="不是 100 分制：什麼是 Band Score？">
+      <div class="slide-inner"><div class="bg-num">05</div>
+        <div class="slide-kicker">CH.2 0–9 分制與官方評分標準</div>
+        <h2 class="slide-title">雅思採 0–9 分制（Band Score），以 0.5 分為單位</h2>
+        <p class="slide-lead">成績單（Test Report Form）會標示四科獨立分數與總平均分，每一級都有明確的英文能力描述。</p>
+        <div class="grid-3">
+          <div class="card"><div class="stat-big">0–4</div><div class="card-title">Non-user → Limited</div><p class="card-body"><strong>Band 4 (Limited)</strong>: Basic competence is limited to familiar situations; frequent problems in understanding and expression.</p></div>
+          <div class="card-accent"><div class="stat-big">5–7</div><div class="card-title">Modest → Good</div><p class="card-body">留學申請主力區間，涵蓋基礎可用（5.5）、有效溝通（6.0–6.5）與研究所門檻（7.0+）。</p></div>
+          <div class="card"><div class="stat-big">8–9</div><div class="card-title">Very Good → Expert</div><p class="card-body"><strong>Band 9 (Expert)</strong>: Fully operational command of the language; appropriate, accurate and fluent.</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 0–9 分制" data-title="四捨五入與 0.5 分進位規則">
+      <div class="slide-inner"><div class="bg-num">06</div>
+        <div class="slide-kicker">CH.2 0–9 分制與官方評分標準</div>
+        <h2 class="slide-title">總分怎麼算？看懂 .25 與 .75 進位線</h2>
+        <p class="slide-lead">四科平均後依官方規則四捨五入到最接近的 0.5 或整數：<strong>.25 進 .5、.75 進整數</strong>。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label">捨去實例（6.125）</div><div class="card-title">L 6.5 / R 6.0 / W 6.0 / S 6.0</div><p class="card-body">Average = <strong>6.125</strong> → Rounded down to <strong>6.0</strong>（只差一科 0.5 分就差一個級距）。</p></div>
+          <div class="card-accent"><div class="card-label blue">進位實例（6.25）</div><div class="card-title">L 6.5 / R 6.5 / W 6.0 / S 6.0</div><p class="card-body">Average = <strong>6.25</strong> → Rounded up to <strong>6.5</strong>（剛好跨過門檻）。</p></div>
+          <div class="card-accent"><div class="card-label blue">衝 7 實例（6.75）</div><div class="card-title">L 7.5 / R 7.0 / W 6.5 / S 6.0</div><p class="card-body">Average = <strong>6.75</strong> → Rounded up to <strong>7.0</strong>（台灣考生衝 7.0 最穩組合）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 0–9 分制" data-title="Band 5.5 與 Band 6.0 的真實能力對照">
+      <div class="slide-inner"><div class="bg-num">07</div>
+        <div class="slide-kicker">CH.2 0–9 分制與官方評分標準</div>
+        <h2 class="slide-title">Band 5.5（Modest）vs. Band 6.0（Competent）</h2>
+        <p class="slide-lead">從 5.5 跨越到 6.0 的關鍵，在於能否有效溝通且不被頻繁錯誤干擾理解。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="stat-big">5.5</div><div class="card-title">Modest User</div><div class="quote-en">"Has a partial command of the language and copes with overall meaning in most situations, although likely to make many mistakes."</div><p class="quote-zh">能掌握大意，但文法與用字錯誤仍偏多。</p></div>
+          <div class="card-accent"><div class="stat-big">6.0</div><div class="card-title">Competent User</div><div class="quote-en">"Has an effective command of the language despite some inaccuracies, inappropriate usage and misunderstandings."</div><p class="quote-zh">具備有效溝通能力，能理解並產出較複雜的英文。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 0–9 分制" data-title="Band 6.5 與 Band 7.0+ 的研究所黃金線">
+      <div class="slide-inner"><div class="bg-num">08</div>
+        <div class="slide-kicker">CH.2 0–9 分制與官方評分標準</div>
+        <h2 class="slide-title">Band 6.5 vs. Band 7.0（Good）差距在哪？</h2>
+        <p class="slide-lead">申請英國或香港頂尖研究所常見要求 6.5–7.0，差別在於複雜論證的精準度。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="stat-big">6.5</div><div class="card-title">Competent+（多數碩士門檻）</div><p class="card-body">能清楚表達立場與理由，但偶爾仍有主詞動詞一致、冠詞（a/the）或中式直譯小瑕疵。</p></div>
+          <div class="card-accent"><div class="stat-big">7.0</div><div class="card-title">Good User（研究所黃金線）</div><div class="quote-en">"Has operational command of the language, though with occasional inaccuracies; generally handles complex language well and understands detailed reasoning."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 0–9 分制" data-title="小心「單科不低於（Sub-score）」門檻">
+      <div class="slide-inner"><div class="bg-num">09</div>
+        <div class="slide-kicker">CH.2 0–9 分制與官方評分標準</div>
+        <h2 class="slide-title">總分過了還不夠：小心學校的「小分限制」</h2>
+        <p class="slide-lead">簡章上常見英文條件：<code>Overall 6.5, with no individual component below 6.0</code>。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 偏科策略</div><div class="card-title">只衝聽讀 8.0，放生寫作 5.5</div><p class="card-body">即使平均達到 7.0，只要寫作 5.5 低於門檻 6.0，仍可能收到 <strong>Conditional Offer</strong>（條件式錄取）或被要求重考。</p></div>
+          <div class="card-accent"><div class="card-label blue">正確配分策略</div><div class="card-title">先保寫說 6.0–6.5 底線，再衝聽讀 7.5+</div><p class="card-body">用結構模板與 PEEL 確保寫作穩住 6.0+，用系統化公式保住口說，再用客觀題把總分拉高。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 0–9 分制" data-title="聽力與閱讀 40 題大約要對幾題？">
+      <div class="slide-inner"><div class="bg-num">10</div>
+        <div class="slide-kicker">CH.2 0–9 分制與官方評分標準</div>
+        <h2 class="slide-title">客觀題（聽／讀）每題 1 分：算對題數就知道目標</h2>
+        <p class="slide-lead">聽力與閱讀各 40 題、答錯不倒扣（No negative marking），容錯空間比想像中大。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label">Band 6.0 區間</div><div class="card-title">約答對 23–26 / 40 題</div><p class="card-body">代表你把 Part 1–2 / Passage 1 基礎題拿穩，後面難題對一半就過關。</p></div>
+          <div class="card-accent"><div class="card-label blue">Band 7.0 區間</div><div class="card-title">約答對 30–32 / 40 題</div><p class="card-body">仍有 8–10 題容錯空間！不需要每一題艱深學術生字題都答對也能拿 7.0。</p></div>
+          <div class="card"><div class="card-label">Band 8.0 區間</div><div class="card-title">約答對 35–36 / 40 題</div><p class="card-body">關鍵在於消除拼字錯誤（spelling errors）與單複數 `-s` 漏聽。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Academic vs. GT" data-title="Academic 學術組 vs. General Training 一般組">
+      <div class="slide-inner"><div class="bg-num">11</div>
+        <div class="slide-kicker">CH.3 Academic vs. General Training</div>
+        <h2 class="slide-title">兩大組別只差在「閱讀」與「寫作」</h2>
+        <p class="slide-lead">不管報考哪一組，<strong>Listening 與 Speaking 的考題、音檔與評分標準 100% 相同</strong>。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent"><div class="card-label blue">IELTS Academic（學術組）</div><div class="card-title">留學升學、專業執照註冊</div><div class="quote-en">"Suited to those entering a higher learning environment (undergraduate or postgraduate) or seeking professional registration."</div></div>
+          <div class="card"><div class="card-label">IELTS General Training（一般組）</div><div class="card-title">移民簽證、海外工作、中學或培訓</div><div class="quote-en">"Focuses on a test taker's proficiency in a practical, everyday workplace and social context for migration or work."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Academic vs. GT" data-title="Reading 閱讀題材差異實例">
+      <div class="slide-inner"><div class="bg-num">12</div>
+        <div class="slide-kicker">CH.3 Academic vs. General Training</div>
+        <h2 class="slide-title">閱讀差在哪？學術期刊長文 vs. 生活職場手冊</h2>
+        <p class="slide-lead">兩組都是 60 分鐘 40 題，但文章取材與結構深度不同。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Academic Reading</div><div class="card-title">3 篇學術級非專業讀者文章</div><p class="card-body">Texts come from <strong>books, journals, magazines, newspapers and online resources</strong>, written for a non-specialist audience（包含敘述與詳細邏輯論證）。</p></div>
+          <div class="card"><div class="card-label">General Training Reading</div><div class="card-title">生活公告 → 職場指南 → 長篇閱讀</div><p class="card-body">Section 1 為日常廣告與須知（everyday survival）；Section 2 為公司培訓與合約；Section 3 為一篇長篇一般性文章。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Academic vs. GT" data-title="Writing Task 1 寫作題型差異">
+      <div class="slide-inner"><div class="bg-num">13</div>
+        <div class="slide-kicker">CH.3 Academic vs. General Training</div>
+        <h2 class="slide-title">小作文 Task 1 差很大：圖表分析 vs. 書信撰寫</h2>
+        <p class="slide-lead">兩組的 Task 2（250 字申論）非常相似，但 Task 1（150 字）是截然不同的文體。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Academic Task 1</div><div class="card-title">Visual Data &amp; Diagrams</div><div class="quote-en">"Present a clear overview, appropriately categorise the data, and identify main trends or differences."</div></div>
+          <div class="card"><div class="card-label">General Training Task 1</div><div class="card-title">Letter Writing（正式／半正式／非正式）</div><div class="quote-en">"Write a letter requesting information or explaining a situation, covering all bullet points with an appropriate tone."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Academic vs. GT" data-title="英國簽證特殊類別：IELTS for UKVI">
+      <div class="slide-inner"><div class="bg-num">14</div>
+        <div class="slide-kicker">CH.3 Academic vs. General Training</div>
+        <h2 class="slide-title">去英國讀書要特別確認：是否需要報考 UKVI？</h2>
+        <p class="slide-lead">IELTS for UKVI 是英國政府核可的 Secure English Language Test (SELT)，考題難度與一般雅思完全相同。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">一般 Academic 適用情境</div><p class="card-body">直接達標英國大學或研究所入學門檻，取得 <strong>Unconditional Offer</strong>（無條件錄取）時通常可通用。</p></div>
+          <div class="card-accent"><div class="card-title">何時必須報 IELTS for UKVI？</div><p class="card-body">需先赴英就讀語言先修班（<strong>Pre-sessional English</strong>）或大學預科（Foundation）時，簽證多規定須附 UKVI 成績單。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Academic vs. GT" data-title="寫作時間配重鐵則：Task 2 佔分是 Task 1 的兩倍">
+      <div class="slide-inner"><div class="bg-num">15</div>
+        <div class="slide-kicker">CH.3 Academic vs. General Training</div>
+        <h2 class="slide-title">寫作 60 分鐘千萬別平分！黃金比例 20 + 40 分鐘</h2>
+        <p class="slide-lead">官方明確規定 Task 2（申論）貢獻的寫作分數是 Task 1 的兩倍，配時錯誤最容易讓寫作失分。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="stat-big">1/3</div><div class="card-title">Task 1（20m / ≥150 words）</div><p class="card-body">寫出改寫開頭＋Overview＋兩段關鍵數據即可停筆；超過 25 分鐘會嚴重壓縮大作文。</p></div>
+          <div class="card-accent"><div class="stat-big">2/3</div><div class="card-title">Task 2（40m / ≥250 words）</div><p class="card-body">決定寫作成敗的主戰場！建議練習時也先寫 Task 2，確保這 2/3 分數結構完整。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Academic vs. GT" data-title="一對一真人面談：Speaking 三階段預覽">
+      <div class="slide-inner"><div class="bg-num">16</div>
+        <div class="slide-kicker">CH.3 Academic vs. General Training</div>
+        <h2 class="slide-title">口說 11–14 分鐘：從日常聊天一路聊到社會議題</h2>
+        <p class="slide-lead">全程由認證考官一對一主持並錄音，難度依三階段遞增。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">Part 1（4–5 分鐘）</div><div class="card-title">Familiar Topics</div><p class="card-body">Short answer questions on familiar topics such as <strong>hometown, food, hobbies, and daily routines</strong>.</p></div>
+          <div class="card-accent"><div class="card-label blue">Part 2（3–4 分鐘）</div><div class="card-title">Cue Card Monologue</div><p class="card-body">Given a topic card with <strong>1 minute to prepare</strong> a short <strong>1–2 minute talk</strong>.</p></div>
+          <div class="card"><div class="card-label blue">Part 3（4–5 分鐘）</div><div class="card-title">Abstract Discussion</div><p class="card-body">More abstract questions connected to Part 2 (e.g., <em>"Have things changed since your parents' time?"</em>).</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 考場形式選擇" data-title="考場電腦考（IELTS on computer）最大優勢">
+      <div class="slide-inner"><div class="bg-num">17</div>
+        <div class="slide-kicker">CH.4 考場形式與實戰選擇</div>
+        <h2 class="slide-title">為什麼推薦電腦考？1–2 天出分＋打字複製</h2>
+        <p class="slide-lead">考場電腦考與紙筆考的題庫難度、評分標準完全一致，但電腦考在作答效率與出分速度上優勢明顯。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">極速出分優勢</div><div class="card-title">Results in 1–2 Days</div><p class="card-body">對於趕學校申請死線（Round 1 / Round 2）的考生非常關鍵，且場次選擇多。</p></div>
+          <div class="card"><div class="card-label blue">介面實戰優勢</div><div class="card-title">Ctrl+C / Ctrl+V 與即時字數統計</div><p class="card-body">閱讀題可在螢幕直接 Highlight 並複製原文單字；寫作區自動顯示 <strong>Word Count</strong>，修改結構極為輕鬆。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 考場形式選擇" data-title="紙筆考與 Writing on Paper 過渡選項">
+      <div class="slide-inner"><div class="bg-num">18</div>
+        <div class="slide-kicker">CH.4 考場形式與實戰選擇</div>
+        <h2 class="slide-title">習慣手寫怎麼辦？認識 Writing on Paper</h2>
+        <p class="slide-lead">官方已宣布各考區將逐步轉向電腦化測驗，部分考區提供「電腦看題＋紙筆手寫寫作」過渡模式。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">成績效度完全相同</div><p class="card-body">官方 2025 年 11 月實測顯示，純紙筆與 Writing on Paper 的成績分布高度一致（strong alignment of scores）。</p></div>
+          <div class="card"><div class="card-title">報考前必看限制</div><p class="card-body">Writing on Paper 僅供一般 Academic 與 GT，<strong>不適用於 IELTS for UKVI</strong> 測驗。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 考場形式選擇" data-title="居家線上考（IELTS Online）注意事項">
+      <div class="slide-inner"><div class="bg-num">19</div>
+        <div class="slide-kicker">CH.4 考場形式與實戰選擇</div>
+        <h2 class="slide-title">在家就能考：IELTS Online 的限制與風險</h2>
+        <p class="slide-lead">IELTS Online 僅提供 Academic 組，口說改為線上視訊真人面談，<strong>6–8 天出分</strong>。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">環境與監考要求</div><div class="card-title">Human + AI Invigilation</div><p class="card-body">全程採真人監考員與 AI 雙重監控，需安靜獨立房間與穩定網路，斷線或雜音可能影響成績效力。</p></div>
+          <div class="card-accent"><div class="card-label blue">最關鍵風險檢查</div><div class="card-title">Check Institution Acceptance First</div><p class="card-body">成績單會標註為 Online 應考，部分院校或簽證機構僅採認實體考場成績，報名前務必查清簡章。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 考場形式選擇" data-title="電腦考介面必練快捷操作">
+      <div class="slide-inner"><div class="bg-num">20</div>
+        <div class="slide-kicker">CH.4 考場形式與實戰選擇</div>
+        <h2 class="slide-title">考前一定要用官方模擬介面練過這 3 件事</h2>
+        <p class="slide-lead">官方特別提醒：報考電腦考的學員，考前一定要先熟悉介面操作與鍵盤快捷鍵。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">右鍵 Highlight &amp; Notes</div><p class="card-body">閱讀長文時反白文字可選 Highlight 標記人名與轉折詞，還能加註筆記方便回頭對答案。</p></div>
+          <div class="card"><div class="card-title">Ctrl+C / Ctrl+V 調結構</div><p class="card-body">寫作時先打好各段骨幹，再用剪下貼上補充例句與連接詞，大幅降低塗改焦慮。</p></div>
+          <div class="card-accent"><div class="card-title">聽力沒有 10 分鐘謄卡</div><p class="card-body">電腦考聽力結束後<strong>僅有約 2 分鐘檢查拼字</strong>（不同於紙筆的 10 分鐘），需練成邊聽邊直接打字。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 考場形式選擇" data-title="考試當天（Test Day）標準流程">
+      <div class="slide-inner"><div class="bg-num">21</div>
+        <div class="slide-kicker">CH.4 考場形式與實戰選擇</div>
+        <h2 class="slide-title">考場當天流程：帶對證件與節奏管理</h2>
+        <p class="slide-lead">考場安檢非常嚴格（含核對護照、拍照、指紋掃描與寄放隨身物品），提早抵達才能保持從容。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">必帶核心證件</div><p class="card-body">務必攜帶<strong>與報名時完全相同的有效護照／身分證件正本</strong>（Bring the exact same ID used for registration）。</p></div>
+          <div class="card"><div class="card-title">筆試連續作答節奏</div><p class="card-body">聽力 → 閱讀 → 寫作連續進行無長休，建議考前適度飲水並先上洗手間。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 迷思與檢核" data-title="初學者常見三大迷思破解">
+      <div class="slide-inner"><div class="bg-num">22</div>
+        <div class="slide-kicker">CH.5 初學者迷思快篩</div>
+        <h2 class="slide-title">破除新手最常聽信的三個錯誤觀念</h2>
+        <p class="slide-lead">避開這些錯誤努力方向，能幫你省下至少一個月的冤枉路。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label">迷思 1</div><div class="card-title">「口說一定要練英國腔？」</div><p class="card-body"><strong>錯！</strong>發音看的是「咬字清晰、輕重音自然」（can be understood without too much effort），台灣／美式口音完全不影響高分。</p></div>
+          <div class="card"><div class="card-label">迷思 2</div><div class="card-title">「寫作難字越多越高分？」</div><p class="card-body"><strong>錯！</strong>硬塞不熟的冷僻字容易用錯搭配（collocation）反被扣分，精準自然的搭配詞才是 7.0 關鍵。</p></div>
+          <div class="card"><div class="card-label">迷思 3</div><div class="card-title">「寫作兩篇平均寫 30 分鐘？」</div><p class="card-body"><strong>錯！</strong>Task 2 佔寫作 2/3 分數，必須嚴守 20 分鐘＋40 分鐘配時。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 迷思與檢核" data-title="隨堂快篩小測驗（3 題檢核）">
+      <div class="slide-inner"><div class="bg-num">23</div>
+        <div class="slide-kicker">CH.5 初學者迷思快篩</div>
+        <h2 class="slide-title">上完這單元，你能立刻答出這 3 題嗎？</h2>
+        <p class="slide-lead">家教課堂可用雷射筆指題，請學員口頭回答確認觀念完全通透。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-label blue">Q1</div><div class="card-title">四科平均 6.25 分，成績單會顯示幾分？</div><p class="card-body">答案：<strong>6.5 分</strong>（.25 進位到半分；若是 6.125 則會捨去為 6.0）。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q2</div><div class="card-title">電腦考聽力結束後有 10 分鐘謄卡時間嗎？</div><p class="card-body">答案：<strong>沒有</strong>，電腦考僅有約 2 分鐘檢查，需邊聽邊打字。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q3</div><div class="card-title">Academic 與 GT 哪兩科考題完全一樣？</div><p class="card-body">答案：<strong>Listening（聽力）與 Speaking（口說）</strong>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 迷思與檢核" data-title="Unit 01 課後行動檢核表">
+      <div class="slide-inner"><div class="bg-num">24</div>
+        <div class="slide-kicker">CH.5 單元總結</div>
+        <h2 class="slide-title">Unit 01 完成！接下來準備進入聽力專項</h2>
+        <p class="slide-lead">確認以下三項基礎設定後，就可以前往 Unit 02 攻克聽力地圖題。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent">
+            <div class="card-label blue">UNIT 01 CHECKLIST</div>
+            <label class="check-item"><input type="checkbox" /> 確認目標總分與單科小分門檻（例如 Overall 6.5, no band below 6.0）</label>
+            <label class="check-item"><input type="checkbox" /> 確認報考組別（Academic / UKVI）與考試形式（電腦考）</label>
+            <label class="check-item"><input type="checkbox" /> 記住寫作 20m + 40m 與閱讀 15m + 20m + 25m 節奏</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">NEXT UNIT</div>
+            <div class="card-title">前往 Unit 02：聽力全攻略與地圖題</div>
+            <p class="card-body">學習如何拿下出題率 29.17% 的 Part 2 地圖題與精聽訓練法。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-ghost" href="unit2.html" style="background:var(--klein); color:#FFF; border-color:var(--klein); text-decoration:none; padding:9px 18px;">進入 Unit 02 →</a>
+              <a class="btn-ghost" href="../home.html" style="text-decoration:none; padding:9px 18px;">回單元總覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true"><div class="toc-panel"><div class="toc-header"><strong style="font-size:1rem;">Unit 01 目錄（24 頁）</strong><button class="btn-ghost" id="closeTocBtn" type="button">關閉</button></div><div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div></div></div>
+  <script src="assets/toolkit.js"></script>
+</body>
+</html>

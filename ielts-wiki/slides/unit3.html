@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 03｜閱讀全攻略與高頻題型（24 頁深度版）</title>
+  <link rel="stylesheet" href="assets/gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><span>UNIT 03 · 閱讀全攻略與高頻題型</span><a href="../home.html">← 返回單元總覽</a></div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.1 閱讀全局</span>
+      <button class="btn-ghost" id="hintBtn" type="button">簡報工具提示</button>
+      <button class="btn-ghost" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="hint-popover" id="hintPopover">
+    <h4>互動教學工具說明</h4>
+    <ul>
+      <li><strong>查劍橋字典</strong>：在「游標 / 選字」模式下反白任意英文單字，點擊浮動氣泡即可直連劍橋字典。</li>
+      <li><strong>三色螢光筆</strong>：反白重點文字後，點氣泡上的柔黃、薄荷綠或淡藍圓點上色。</li>
+      <li><strong>雷射筆 ＆ 畫筆</strong>：從底部 Dock 切換雷射指示或自由板書，換頁自動清空。</li>
+    </ul>
+  </div>
+  <canvas id="drawCanvas"></canvas><div id="laserDot"></div>
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.25); padding-left:10px;">查劍橋字典：<strong id="cambridgeWord"></strong> ↗</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.1 閱讀全局" data-title="Unit 03 封面：閱讀全攻略與高頻題型">
+      <div class="slide-inner"><div class="bg-num">01</div>
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="slide-kicker">UNIT 03 · IELTS ACADEMIC READING</div>
+            <h1 class="slide-title">60 分鐘 3 篇長文：不逐字翻譯也能高分破題</h1>
+            <p class="slide-lead">閱讀總長高達 2,150–2,750 字、共 40 題。本單元帶你建立略讀掃讀定位法、看懂三大魔王題型的英文實戰對照，並守住字數紅線。</p>
+            <div class="chip-row"><span class="chip blue">60m · 40 Questions</span><span class="chip">True / False / Not Given</span><span class="chip">Paraphrasing</span></div>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 210" width="100%" style="max-width:250px;" fill="none"><rect x="28" y="22" width="224" height="166" stroke="#111111" stroke-width="1.5"/><line x1="52" y1="54" x2="180" y2="54" stroke="#111111" stroke-width="2"/><line x1="52" y1="78" x2="220" y2="78" stroke="#E2E5EB" stroke-width="2"/><line x1="52" y1="98" x2="220" y2="98" stroke="#002FA7" stroke-width="2.5"/><line x1="52" y1="118" x2="200" y2="118" stroke="#E2E5EB" stroke-width="2"/><circle cx="204" cy="144" r="22" stroke="#002FA7" stroke-width="1.75"/><line x1="220" y1="160" x2="238" y2="176" stroke="#002FA7" stroke-width="2"/></svg>
+            <div class="art-caption">Skimming + Scanning：帶著關鍵字進文章找證據</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 閱讀全局" data-title="閱讀測驗的真實規模與字數">
+      <div class="slide-inner"><div class="bg-num">02</div>
+        <div class="slide-kicker">CH.1 閱讀全局</div>
+        <h2 class="slide-title">60 分鐘讀 2,750 字＋寫 40 題，而且沒有額外謄卡時間</h2>
+        <p class="slide-lead">閱讀測驗結束鐘響即收卷，因此時間管理與做題順序比逐字看懂更重要。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="stat-big">60m</div><div class="card-title">Total Time Allowed</div><p class="card-body">無額外檢查時間，建議每寫完一篇就立即確認該篇 13–14 題是否全部填妥。</p></div>
+          <div class="card"><div class="stat-big">3 篇</div><div class="card-title">2,150–2,750 Words</div><p class="card-body">Taken from books, journals, magazines and newspapers; at least one text contains detailed logical argument.</p></div>
+          <div class="card"><div class="stat-big">40 題</div><div class="card-title">1 Mark Each</div><p class="card-body">專有名詞不用死背；If texts use technical vocabulary, a simple dictionary definition is provided.</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 閱讀全局" data-title="三篇文章的難度階梯與配時（15+20+25）">
+      <div class="slide-inner"><div class="bg-num">03</div>
+        <div class="slide-kicker">CH.1 閱讀全局</div>
+        <h2 class="slide-title">別平均 20 分鐘一篇！黃金配速：15 + 20 + 25 分鐘</h2>
+        <p class="slide-lead">三篇文章難度通常依序遞增，把第 1 篇壓在 15 分鐘內寫完，才能從容應對第 3 篇的長難句與推論。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-label blue">Passage 1 · 15 分</div><div class="card-title">Descriptive / Factual</div><p class="card-body">細節填空與 T/F/NG 比例高，幾乎都照順序出題，目標錯 ≤ 2 題。</p></div>
+          <div class="card"><div class="card-label blue">Passage 2 · 20 分</div><div class="card-title">Analytical + Matching</div><p class="card-body">常出現 Matching Headings（段落大意）與 Matching Information（細節配對）。</p></div>
+          <div class="card"><div class="card-label blue">Passage 3 · 25 分</div><div class="card-title">Discursive / Argumentative</div><p class="card-body">常考作者觀點（Yes / No / Not Given）與學者觀點配對，需要較多時間核對細節。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 閱讀全局" data-title="閱讀不是「看懂整篇」，而是「找證據」">
+      <div class="slide-inner"><div class="bg-num">04</div>
+        <div class="slide-kicker">CH.1 閱讀全局</div>
+        <h2 class="slide-title">心態轉換：閱讀測驗像「法醫找證據」</h2>
+        <p class="slide-lead">不需要把英文翻譯成優美的中文，只需要確認「題目這句話在文章哪一段、有沒有被同義改寫」。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 讀法（盲目精讀）</div><div class="card-title">從第一句開始逐字看，卡在生字查不到</div><p class="card-body">看了 10 分鐘才讀完兩段，根本還沒看到題目問什麼，看完題目又忘記前面寫什麼。</p></div>
+          <div class="card-accent"><div class="card-label blue">高分讀法（Evidence-based）</div><div class="card-title">先花 1 分鐘看標題＋掃題目關鍵字</div><p class="card-body">腦中先帶著問題清單，進文章精準鎖定段落後再放慢速度精讀那 2–3 句證據句。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 略讀與掃讀" data-title="核心技能一：Skimming（略讀）">
+      <div class="slide-inner"><div class="bg-num">05</div>
+        <div class="slide-kicker">CH.2 核心定位技能</div>
+        <h2 class="slide-title">Skimming（略讀）：2 分鐘畫出文章地圖</h2>
+        <p class="slide-lead">略讀的目的不是記住細節，而是知道「哪一段在講什麼主題」，方便後面秒解配對題。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">略讀必看 4 個位置</div><ul class="list-clean"><li>Title &amp; Subtitle（大標題與副標題）</li><li>Introduction（第一段了解討論對象）</li><li>Topic Sentences（各段<strong>第一句</strong>與最後一句）</li><li>Signposts（<code>However / Yet / In contrast</code> 後的主旨）</li></ul></div>
+          <div class="card"><div class="card-title">邊讀邊寫「2 字中文標籤」</div><p class="card-body">讀完每段首尾句，在段落旁順手標上「起源 / 優點 / 批評 / 未來」，整篇結構一秒看懂。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 略讀與掃讀" data-title="核心技能二：Scanning（掃讀）">
+      <div class="slide-inner"><div class="bg-num">06</div>
+        <div class="slide-kicker">CH.2 核心定位技能</div>
+        <h2 class="slide-title">Scanning（掃讀）：用眼睛當雷達抓定位詞</h2>
+        <p class="slide-lead">先挑題目裡「最不容易被同義改寫」的詞當作定位錨點（Anchor），5 秒內鎖定段落。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-title">最穩定位詞（首選）</div><p class="card-body"><strong>Proper nouns, Dates, Numbers, Percentages</strong>（人名、地名、年份、百分比在原文幾乎照印）。</p></div>
+          <div class="card"><div class="card-title">次穩定位詞</div><p class="card-body">特殊專有名詞、連字號複合詞（hyphenated words）或引號內的特殊字眼。</p></div>
+          <div class="card"><div class="card-title">千萬別拿來定位的詞</div><p class="card-body">文章大標題反覆出現的主題詞（如 `climate`），整篇都是反而找不到。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 略讀與掃讀" data-title="黃金法則：細節題「依文章順序出現」">
+      <div class="slide-inner"><div class="bg-num">07</div>
+        <div class="slide-kicker">CH.2 核心定位技能</div>
+        <h2 class="slide-title">順序原則（Order Rule）：不用整篇重頭找！</h2>
+        <p class="slide-lead">官方明確說明：<code>The answers come in the same order as the information in the text.</code>（填空與是非題幾乎都照段落順序出現）。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">實戰夾擊定位法</div><p class="card-body">若第 1 題在 B 段找到、第 3 題在 D 段找到，那第 2 題一定被夾在 B 段尾到 D 段頭之間，完全不用回頭看 A 段！</p></div>
+          <div class="card"><div class="card-title">找不到某題時立刻跳過</div><p class="card-body">先往下找下一題的位置，定位到下一題後再回頭夾擊中間那一段，這招對抓 `Not Given` 超級有效。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 略讀與掃讀" data-title="做題順序黃金排列：先順序題、後配對題">
+      <div class="slide-inner"><div class="bg-num">08</div>
+        <div class="slide-kicker">CH.2 核心定位技能</div>
+        <h2 class="slide-title">拿到一篇文章，先寫哪一組題目最賺？</h2>
+        <p class="slide-lead">不要照題號從頭硬寫！如果第 1–5 題是跨段落資訊配對，先寫它會耗掉 10 分鐘還沒摸熟文章。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">優先寫（In-order Question Types）</div><ul class="list-clean"><li>Completion（Summary / Note / Table Completion）</li><li>True / False / Not Given（或 Yes / No / Not Given）</li><li>Short-answer questions</li></ul></div>
+          <div class="card"><div class="card-label">最後寫（Out-of-order Question Types）</div><ul class="list-clean"><li>Matching Information（段落細節配對）</li><li>Matching Headings（段落大意配對）</li><li>Global Multiple Choice（全文主旨題）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 三大魔王題型" data-title="魔王一：True / False / Not Given">
+      <div class="slide-inner"><div class="bg-num">09</div>
+        <div class="slide-kicker">CH.3 三大魔王題型拆解</div>
+        <h2 class="slide-title">True / False / Not Given：最常錯在「腦補」</h2>
+        <p class="slide-lead">這題型考的是「題幹陳述 vs. 原文事實」的嚴格邏輯關係，絕不能用自己的常識判斷。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">TRUE</div><div class="card-title">Agrees with the text</div><p class="card-body">題幹用同義詞改寫原文意思（例：原文 `rarely` ↔ 題幹 `seldom`）。</p></div>
+          <div class="card"><div class="card-label blue">FALSE</div><div class="card-title">Contradicts the text</div><p class="card-body">原文講 A，題幹講非 A（例：原文 `only 20%` ↔ 題幹 `the majority`）。</p></div>
+          <div class="card-accent"><div class="card-label blue">NOT GIVEN</div><div class="card-title">No information</div><p class="card-body">原文根本沒提這件事（例：原文只談 A 與 B，沒比較誰更便宜）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 三大魔王題型" data-title="T/F/NG 經典陷阱：絕對詞與偷渡比較級">
+      <div class="slide-inner"><div class="bg-num">10</div>
+        <div class="slide-kicker">CH.3 三大魔王題型拆解</div>
+        <h2 class="slide-title">一眼抓出題幹裡的 3 種考官陷阱字</h2>
+        <p class="slide-lead">看到這些字眼時，回原文務必逐字核對，十之八九就是考點所在。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">絕對限定詞</div><div class="quote-en">"<strong>All</strong> citizens supported the plan."</div><p class="quote-zh">原文常寫 `some / many / mainly` → 判 <strong>FALSE</strong>。</p></div>
+          <div class="card-accent"><div class="card-title">無中生有比較級</div><div class="quote-en">"Method A is <strong>more effective than</strong> B."</div><p class="quote-zh">原文只介紹兩者卻沒比較 → <strong>NOT GIVEN</strong>。</p></div>
+          <div class="card"><div class="card-title">時間與因果偷換</div><p class="card-body">注意 `before / after`、`at least / less than` 或 `caused by` 有沒有被題幹顛倒因果。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 三大魔王題型" data-title="Yes / No / Not Given 跟 T/F/NG 差在哪？">
+      <div class="slide-inner"><div class="bg-num">11</div>
+        <div class="slide-kicker">CH.3 三大魔王題型拆解</div>
+        <h2 class="slide-title">Yes / No / Not Given：考的是「作者觀點」</h2>
+        <p class="slide-lead">判斷邏輯跟 T/F/NG 一模一樣，只是題目問的是「作者的看法／立場（Writer's views or claims）」，而非客觀事實。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">千萬別寫錯字母！</div><p class="card-body">題目要求寫 `YES/NO/NOT GIVEN` 時寫成 `TRUE/FALSE` 可能會被判錯，作答前務必看清楚題幹指令。</p></div>
+          <div class="card-accent"><div class="card-title">緊盯態度副詞</div><p class="card-body">留意作者在段中流露態度的字：<code>surprisingly / unfortunately / convincingly / flawed</code>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 三大魔王題型" data-title="魔王二：Matching Headings（段落大意配對）">
+      <div class="slide-inner"><div class="bg-num">12</div>
+        <div class="slide-kicker">CH.3 三大魔王題型拆解</div>
+        <h2 class="slide-title">Matching Headings：給每一段取一個小標題</h2>
+        <p class="slide-lead">選項數量通常比段落多（例如 6 段給 9 個標題），且每個選項只能使用一次。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">解題 3 步驟</div><ul class="list-clean"><li>先劃掉題目已經用掉的範例選項（Example）。</li><li>讀每個選項的<strong>核心名詞與動詞</strong>，把相似主題先分群。</li><li>讀該段<strong>首句＋第二句＋尾句</strong>，抓整段核心而非單一例子。</li></ul></div>
+          <div class="card"><div class="card-label">常見干擾陷阱</div><div class="card-title">拿「某個小例子」當整段標題</div><p class="card-body">如果某段第 3 句舉了一個例子，選項卻把那個例子寫成標題，通常是錯的（以偏概全），要選能涵蓋整段的話。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 三大魔王題型" data-title="魔王三：Matching Information（段落細節配對）">
+      <div class="slide-inner"><div class="bg-num">13</div>
+        <div class="slide-kicker">CH.3 三大魔王題型拆解</div>
+        <h2 class="slide-title">段落細節配對：不按順序，且同段可能選兩次</h2>
+        <p class="slide-lead">題目會問「哪一段提到某個現象的財務原因？」，常出現 <code>NB: You may use any letter more than once.</code>。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">為什麼建議最後做？</div><p class="card-body">因為它的線索分散在各段細節中，等你先寫完填空與是非題、對每段內容有印象後再寫，命中率會翻倍。</p></div>
+          <div class="card-accent"><div class="card-title">先看題幹裡的「功能詞」</div><p class="card-body">注意 <code>a reason why / a comparison between / an example of / criticism of</code>，這能幫你縮小搜尋目標（例如批評通常在後段）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 填空與同義替換" data-title="填空題鐵則：答案必須來自原文原字">
+      <div class="slide-inner"><div class="bg-num">14</div>
+        <div class="slide-kicker">CH.4 填空題與字數鐵則</div>
+        <h2 class="slide-title">Summary / Note Completion：不要自己改寫單字！</h2>
+        <p class="slide-lead">閱讀填空（無選項版）的答案，<strong>必須直接照抄原文裡的單字與詞性</strong>，電腦考直接用複製貼上最保險。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">先判斷空格詞性</div><div class="quote-en">"A significant ______ (singular noun) in global temperatures was recorded."</div><p class="quote-zh">先確定詞性為單數名詞，回原文找到直接複製貼上。</p></div>
+          <div class="card"><div class="card-title">注意單複數與文法一致性</div><p class="card-body">切勿擅自把原文複數改成單數，若發現填入後文法完全不合，代表你可能找錯位置了。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 填空與同義替換" data-title="官方字數上限紅線：連字號算幾個字？">
+      <div class="slide-inner"><div class="bg-num">15</div>
+        <div class="slide-kicker">CH.4 填空題與字數鐵則</div>
+        <h2 class="slide-title">NO MORE THAN TWO WORDS AND/OR A NUMBER</h2>
+        <p class="slide-lead">只要超過字數上限一個字（即使多寫了 `a` 或 `the`），該題直接零分計算！</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-title">連字號算 1 個字</div><p class="card-body">官方規定如 <code>check-in</code> 這種連字號複合詞算作 <strong>1 個字</strong>（Hyphenated words count as single words）。</p></div>
+          <div class="card"><div class="card-title">不考縮寫詞</div><p class="card-body">測驗不會將 <code>they're</code> 等縮寫詞列為標準填空答案（Contracted words will not be tested）。</p></div>
+          <div class="card"><div class="card-title">數字可用阿拉伯數字</div><p class="card-body">寫 <code>1</code>、<code>2</code> 或 <code>one</code>、<code>two</code> 皆可，建議直接寫阿拉伯數字最省字數也不會拼錯。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 填空與同義替換" data-title="有選項的 Summary 摘要填空技巧">
+      <div class="slide-inner"><div class="bg-num">16</div>
+        <div class="slide-kicker">CH.4 填空題與字數鐵則</div>
+        <h2 class="slide-title">選項式摘要填空：考「詞性篩選 ＋ 同義替換」</h2>
+        <p class="slide-lead">題目下方給 A–J 一堆單字選項時，答案往往是原文單字的同義詞，而不是原字照抄。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">步驟 1：先把選項依詞性分類</div><p class="card-body">在旁邊標上 `n. / v. / adj.`，遇到需要形容詞的空格，選項瞬間從 10 個縮減成 3 個。</p></div>
+          <div class="card-accent"><div class="card-title">步驟 2：回原文找意思配對</div><p class="card-body">看懂原文那個位置在講什麼概念，再從那 3 個候選詞裡挑出最貼切的同義字（反白選項可用劍橋字典確認）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 填空與同義替換" data-title="閱讀最核心底層能力：Paraphrasing（同義替換）">
+      <div class="slide-inner"><div class="bg-num">17</div>
+        <div class="slide-kicker">CH.4 填空題與字數鐵則</div>
+        <h2 class="slide-title">為什麼找到那一句卻看不出是答案？因為同義替換</h2>
+        <p class="slide-lead">雅思閱讀 80% 的題目都建立在「題幹換個說法講原文的事」，養成累積替換詞對的習慣就能秒殺定位。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">動詞替換</div><p class="card-body"><code>ignore</code> ↔ <code>pay little attention to</code><br><code>trigger</code> ↔ <code>lead to</code><br><code>resemble</code> ↔ <code>look similar to</code></p></div>
+          <div class="card"><div class="card-title">名詞替換</div><p class="card-body"><code>shortage</code> ↔ <code>lack of</code><br><code>impact</code> ↔ <code>consequence</code><br><code>obstacle</code> ↔ <code>barrier</code></p></div>
+          <div class="card-accent"><div class="card-title">形容詞／時間替換</div><p class="card-body"><code>ancient</code> ↔ <code>centuries ago</code><br><code>rare</code> ↔ <code>seldom seen</code><br><code>financial</code> ↔ <code>monetary</code></p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 填空與同義替換" data-title="長難句切分法：先抓「主詞 ＋ 動詞 ＋ 受詞」">
+      <div class="slide-inner"><div class="bg-num">18</div>
+        <div class="slide-kicker">CH.4 填空題與字數鐵則</div>
+        <h2 class="slide-title">遇到一行 40 字的長句子？先把插入語括號起來</h2>
+        <p class="slide-lead">學術文章常在主詞與動詞中間塞入兩個逗號或 `which` 子句，先跳過修飾語就能看懂骨幹。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">拆解示範</div><div class="quote-en">"The new policy, <strong>[which was introduced in 2019 despite strong opposition]</strong>, significantly reduced urban emissions."</div><p class="quote-zh">拿掉中間括號後，骨幹只剩：<strong>The new policy significantly reduced urban emissions.</strong>（新政策大幅減少都市排放）。</p></div>
+          <div class="card"><div class="card-title">實戰心法</div><p class="card-body">閱讀題看細節時先看主幹是否符合題意，需要時再回頭核對括號裡的年份、條件或反對意見。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰演練與覆盤" data-title="單選題（Multiple Choice）排除法">
+      <div class="slide-inner"><div class="bg-num">19</div>
+        <div class="slide-kicker">CH.5 實戰演練與覆盤</div>
+        <h2 class="slide-title">單選題四選一：先刪掉「有偷加料的選項」</h2>
+        <p class="slide-lead">閱讀單選題的錯誤選項往往看起來很合理，其實藏了三種常見瑕疵：</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">Not Mentioned</div><p class="card-body">選項用常識推論出原文根本沒講的結果（即使你覺得很合理也錯）。</p></div>
+          <div class="card"><div class="card-title">Too Extreme</div><p class="card-body">把原文的「可能、部分」改寫成「唯一、全部或永遠」。</p></div>
+          <div class="card-accent"><div class="card-title">Wrong Attribution</div><p class="card-body">把 A 學者的觀點安到 B 學者頭上，回原文務必核對主詞。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰演練與覆盤" data-title="圖表標示題（Diagram Label Completion）">
+      <div class="slide-inner"><div class="bg-num">20</div>
+        <div class="slide-kicker">CH.5 實戰演練與覆盤</div>
+        <h2 class="slide-title">閱讀也會考圖表填空！答案通常集中在 1–2 段</h2>
+        <p class="slide-lead">遇到機械構造或建築剖面圖時別慌，這反而是閱讀裡定位最快、最集中得分的題型。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">先看圖上已知零件名稱</div><p class="card-body">直接拿圖上已經標出來的名詞去文章掃讀，找到描述構造的那一段，所有空格答案通常全在旁邊。</p></div>
+          <div class="card"><div class="card-title">注意空間介係詞</div><p class="card-body">留意 <code>above / beneath / attached to / connected via</code>，就能精準對號入座。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰演練與覆盤" data-title="實戰對比：逐字精讀 vs. 定位掃讀">
+      <div class="slide-inner"><div class="bg-num">21</div>
+        <div class="slide-kicker">CH.5 實戰演練與覆盤</div>
+        <h2 class="slide-title">為什麼一樣的英文程度，有人寫不完、有人剩 5 分鐘？</h2>
+        <p class="slide-lead">差別不在單字量，而在於有沒有區分「略讀段旨」跟「精讀出題句」。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 習慣</div><div class="card-title">每段都用同一種速度精讀</div><p class="card-body">遇到沒出題的背景描述也花 3 分鐘細讀，導致後面題組沒時間思考只能用猜的。</p></div>
+          <div class="card-accent"><div class="card-label blue">高分習慣</div><div class="card-title">沒出題的地方快掃，出題句才慢讀</div><p class="card-body">只在找到定位詞的那 2–3 句放慢速度精讀，確保邏輯與細節 100% 準確。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰演練與覆盤" data-title="閱讀錯題覆盤 SOP：只整理這兩件事">
+      <div class="slide-inner"><div class="bg-num">22</div>
+        <div class="slide-kicker">CH.5 實戰演練與覆盤</div>
+        <h2 class="slide-title">寫完一回閱讀怎麼訂正才有效？</h2>
+        <p class="slide-lead">對完答案不要只看「這題選 B」，必須找出錯在哪個環節才能真正提分。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">1. 累積「題幹 ↔ 原文」替換對</div><p class="card-body">把沒認出來的同義替換寫進筆記本（例如題幹 `financial` ↔ 原文 `monetary`），這就是閱讀最核心的字彙庫。</p></div>
+          <div class="card-accent"><div class="card-title">2. 標記自己「過度腦補」的題目</div><p class="card-body">特別檢查所有把 `Not Given` 誤判成 `False` 或 `True` 的題目，強迫自己找出原文到底有沒有寫。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰演練與覆盤" data-title="閱讀隨堂快篩（3 題檢核）">
+      <div class="slide-inner"><div class="bg-num">23</div>
+        <div class="slide-kicker">CH.5 實戰演練與覆盤</div>
+        <h2 class="slide-title">隨堂檢核：這 3 個問題你答對了嗎？</h2>
+        <p class="slide-lead">確認上課重點已完全吸收。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-label blue">Q1</div><div class="card-title">文章根本沒提到題幹講的事，選 False 還是 Not Given？</div><p class="card-body">答案：<strong>Not Given</strong>（明確矛盾才是 False）。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q2</div><div class="card-title">限填 TWO WORDS 時，<code>check-in</code> 算幾個字？</div><p class="card-body">答案：<strong>1 個字</strong>（連字號複合詞算單字）。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q3</div><div class="card-title">T/F/NG 與 Matching Headings 哪個應該先做？</div><p class="card-body">答案：先做有順序性的 <strong>T/F/NG</strong>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰演練與檢核" data-title="Unit 03 課後行動檢核表">
+      <div class="slide-inner"><div class="bg-num">24</div>
+        <div class="slide-kicker">CH.5 單元總結</div>
+        <h2 class="slide-title">Unit 03 完成！接下來進入寫作 Task 1</h2>
+        <p class="slide-lead">把閱讀的同義替換敏感度帶進寫作，下個單元看懂小作文圖表分析。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent">
+            <div class="card-label blue">UNIT 03 CHECKLIST</div>
+            <label class="check-item"><input type="checkbox" /> 嚴格執行 15m + 20m + 25m 閱讀配速</label>
+            <label class="check-item"><input type="checkbox" /> 練習先做順序題（填空/是非），最後再做跨段配對</label>
+            <label class="check-item"><input type="checkbox" /> 每次訂正皆記錄 5 組以上的「題幹 ↔ 原文」同義替換詞</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">NEXT UNIT</div>
+            <div class="card-title">前往 Unit 04：寫作 Task 1 小作文</div>
+            <p class="card-body">用 20 分鐘搞定四段結構、Overview 與 2025 流程圖／宿舍地圖真題。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-ghost" href="unit4.html" style="background:var(--klein); color:#FFF; border-color:var(--klein); text-decoration:none; padding:9px 18px;">進入 Unit 04 →</a>
+              <a class="btn-ghost" href="../home.html" style="text-decoration:none; padding:9px 18px;">回單元總覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/reading-strategy.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true"><div class="toc-panel"><div class="toc-header"><strong style="font-size:1rem;">Unit 03 目錄（24 頁）</strong><button class="btn-ghost" id="closeTocBtn" type="button">關閉</button></div><div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div></div></div>
+  <script src="assets/toolkit.js"></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 04｜寫作 Task 1 小作文（24 頁深度版）</title>
+  <link rel="stylesheet" href="assets/gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><span>UNIT 04 · 寫作 Task 1 小作文</span><a href="../home.html">← 返回單元總覽</a></div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.1 小作文規則</span>
+      <button class="btn-ghost" id="hintBtn" type="button">簡報工具提示</button>
+      <button class="btn-ghost" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="hint-popover" id="hintPopover">
+    <h4>互動教學工具說明</h4>
+    <ul>
+      <li><strong>查劍橋字典</strong>：在「游標 / 選字」模式下反白任意英文單字，點擊浮動氣泡即可直連劍橋字典。</li>
+      <li><strong>三色螢光筆</strong>：反白重點文字後，點氣泡上的柔黃、薄荷綠或淡藍圓點上色。</li>
+      <li><strong>雷射筆 ＆ 畫筆</strong>：從底部 Dock 切換雷射指示或自由板書，換頁自動清空。</li>
+    </ul>
+  </div>
+  <canvas id="drawCanvas"></canvas><div id="laserDot"></div>
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.25); padding-left:10px;">查劍橋字典：<strong id="cambridgeWord"></strong> ↗</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.1 小作文規則" data-title="Unit 04 封面：寫作 Task 1 小作文攻略">
+      <div class="slide-inner"><div class="bg-num">01</div>
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="slide-kicker">UNIT 04 · ACADEMIC WRITING TASK 1</div>
+            <h1 class="slide-title">20 分鐘 150 字：把圖表變成精準客觀的英文快報</h1>
+            <p class="slide-lead">本單元整合高分英文動詞句式與 2025 年 1–7 月實考六大題型真題（折線、柱狀、表格、混合、流程、宿舍地圖），帶你寫出架構完整的 7 分級小作文。</p>
+            <div class="chip-row"><span class="chip blue">20m · ≥150 Words</span><span class="chip">Clear Overview</span><span class="chip">2025 Six Question Types</span></div>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 190" width="100%" style="max-width:250px;" fill="none"><rect x="20" y="20" width="240" height="150" stroke="#111111" stroke-width="1.5"/><line x1="40" y1="146" x2="240" y2="146" stroke="#111111" stroke-width="1.3"/><line x1="40" y1="36" x2="40" y2="146" stroke="#111111" stroke-width="1.3"/><polyline points="48,128 96,102 144,110 192,58 232,44" stroke="#002FA7" stroke-width="2.2"/><polyline points="48,84 96,90 144,74 192,98 232,118" stroke="#6B7280" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="232" cy="44" r="4" fill="#002FA7"/></svg>
+            <div class="art-caption">Summarize key features &amp; make comparisons where relevant</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 小作文規則" data-title="小作文定位：20 分鐘、150 字、佔 1/3 分數">
+      <div class="slide-inner"><div class="bg-num">02</div>
+        <div class="slide-kicker">CH.1 小作文規則</div>
+        <h2 class="slide-title">小作文不是發揮創意，而是「看圖寫報告」</h2>
+        <p class="slide-lead">題目固定指令：<code>"Summarise the information by selecting and reporting the main features, and make comparisons where relevant."</code></p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="stat-big">20m</div><div class="card-title">Time Limit</div><p class="card-body">超過 20 分鐘就會壓縮佔分兩倍的 Task 2，寫滿關鍵特徵後必須果斷收尾。</p></div>
+          <div class="card"><div class="stat-big">150+</div><div class="card-title">Minimum Word Count</div><p class="card-body">建議寫到 165–190 字最安全，既完整涵蓋數據又不會太耗時。</p></div>
+          <div class="card"><div class="stat-big">0 意見</div><div class="card-title">Objective Tone</div><p class="card-body">絕不寫 `I think` 或推測「因為景氣差所以下降」，只報告圖上看得到的變化！</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 小作文規則" data-title="2025 實考六大圖表類型總覽">
+      <div class="slide-inner"><div class="bg-num">03</div>
+        <div class="slide-kicker">CH.1 小作文規則</div>
+        <h2 class="slide-title">2025 上半年考過這六種圖表</h2>
+        <p class="slide-lead">把題型先分成「有數字（數據類）」跟「沒數字（非數據類）」，解法與必用文法立刻清楚一半。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">數據類（Quantitative Charts）</div><ul class="list-clean"><li><strong>Line Graph</strong>：1961–2013 肉類消耗、2006–2013 醫療支出</li><li><strong>Bar Chart</strong>：UK 博物館參觀數、巴西利亞 vs 薩爾瓦多雨量</li><li><strong>Table</strong>：2000–2004 石油產量、1975–2005 稅收佔 GDP</li><li><strong>Mixed (Bar + Pie)</strong>：2000 vs 2010 新加坡教育程度</li></ul></div>
+          <div class="card"><div class="card-label blue">非數據類（Non-data Diagrams）</div><ul class="list-clean"><li><strong>Process Diagram</strong>：Concrete Canvas 水泥帆布 8 步、Making Jam 6 步</li><li><strong>Floor Plan / Map</strong>：學生宿舍 2010 vs Now 空間改造</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 小作文規則" data-title="20 分鐘細部時間分配">
+      <div class="slide-inner"><div class="bg-num">04</div>
+        <div class="slide-kicker">CH.1 小作文規則</div>
+        <h2 class="slide-title">20 分鐘怎麼切？3 + 15 + 2 分鐘</h2>
+        <p class="slide-lead">先花 3 分鐘分組再下筆，寫起來會比邊看邊寫快上一倍，也才不會漏掉 Overview。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">前 3 分鐘</div><div class="card-title">Analyze &amp; Group</div><p class="card-body">圈出最高、最低、交叉點與總趨勢，決定 Body 1 與 Body 2 怎麼分組。</p></div>
+          <div class="card-accent"><div class="card-label blue">中間 15 分鐘</div><div class="card-title">Draft 4 Paragraphs</div><p class="card-body">開頭 2 分 → Overview 3 分 → Body 1 &amp; 2 各 5 分鐘，精準寫出關鍵數字。</p></div>
+          <div class="card"><div class="card-label blue">最後 2 分鐘</div><div class="card-title">Proofread Tense &amp; Units</div><p class="card-body">特別檢查過去年份有沒有全部用對過去式，以及 `% / million / tonnes` 單位。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 四段骨架與 Overview" data-title="萬用四段式黃金結構">
+      <div class="slide-inner"><div class="bg-num">05</div>
+        <div class="slide-kicker">CH.2 四段骨架與 Overview</div>
+        <h2 class="slide-title">不管哪一種圖表，一律套用「四段式骨架」</h2>
+        <p class="slide-lead">把總趨勢放在第二段（Overview），即使最後時間緊迫，考官一眼也能看到你的整體結構完整。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">第 1 段 &amp; 第 2 段</div><ul class="list-clean"><li><strong>Introduction（1–2 句）</strong>：Paraphrase the prompt（改寫題目對象、單位與時間）。</li><li><strong>Overview（2–3 句）</strong>：Summarize overall trends and extremes（<strong>不放具體數字</strong>）。</li></ul></div>
+          <div class="card-accent"><div class="card-label blue">第 3 段 &amp; 第 4 段</div><ul class="list-clean"><li><strong>Body 1</strong>：第一組數據（上升組／第一張圖），附精準起終點與極值數字。</li><li><strong>Body 2</strong>：第二組數據（下降組／第二張圖），用對比詞做跨組高低比較。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 四段骨架與 Overview" data-title="第 1 段 Intro 改寫動詞庫">
+      <div class="slide-inner"><div class="bg-num">06</div>
+        <div class="slide-kicker">CH.2 四段骨架與 Overview</div>
+        <h2 class="slide-title">開頭第一句怎麼改寫？換掉題目的 show</h2>
+        <p class="slide-lead">整句照抄題目會被扣字數也不計分，熟記這四個開頭萬用動詞與時間改寫法就能一秒完成第一段。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">四大改寫動詞 ＋ 時間換字</div><ul class="list-clean"><li><code>illustrate / demonstrate / reflect / show</code></li><li><code>between 2000 and 2010</code> ↔ <code>over a 10-year period from 2000 to 2010</code></li><li><code>the percentage of</code> ↔ <code>the proportion of</code></li></ul></div>
+          <div class="card"><div class="card-label">開頭改寫示範</div><div class="quote-en">"The line graph <strong>illustrates</strong> the changes in global meat consumption <strong>over a 52-year period from</strong> 1961 to 2013."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 四段骨架與 Overview" data-title="第 2 段 Overview（全篇靈魂）怎麼寫？">
+      <div class="slide-inner"><div class="bg-num">07</div>
+        <div class="slide-kicker">CH.2 四段骨架與 Overview</div>
+        <h2 class="slide-title">沒有寫 Overview，Task Achievement 很難過 5.5</h2>
+        <p class="slide-lead">用 <code>Overall, it is clear that...</code> 開頭，只挑「最顯眼的大方向」，千萬別塞進細碎數字。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">動態圖 Overview 範例</div><div class="quote-en">"<strong>Overall</strong>, healthcare spending rose steadily across all countries, with Country A <strong>remaining the highest</strong> throughout the period."</div></div>
+          <div class="card-accent"><div class="card-title">靜態圖 Overview 範例</div><div class="quote-en">"<strong>Overall</strong>, university graduates <strong>accounted for the largest share</strong> in 2010, whereas secondary-level figures saw a noticeable decline."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 四段骨架與 Overview" data-title="Body 1 &amp; 2 數據分組的三大原則">
+      <div class="slide-inner"><div class="bg-num">08</div>
+        <div class="slide-kicker">CH.2 四段骨架與 Overview</div>
+        <h2 class="slide-title">數字太多寫不完？學會「分組」而不是全報</h2>
+        <p class="slide-lead">小作文考的是「挑選重點特徵（Key Features）」，不是把表格裡 30 個數字全部唸一遍。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">依趨勢分組</div><p class="card-body">上升的放 Body 1，下降或波動持平的放 Body 2，邏輯最直覺。</p></div>
+          <div class="card-accent"><div class="card-title">依高低規模分組</div><p class="card-body">佔比最大的前兩名放 Body 1，其餘低佔比放 Body 2，並用 `far outweighs` 比較。</p></div>
+          <div class="card"><div class="card-title">依時間切半</div><p class="card-body">只有 1–2 條線但年份很長時，前半段轉折放 Body 1、後半段放 Body 2。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 高分詞彙與句型" data-title="趨勢動詞升級：劇烈上升與劇烈下降">
+      <div class="slide-inner"><div class="bg-num">09</div>
+        <div class="slide-kicker">CH.3 高分詞彙與句型庫</div>
+        <h2 class="slide-title">別再只寫 increase / decrease！高分動詞替換</h2>
+        <p class="slide-lead">精準的動詞能讓字彙分數（Lexical Resource）瞬間拉開差距，反白可查劍橋字典確認搭配。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">劇烈上升</div><ul class="list-clean"><li><code>rocket</code>（火箭般飆升）</li><li><code>surge</code>（激增）</li><li><code>soar</code>（急劇高飛）</li><li><code>double</code>（翻倍，描述 20%→40% 超好用！）</li></ul></div>
+          <div class="card"><div class="card-label blue">劇烈下降</div><ul class="list-clean"><li><code>plummet</code>（垂直暴跌）</li><li><code>plunge</code>（驟降）</li><li><code>slip dramatically</code>（大幅滑落）</li><li><code>halve</code>（減半，描述 60%→30% 超精準！）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 高分詞彙與句型" data-title="程度與速度副詞搭配">
+      <div class="slide-inner"><div class="bg-num">10</div>
+        <div class="slide-kicker">CH.3 高分詞彙與句型庫</div>
+        <h2 class="slide-title">程度副詞：精準區分「暴漲」vs.「緩慢爬升」</h2>
+        <p class="slide-lead">把「動詞＋副詞」（<code>rose sharply</code>）換成「there was a＋形容詞＋名詞」（<code>there was a sharp rise</code>）就能輕鬆變換句型。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-title">幅度大／速度快</div><p class="card-body"><code>dramatically</code><br><code>sharply</code><br><code>substantially</code></p></div>
+          <div class="card"><div class="card-title">幅度中等／溫和</div><p class="card-body"><code>moderately</code><br><code>slightly</code></p></div>
+          <div class="card"><div class="card-title">穩定／緩慢</div><p class="card-body"><code>steadily</code><br><code>gradually</code></p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 高分詞彙與句型" data-title="高級對比連接詞與倍數比較">
+      <div class="slide-inner"><div class="bg-num">11</div>
+        <div class="slide-kicker">CH.3 高分詞彙與句型庫</div>
+        <h2 class="slide-title">讓數據之間產生連結：高級對比表達</h2>
+        <p class="slide-lead">7 分範文不會只寫 `and`，而是用對比詞把兩組數字扣在一起，展現分析能力。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">對比轉折詞</div><div class="quote-en">"Male employment rose to 75%; <strong>conversely</strong>, female participation fell to 42% (and <strong>vice versa</strong> in the service sector)."</div></div>
+          <div class="card-accent"><div class="card-title">壓倒性差距</div><div class="quote-en">"Public spending on healthcare <strong>far outweighs</strong> investment in recreation, standing at <strong>three times higher than</strong> the 2006 figure."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 高分詞彙與句型" data-title="高分加分句型：with + N + V-ing / V-ed">
+      <div class="slide-inner"><div class="bg-num">12</div>
+        <div class="slide-kicker">CH.3 高分詞彙與句型庫</div>
+        <h2 class="slide-title">一句同時塞進兩個數據：with 伴隨狀語</h2>
+        <p class="slide-lead">這組句型在文法多樣性（GRA）上極為加分，適合用來補充次要數據或空間變化。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">主動進行：with + N + V-ing</div><div class="quote-en">"Energy consumption surged in 2010, <strong>with</strong> industrial usage <strong>accounting for</strong> 45%."</div></div>
+          <div class="card"><div class="card-label blue">被動狀態：with + N + V-ed</div><div class="quote-en">"The dorm was expanded, <strong>with</strong> two extra bedrooms <strong>added</strong> to the east wing."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 表格題（Table）真題拆解">
+      <div class="slide-inner"><div class="bg-num">13</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">2025 表格題：石油產量、GDP 稅收與工時</h2>
+        <p class="slide-lead">面對密密麻麻的表格（2000–2004 石油產量、1975–2005 稅收佔 GDP、2002 年工時），只抓「最高行、最低行、變化最大格」。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">橫向 vs. 縱向掃描</div><p class="card-body">先橫看每個國家的起終年份變化，再縱看同一年份裡誰排第一誰墊底。</p></div>
+          <div class="card-accent"><div class="card-title">適度合併相近數據</div><div class="quote-en">"Tax revenue in both Germany and France <strong>hovered around 35%</strong> of GDP between 1995 and 2005."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 柱狀圖（Bar Chart）真題拆解">
+      <div class="slide-inner"><div class="bg-num">14</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">2025 柱狀圖：英國博物館、降雨量與性別比例</h2>
+        <p class="slide-lead">2025 年考出 2015 英國博物館參觀數、巴西利亞 vs 薩爾瓦多雨量、家務時數與各領域女性比例。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">靜態柱狀圖重點</div><p class="card-body">沒有年份變化時，重點在「比較長短差距」與「第一名 vs. 最後一名」，例如某領域女性比例遠低於男性。</p></div>
+          <div class="card-accent"><div class="card-title">雙柱對比（Brasilia vs. Salvador）</div><div class="quote-en">"While Brasilia experienced a pronounced dry season mid-year, Salvador maintained <strong>consistently high rainfall</strong>."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 折線圖（Line Graph）真題拆解">
+      <div class="slide-inner"><div class="bg-num">15</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">2025 折線圖：肉類消耗、醫療支出與列車誤點</h2>
+        <p class="slide-lead">2025 考題涵蓋 1961–2013 肉類消耗、2006–2013 醫療支出、2008 列車誤點與取消率。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">必寫的 4 個節點</div><ul class="list-clean"><li><strong>Starting point</strong>（起點值）</li><li><strong>Peak / Trough</strong>（最高峰／最低谷）</li><li><strong>Intersection</strong>（交叉反超點）</li><li><strong>Ending point</strong>（終點值）</li></ul></div>
+          <div class="card"><div class="card-title">超越動詞必背</div><div class="quote-en">"Poultry consumption <strong>overtook</strong> beef in 1995 and <strong>surpassed</strong> all other meat categories by 2013."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 混合圖（Mixed: Bar + Pie）真題拆解">
+      <div class="slide-inner"><div class="bg-num">16</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">2025 混合圖：2000 vs 2010 新加坡教育程度</h2>
+        <p class="slide-lead">同時給一張柱狀圖和一張圓餅圖時，結構最簡單：<strong>Body 1 寫第一張圖、Body 2 寫第二張圖</strong>。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Intro 兩張圖都要提到</div><div class="quote-en">"The bar chart illustrates educational attainment by gender, <strong>while</strong> the pie charts compare overall qualification levels in 2000 and 2010."</div></div>
+          <div class="card-accent"><div class="card-title">Overview 找共同連動</div><p class="card-body">點出新加坡居民高學歷比例整體提升的共同趨勢，以及各自佔比最高的組別。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 流程圖（Process）順序連接詞">
+      <div class="slide-inner"><div class="bg-num">17</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">流程圖沒數字怎麼寫？靠「順序詞 ＋ 被動語態」</h2>
+        <p class="slide-lead">2025 年考出 Concrete Canvas 水泥帆布（8 步驟）與 Making Jam 製作果醬（6 步驟），一定要寫出總步驟數。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">必背流程順序詞</div><ul class="list-clean"><li><code>At the preliminary stage, ...</code>（初步階段）</li><li><code>After the initial stage, ...</code>（初始階段之後）</li><li><code>In the subsequent stage, ...</code>（接下來的階段）</li><li><code>At the final stage, ...</code>（最後階段）</li></ul></div>
+          <div class="card"><div class="card-label blue">Overview 怎麼寫？</div><div class="quote-en">"Overall, the process consists of six distinct stages, starting with washing raw fruit and culminating in sealed jars ready for retail."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 流程圖實戰：Concrete Canvas 與果醬製作">
+      <div class="slide-inner"><div class="bg-num">18</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">流程圖文法關鍵：現在簡單式被動語態</h2>
+        <p class="slide-lead">製作產品時「誰做的」不重要，重點在原料怎麼被加工，因此全文大量使用 `is / are + V-ed`。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Making Jam（6 步驟）示範</div><div class="quote-en">"Once the fruit <strong>is washed</strong>, sugar and pectin <strong>are added</strong>, and the mixture <strong>is heated</strong> at high temperature before being poured into jars."</div></div>
+          <div class="card-accent"><div class="card-title">Concrete Canvas（8 步驟）示範</div><div class="quote-en">"Dry concrete <strong>is sandwiched</strong> between fibrous layers; once delivered, water <strong>is sprayed</strong> onto the surface so it hardens."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 2025 真題實戰" data-title="2025 平面地圖變遷（Floor Plan）：學生宿舍改造">
+      <div class="slide-inner"><div class="bg-num">19</div>
+        <div class="slide-kicker">CH.4 2025 數據與非數據真題拆解</div>
+        <h2 class="slide-title">2025 地圖變遷真題：學生宿舍 2010 vs. Now</h2>
+        <p class="slide-lead">平面圖考「空間功能的改造」，把原本跟現在長不一樣的地方分區描述即可。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">2025 宿舍改造核心句型</div><div class="quote-en">"The former living room <strong>was converted into</strong> an additional bedroom, while the gardens <strong>were replaced by</strong> car parking and en-suite bathrooms."</div></div>
+          <div class="card"><div class="card-label blue">必備改造動詞</div><ul class="list-clean"><li><code>was converted into</code>（被改建為）</li><li><code>was replaced by</code>（被取代）</li><li><code>remained unchanged</code>（維持不變）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="實戰對比（一）：流水帳 vs. 抓總勢">
+      <div class="slide-inner"><div class="bg-num">20</div>
+        <div class="slide-kicker">CH.5 實戰對比與檢核</div>
+        <h2 class="slide-title">實戰對比：流水帳 NG 版 vs. 高分對比版</h2>
+        <p class="slide-lead">把兩組寫法並排看，字彙與句型差距一眼就看出來。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 寫法（照唸年份＋缺對比）</div><div class="quote-en">"In 2000, A was 20%. In 2005, A was 35%. In 2010, A increased to 50%. B was 10% in 2000 and 15% in 2010."</div></div>
+          <div class="card-accent"><div class="card-label blue">高分寫法（動詞升級＋高低對比）</div><div class="quote-en">"A <strong>surged</strong> from 20% in 2000 to 50% in 2010, <strong>far outweighing</strong> B, which rose only <strong>slightly</strong> to 15%."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="實戰對比（二）：正確使用過去式與完成式">
+      <div class="slide-inner"><div class="bg-num">21</div>
+        <div class="slide-kicker">CH.5 實戰對比與檢核</div>
+        <h2 class="slide-title">時態不統一是大忌！三種時間軸這樣配時態</h2>
+        <p class="slide-lead">動筆前先看圖表底下的年份，一秒決定全文時態。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">過去年份（2000–2010）</div><p class="card-body">一律用<strong>過去簡單式</strong>（`rose / plummeted / was`）。</p></div>
+          <div class="card-accent"><div class="card-title">跨越到現在（2010–Now）</div><p class="card-body">描述改變過程用<strong>現在完成式</strong>（`has been converted into`）。</p></div>
+          <div class="card"><div class="card-title">無年份／未來預測</div><p class="card-body">流程圖用<strong>現在簡單式</strong>；未來圖用 `is projected to`。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="常見失分檢查：單位與名詞主詞">
+      <div class="slide-inner"><div class="bg-num">22</div>
+        <div class="slide-kicker">CH.5 實戰對比與檢核</div>
+        <h2 class="slide-title">別寫出「中國上升了」：主詞要是「數據／比例」</h2>
+        <p class="slide-lead">英文寫作講究主詞精準，國家本身不會變成 50%，是「該國的某項比例或產量」變成 50%。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 寫法</div><p class="card-body"><code>China increased to 50% in 2010.</code></p></div>
+          <div class="card-accent"><div class="card-label blue">正確寫法</div><p class="card-body"><code><strong>The proportion of</strong> energy used in China increased to 50% in 2010.</code></p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="隨堂快篩（3 題檢核）">
+      <div class="slide-inner"><div class="bg-num">23</div>
+        <div class="slide-kicker">CH.5 實戰對比與檢核</div>
+        <h2 class="slide-title">隨堂檢核：這 3 個重點都記住了嗎？</h2>
+        <p class="slide-lead">快速測試小作文核心觀念。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-label blue">Q1</div><div class="card-title">Overview 段可以放具體百分比嗎？</div><p class="card-body">答案：<strong>不要放</strong>，只寫總趨勢與最高／最低。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q2</div><div class="card-title">流程圖主要用主動還是被動語態？</div><p class="card-body">答案：<strong>現在簡單式被動語態</strong>。</p></div>
+          <div class="card-accent"><div class="card-label blue">Q3</div><div class="card-title">Task 1 可以推測數據上升的原因嗎？</div><p class="card-body">答案：<strong>絕對不行</strong>，只報事實。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 實戰對比與檢核" data-title="Unit 04 課後行動檢核表">
+      <div class="slide-inner"><div class="bg-num">24</div>
+        <div class="slide-kicker">CH.5 單元總結</div>
+        <h2 class="slide-title">Unit 04 完成！接下來進入主戰場 Task 2</h2>
+        <p class="slide-lead">熟練小作文的 20 分鐘配時後，前往 Unit 05 攻克佔寫作 2/3 分數的大作文。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent">
+            <div class="card-label blue">UNIT 04 CHECKLIST</div>
+            <label class="check-item"><input type="checkbox" /> 熟記四段結構與 `illustrate / surge / plummet / conversely`</label>
+            <label class="check-item"><input type="checkbox" /> 練習 1 篇動態折線圖＋1 篇流程圖或地圖變遷（限時 20 分）</label>
+            <label class="check-item"><input type="checkbox" /> 檢查自己寫的主詞是否為 `The proportion / figure of...`</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">NEXT UNIT</div>
+            <div class="card-title">前往 Unit 05：寫作 Task 2 大作文</div>
+            <p class="card-body">學習 PEEL 論證推進法與 2025 五大高頻申論母題。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-ghost" href="unit5.html" style="background:var(--klein); color:#FFF; border-color:var(--klein); text-decoration:none; padding:9px 18px;">進入 Unit 05 →</a>
+              <a class="btn-ghost" href="../home.html" style="text-decoration:none; padding:9px 18px;">回單元總覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true"><div class="toc-panel"><div class="toc-header"><strong style="font-size:1rem;">Unit 04 目錄（24 頁）</strong><button class="btn-ghost" id="closeTocBtn" type="button">關閉</button></div><div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div></div></div>
+  <script src="assets/toolkit.js"></script>
+</body>
+</html>

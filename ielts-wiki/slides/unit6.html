@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 06｜口說 Part 1–3 全攻略（24 頁深度版）</title>
+  <link rel="stylesheet" href="assets/gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><span>UNIT 06 · 口說 Part 1–3 全攻略</span><a href="../home.html">← 返回單元總覽</a></div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.1 口說全局</span>
+      <button class="btn-ghost" id="hintBtn" type="button">簡報工具提示</button>
+      <button class="btn-ghost" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="hint-popover" id="hintPopover">
+    <h4>互動教學工具說明</h4>
+    <ul>
+      <li><strong>查劍橋字典</strong>：在「游標 / 選字」模式下反白任意英文單字，點擊浮動氣泡即可直連劍橋字典。</li>
+      <li><strong>三色螢光筆</strong>：反白重點文字後，點氣泡上的柔黃、薄荷綠或淡藍圓點上色。</li>
+      <li><strong>雷射筆 ＆ 畫筆</strong>：從底部 Dock 切換雷射指示或自由板書，換頁自動清空。</li>
+    </ul>
+  </div>
+  <canvas id="drawCanvas"></canvas><div id="laserDot"></div>
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.25); padding-left:10px;">查劍橋字典：<strong id="cambridgeWord"></strong> ↗</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.1 口說全局" data-title="Unit 06 封面：口說 Part 1–3 全攻略">
+      <div class="slide-inner"><div class="bg-num">01</div>
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="slide-kicker">UNIT 06 · IELTS SPEAKING PART 1–3</div>
+            <h1 class="slide-title">告別死背逐字稿：用公式與真實小故事自然聊滿 14 分鐘</h1>
+            <p class="slide-lead">完整收錄 Part 1 十大萬用公式、耳機／溯溪／高雄台北對比英文逐字範例、Part 2 三段故事弧與四階段記憶法，以及 Part 3 抽象延伸應答。</p>
+            <div class="chip-row"><span class="chip blue">11–14 Minutes</span><span class="chip">Part 1 Formulas</span><span class="chip">Part 2 Story Arc</span></div>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 180" width="100%" style="max-width:250px;" fill="none"><rect x="16" y="16" width="248" height="148" stroke="#111111" stroke-width="1.5"/><path d="M32 134 Q96 128 140 58 T248 44" stroke="#002FA7" stroke-width="2.2" fill="none"/><circle cx="32" cy="134" r="4.5" fill="#111111"/><circle cx="140" cy="58" r="5" fill="#002FA7"/><circle cx="248" cy="44" r="4.5" fill="#111111"/><text x="24" y="152" fill="#111111" font-size="9" font-weight="700">BEGINNING</text><text x="114" y="44" fill="#002FA7" font-size="9" font-weight="700">PLOT TWIST</text><text x="206" y="32" fill="#111111" font-size="9" font-weight="700">ENDING</text></svg>
+            <div class="art-caption">A natural plot twist beats a memorized script</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 口說全局" data-title="口說 11–14 分鐘三階段節奏">
+      <div class="slide-inner"><div class="bg-num">02</div>
+        <div class="slide-kicker">CH.1 口說全局觀</div>
+        <h2 class="slide-title">把考官當成「想認識你的外國朋友」</h2>
+        <p class="slide-lead">全程 11–14 分鐘採真人面對面（或官方視訊）一對一對談，從生活暖身一路聊到社會觀察。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">Part 1 (4–5 mins)</div><div class="card-title">Everyday Q&amp;A</div><p class="card-body">2–3 個日常話題，每題自然答 3–4 句（15–25 秒），展現親切流暢的節奏。</p></div>
+          <div class="card-accent"><div class="card-label blue">Part 2 (3–4 mins)</div><div class="card-title">Individual Long Turn</div><p class="card-body">1 分鐘做筆記、連續講 1–2 分鐘直到考官說 <code>"Thank you"</code>，靠故事畫面感撐滿時間。</p></div>
+          <div class="card"><div class="card-label blue">Part 3 (4–5 mins)</div><div class="card-title">Two-Way Discussion</div><p class="card-body">從 Part 2 延伸討論社會與世代差異，考官會追問 <code>"Why do you think so?"</code>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 口說全局" data-title="考官評分四維度白話翻譯">
+      <div class="slide-inner"><div class="bg-num">03</div>
+        <div class="slide-kicker">CH.1 口說全局觀</div>
+        <h2 class="slide-title">口說給分看這 4 件事，沒有一項要求「完美腔調」</h2>
+        <p class="slide-lead">講錯一個小文法立刻自然修正（self-correction）就好，千萬別因為怕錯而沉默卡死。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">Fluency &amp; Pronunciation (50%)</div><ul class="list-clean"><li><strong>Fluency &amp; Coherence</strong>：講話連貫、善用 <code>Actually / Besides that</code> 換氣，不背誦機器人語調。</li><li><strong>Pronunciation</strong>：咬字清楚、有輕重音與語調起伏（stress-timing），不需刻意模仿英國腔。</li></ul></div>
+          <div class="card"><div class="card-title">Vocabulary &amp; Grammar (50%)</div><ul class="list-clean"><li><strong>Lexical Resource</strong>：自然用出地道片語，例如 <code>a total game-changer</code>、<code>well-padded</code>。</li><li><strong>Grammatical Range</strong>：現在／過去／未來時態切換正確，適度混用 <code>If...</code> 與 <code>although</code> 複句。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Part 1 十大公式" data-title="Part 1 十大題型公式總覽（1–3）">
+      <div class="slide-inner"><div class="bg-num">04</div>
+        <div class="slide-kicker">CH.2 Part 1 十大題型萬用公式</div>
+        <h2 class="slide-title">公式 1–3：喜好（Preference）、觀點與頻率題</h2>
+        <p class="slide-lead">聽到問題開頭先辨識公式，大腦就會自動接出 3–4 句流暢英文，不用臨場乾想。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="card-label blue">1. Preference</div><div class="card-title">"Do you like...?"</div><p class="card-body"><code>Answer + Reason + Frequency + Types + People/Place + Memory</code></p></div>
+          <div class="card"><div class="card-label blue">2. Perspective</div><div class="card-title">"Do you think...?"</div><p class="card-body"><code>Answer + Reason + Example + Advise</code></p></div>
+          <div class="card"><div class="card-label blue">3. How often</div><div class="card-title">"How often do you...?"</div><p class="card-body"><code>Answer + Reason + Example + Memory</code></p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Part 1 十大公式" data-title="Part 1 十大題型公式總覽（4–6）">
+      <div class="slide-inner"><div class="bg-num">05</div>
+        <div class="slide-kicker">CH.2 Part 1 十大題型萬用公式</div>
+        <h2 class="slide-title">公式 4–6：地點（Where）、原因（Why）與時間（When）</h2>
+        <p class="slide-lead">遇到 <code>Where / When</code> 題，把答案拆成「兩個具體情境（Scenario 1 &amp; 2）」就會非常豐富。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">4. Where</div><div class="card-title">"Where do you...?"</div><p class="card-body"><code>Answer + Description + Feeling</code>（答出在哪＋環境描寫＋感受）</p></div>
+          <div class="card-accent"><div class="card-label blue">5. Why</div><div class="card-title">"Why do people...?"</div><p class="card-body"><code>Summary + Reason 1 + Reason 2</code>（先總結再給兩個面向理由）</p></div>
+          <div class="card"><div class="card-label blue">6. When</div><div class="card-title">"When do you...?"</div><p class="card-body"><code>Overall + Scenario 1 + Scenario 2</code>（例如平常通勤 vs. 週末運動）</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Part 1 十大公式" data-title="Part 1 十大題型公式總覽（7–10）">
+      <div class="slide-inner"><div class="bg-num">06</div>
+        <div class="slide-kicker">CH.2 Part 1 十大題型萬用公式</div>
+        <h2 class="slide-title">公式 7–10：人物、假設、比較與重要性題</h2>
+        <p class="slide-lead">特別注意「重要性題」的 <code>Without</code>（如果沒有它會怎樣），以及「假設題」的 <code>If it happened</code>。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">7. Who &amp; 8. Prediction</div><ul class="list-clean"><li><strong>Who</strong>：<code>Answer + Reason + Tell a story</code>（點出人物＋帶一個小故事）</li><li><strong>Prediction</strong>：<code>Answer + If it happened</code>（表態＋假設情境推論）</li></ul></div>
+          <div class="card-accent"><div class="card-label blue">9. Compare &amp; 10. Importance</div><ul class="list-clean"><li><strong>Compare</strong>：<code>Overall + Object 1 + Object 2</code>（先總結差異再分述兩者）</li><li><strong>Importance</strong>：<code>Answer + Reason + Without + Memory</code>（少了它會怎樣）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Part 1 十大公式" data-title="Part 1 實戰示範：宿舍與理想房子">
+      <div class="slide-inner"><div class="bg-num">07</div>
+        <div class="slide-kicker">CH.2 Part 1 十大題型萬用公式</div>
+        <h2 class="slide-title">生活題怎麼講出畫面？宿舍、公寓與理想房子</h2>
+        <p class="slide-lead">不要只說 <code>"My room is small."</code>，加上「功能便利性與個人感受」立刻變得真實生動。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Dormitory / Flat vs. House</div><div class="quote-en">"Living in a campus dorm is super convenient because it's just a five-minute walk to class, and I love grabbing late-night snacks with my roommates."</div></div>
+          <div class="card-accent"><div class="card-title">Dream House（Answer + Description + Feeling）</div><div class="quote-en">"My ideal home would have floor-to-ceiling windows for plenty of <strong>natural light</strong> and a quiet study nook where I can truly unwind."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 雙版本升級對比" data-title="耳機題升級對比（一）：隔絕吵雜">
+      <div class="slide-inner"><div class="bg-num">08</div>
+        <div class="slide-kicker">CH.3 自然口語 vs. 高分進階對比</div>
+        <h2 class="slide-title">耳機題對比（一）：把「很安靜」升級成地道片語</h2>
+        <p class="slide-lead">不用背冷僻大字，把基礎形容詞換成母語者常用的動賓搭配詞，立刻從 6.0 跳到 7.0 語感。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">自然順口版（好記好講 · Band 6.0）</div><div class="quote-en">"I always wear headphones on the MRT because it is quiet and helps me focus on studying."</div><p class="quote-zh">文法完全正確，但 `quiet` 和 `helps me` 屬於基礎詞彙。</p></div>
+          <div class="card-accent"><div class="card-label blue">高分進階版（地道替換 · Band 7.0+）</div><div class="quote-en">"I usually put them on during my commute to <strong>block out the hustle and bustle of the city</strong>, which really helps me stay in the zone."</div><p class="quote-zh">反白 `hustle` 或 `commute` 可直接查劍橋字典！</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 雙版本升級對比" data-title="耳機題升級對比（二）：很有幫助與舒服">
+      <div class="slide-inner"><div class="bg-num">09</div>
+        <div class="slide-kicker">CH.3 自然口語 vs. 高分進階對比</div>
+        <h2 class="slide-title">耳機題對比（二）：形容心情與配戴舒適度</h2>
+        <p class="slide-lead">同樣講「耳機很舒服、對我幫助很大」，看看高分詞彙怎麼自然融入整句英文。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">自然順口版</div><div class="quote-en">"Listening to music puts me in a good mood. I like over-ear headphones because the soft ear pads feel comfortable."</div></div>
+          <div class="card-accent"><div class="card-label blue">高分進階版（整句升級）</div><div class="quote-en">"Noise-cancelling headphones are <strong>a total game-changer</strong>—they instantly <strong>boost my mood</strong>, and the <strong>well-padded</strong> cushions keep my ears from feeling <strong>fatigued</strong>."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 雙版本升級對比" data-title="耳機題補充：什麼時候會拿掉耳機？（溯溪）">
+      <div class="slide-inner"><div class="bg-num">10</div>
+        <div class="slide-kicker">CH.3 自然口語 vs. 高分進階對比</div>
+        <h2 class="slide-title">加分生活細節：台灣戶外活動「溯溪（river tracing）」</h2>
+        <p class="slide-lead">回答「什麼時候不用耳機」時，結合安全意識與台灣在地經驗，考官聽了會覺得非常真實。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">完整英文回答示範</div><div class="quote-en">"When I go <strong>river tracing</strong> in the mountains, I definitely take off my headphones. It's crucial for safety so I can hear my teammates and enjoy the natural sound of flowing water."</div></div>
+          <div class="card"><div class="card-title">為什麼這題很容易拿高分？</div><p class="card-body">跳脫了「只有讀書和搭車」的千篇一律答案，同時自然帶出 <code>crucial for safety</code> 與 <code>flowing water</code> 等情境詞彙。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 雙版本升級對比" data-title="家鄉比較題：高雄 vs. 台北（Compare 公式）">
+      <div class="slide-inner"><div class="bg-num">11</div>
+        <div class="slide-kicker">CH.3 自然口語 vs. 高分進階對比</div>
+        <h2 class="slide-title">家鄉比較（Compare）：高雄的步調 vs. 台北的便利</h2>
+        <p class="slide-lead">套用 <code>Overall + Object 1 + Object 2</code>，用英文對比兩座城市的氛圍與天氣。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">Object 1 · Kaohsiung（Hometown）</div><div class="quote-en">"Growing up in Kaohsiung, I love its <strong>spacious streets</strong>, abundant sunshine, and laid-back pace of life."</div></div>
+          <div class="card-accent"><div class="card-label blue">Object 2 · Taipei（Study / Work）</div><div class="quote-en">"By contrast, Taipei is <strong>fast-paced</strong> and packed with career opportunities, though the gloomy winter drizzle takes some getting used to."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 雙版本升級對比" data-title="科系與讀書習慣：生物產業傳播 &amp; 夜貓子">
+      <div class="slide-inner"><div class="bg-num">12</div>
+        <div class="slide-kicker">CH.3 自然口語 vs. 高分進階對比</div>
+        <h2 class="slide-title">科系與作息題：講出「為什麼選這個時間／科系」</h2>
+        <p class="slide-lead">被問到主修或何時效率最高時，用自然好懂的英文細節代替空泛形容。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Major: Bio-Industry Communication</div><div class="quote-en">"My major bridges agricultural science with modern media—basically helping local farmers market sustainable products through creative storytelling."</div></div>
+          <div class="card-accent"><div class="card-title">Study Habit: Night Owl</div><div class="quote-en">"I'm definitely a <strong>night owl</strong>. After midnight, there are zero notifications, which lets me slip right into deep focus."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 雙版本升級對比" data-title="Part 1 最實用的口說換氣連接詞">
+      <div class="slide-inner"><div class="bg-num">13</div>
+        <div class="slide-kicker">CH.3 自然口語 vs. 高分進階對比</div>
+        <h2 class="slide-title">大腦突然空白？用這 4 個自然發語詞爭取 2 秒</h2>
+        <p class="slide-lead">不要發出單調的 <code>uh... um...</code>，改用自然的英語口語連接詞維持流暢度。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">開場爭取思考時間</div><ul class="list-clean"><li><code>To be honest, I've never really thought about that, but...</code></li><li><code>That's an interesting question—off the top of my head...</code></li></ul></div>
+          <div class="card"><div class="card-title">自然補充下一句</div><ul class="list-clean"><li><code>On top of that, ...</code>（除此之外…）</li><li><code>Speaking of which, ...</code>（說到這個…）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Part 2 故事弧" data-title="Part 2 獨白四大題庫類別">
+      <div class="slide-inner"><div class="bg-num">14</div>
+        <div class="slide-kicker">CH.4 Part 2 故事弧與細節擴寫</div>
+        <h2 class="slide-title">Part 2 主題卡不外乎這四大類：人、事、地、物</h2>
+        <p class="slide-lead">四大類可以互相串聯，只要準備 4 個真實經歷就能覆蓋大半題庫。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">People &amp; Places</div><p class="card-body">A hardworking teenager at a local diner, a kind café owner, or a cozy corner café you visit before finals.</p></div>
+          <div class="card-accent"><div class="card-title">Events &amp; Objects</div><p class="card-body">An unforgettable <code>river tracing</code> trip, a pair of noise-cancelling headphones, or traditional <code>Zongzi</code> during Dragon Boat Festival.</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Part 2 故事弧" data-title="三段式故事弧（Beginning → Plot → Ending）">
+      <div class="slide-inner"><div class="bg-num">15</div>
+        <div class="slide-kicker">CH.4 Part 2 故事弧與細節擴寫</div>
+        <h2 class="slide-title">為什麼講不滿 2 分鐘？因為只有「交代」沒有「轉折」</h2>
+        <p class="slide-lead">把 2 分鐘拆成三段，核心戲肉放在中間的 Plot（轉折／反差），故事自然好聽。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-label blue">Beginning (25s)</div><div class="card-title">Set the Scene</div><p class="card-body">交代是誰／哪裡，並鋪陳一開始的印象或誤解（e.g., looked strict at first）。</p></div>
+          <div class="card-accent"><div class="card-label blue">Plot (60s)</div><div class="card-title">Contrast &amp; Turning Point</div><p class="card-body">發生什麼意外或溫馨插曲，讓故事有情緒反差與畫面感。</p></div>
+          <div class="card"><div class="card-label blue">Ending (35s)</div><div class="card-title">Summary + Feeling + Gain</div><p class="card-body">總結事件、表達當下感受（Feeling）與這件事帶給你的啟發（Gain）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Part 2 故事弧" data-title="六大細節擴寫器（Description Boosters）">
+      <div class="slide-inner"><div class="bg-num">16</div>
+        <div class="slide-kicker">CH.4 Part 2 故事弧與細節擴寫</div>
+        <h2 class="slide-title">覺得故事太乾？套用「六大細節擴寫器」</h2>
+        <p class="slide-lead">只要在故事裡隨意挑 2–3 個維度加上去，畫面感跟長度立刻翻倍。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">Background &amp; Environmental</div><p class="card-body"><code>"Pouring rain outside, warm amber lighting, and soft jazz playing in the background."</code></p></div>
+          <div class="card-accent"><div class="card-title">Dialogue &amp; Psychological</div><p class="card-body"><code>"She whispered, 'It's on the house.' Honestly, I was stunned and deeply touched."</code></p></div>
+          <div class="card"><div class="card-title">Action &amp; Expression</div><p class="card-body"><code>"Without saying a word, she slid a plate across the table with a gentle smile."</code></p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Part 2 故事弧" data-title="教材經典對比：咖啡廳阿姨（平淡 vs. 轉折）">
+      <div class="slide-inner"><div class="bg-num">17</div>
+        <div class="slide-kicker">CH.4 Part 2 故事弧與細節擴寫</div>
+        <h2 class="slide-title">實戰對比：同樣講「咖啡廳阿姨」，轉折讓分數大不同</h2>
+        <p class="slide-lead">教材經典示範「流水帳」與「Plot-driven 轉折故事」的差別：</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label">NG 流水帳講法（平鋪直敘）</div><div class="quote-en">"There is an auntie at a café near my school. She looks strict, but she is nice. I often study there."</div><p class="quote-zh">沒有事件轉折，講 40 秒就沒話說了。</p></div>
+          <div class="card-accent"><div class="card-label blue">高分轉折講法（Strawberry Cake）</div><div class="quote-en">"At first, her stone-cold expression intimidated me. Yet on the eve of my finals, seeing me exhausted, she quietly brought me a complimentary slice of <strong>strawberry cake</strong>—it completely melted my stress away."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="考場 1 分鐘準備救星：四階段記憶關鍵字">
+      <div class="slide-inner"><div class="bg-num">18</div>
+        <div class="slide-kicker">CH.5 記憶神技與文化模板</div>
+        <h2 class="slide-title">準備時間只有 60 秒：千萬別寫完整句子！</h2>
+        <p class="slide-lead">在草稿紙上只寫四個觸發關鍵字，看著講就能把兩分鐘串完而且語氣超自然。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Keywords 1 &amp; 2</div><ul class="list-clean"><li><strong>1. Where</strong>：故事發生的地點與感官氛圍（aroma, sizzling wok）</li><li><strong>2. Contrast</strong>：核心反差點（teenager yet remarkably skilled）</li></ul></div>
+          <div class="card-accent"><div class="card-label blue">Keywords 3 &amp; 4</div><ul class="list-clean"><li><strong>3. Action</strong>：具體動作細節（tossing the wok effortlessly）</li><li><strong>4. Ending</strong>：這件事給你的感動與收穫（work ethic, inspiration）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="個人筆記實戰示範：炒飯小弟的四個關鍵字">
+      <div class="slide-inner"><div class="bg-num">19</div>
+        <div class="slide-kicker">CH.5 記憶神技與文化模板</div>
+        <h2 class="slide-title">實戰示範：只寫 4 個詞講完「炒飯店員故事」</h2>
+        <p class="slide-lead">用這四個關鍵字串成自然英文獨白，不用死背逐字稿也能穩定講滿 1 分 45 秒。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">Where &amp; Contrast</div><div class="quote-en">"It happened at a bustling fried-rice stall near my neighborhood. To my surprise, the chef behind the roaring stove was just a junior high teenager."</div></div>
+          <div class="card-accent"><div class="card-label blue">Action &amp; Ending</div><div class="quote-en">"Despite beads of sweat on his forehead, he tossed the heavy wok with laser focus and greeted customers warmly—his dedication truly humbled me."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="文化與食物萬用模板：端午節粽子（Zongzi）">
+      <div class="slide-inner"><div class="bg-num">20</div>
+        <div class="slide-kicker">CH.5 記憶神技與文化模板</div>
+        <h2 class="slide-title">傳統節慶／美食怎麼用英文介紹？粽子四步模板</h2>
+        <p class="slide-lead">這組英文語料可直接套用到任何「傳統食物、節慶或文化物品」題目。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">What &amp; How It Is Made</div><div class="quote-en">"<strong>Zongzi</strong> are pyramid-shaped <strong>sticky rice dumplings</strong> eaten during the <strong>Dragon Boat Festival</strong>, wrapped in fragrant <strong>bamboo leaves</strong> with pork, mushrooms, and salted egg yolk."</div></div>
+          <div class="card-accent"><div class="card-label blue">Why (Qu Yuan) &amp; Conclusion</div><div class="quote-en">"Traditionally, people threw rice into the river to honor the patriotic poet <strong>Qu Yuan</strong>. Beyond its savory taste, it symbolizes family reunion and cultural heritage."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="Part 3 抽象延伸：把視角從「我」拉到「社會」">
+      <div class="slide-inner"><div class="bg-num">21</div>
+        <div class="slide-kicker">CH.5 記憶神技與文化模板</div>
+        <h2 class="slide-title">Part 3 怎麼答？別再一直講 I，改講 People / Society</h2>
+        <p class="slide-lead">Part 3 考的是針對 Part 2 主題的社會觀察，重點在「觀點＋對比＋原因」。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">官方 Part 3 經典問法</div><div class="quote-en">"Have things changed since your parents' time?"</div><p class="quote-zh">考官最喜歡問「過去 vs. 現在」的世代變化，或「社會現象背後的推力」。</p></div>
+          <div class="card"><div class="card-label blue">英文三句應答示範</div><div class="quote-en">"Yes, dramatically. Unlike my parents' generation, who relied on close-knit neighborhood stalls, young people today prioritize convenience and delivery apps due to hectic work schedules."</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="考場聽不懂 Part 3 題目怎麼辦？">
+      <div class="slide-inner"><div class="bg-num">22</div>
+        <div class="slide-kicker">CH.5 記憶神技與文化模板</div>
+        <h2 class="slide-title">沒聽清考官問題？禮貌請對方重講不會扣分！</h2>
+        <p class="slide-lead">硬猜題意結果答非所問才會大扣分，大方用自然句型請考官重複或換句話說。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Part 1 &amp; 2（考官只能原句重複）</div><div class="quote-en">"Sorry, could you say that again, please?"</div></div>
+          <div class="card-accent"><div class="card-title">Part 3（可請考官換句話說）</div><div class="quote-en">"Sorry, I didn't quite catch that. Could you rephrase the question?"</div></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="口說隨堂模擬演練（2 題）">
+      <div class="slide-inner"><div class="bg-num">23</div>
+        <div class="slide-kicker">CH.5 記憶神技與文化模板</div>
+        <h2 class="slide-title">課堂即時演練：用剛學的公式開口說 30 秒</h2>
+        <p class="slide-lead">上課時可用雷射筆指題，請學員當場套用公式回答。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Part 1 演練（Compare 公式）</div><div class="card-title">"Do you prefer studying in the morning or at night?"</div><p class="card-body">提示：套用 <code>Overall + Night Owl 安靜優勢 + Morning 對比</code>。</p></div>
+          <div class="card-accent"><div class="card-label blue">Part 2 演練（1 分鐘只寫 4 個字）</div><div class="card-title">"Describe a person who works hard."</div><p class="card-body">提示：寫下 <code>Where → Contrast → Action → Ending</code>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 記憶神技與 Part 3" data-title="Unit 06 課後行動檢核表">
+      <div class="slide-inner"><div class="bg-num">24</div>
+        <div class="slide-kicker">CH.5 單元總結</div>
+        <h2 class="slide-title">Unit 06 完成！最後到 Unit 07 排定四週課表</h2>
+        <p class="slide-lead">四科技巧都到手了，最後一個單元幫你把練習排進每天做得到的進度表。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent">
+            <div class="card-label blue">UNIT 06 CHECKLIST</div>
+            <label class="check-item"><input type="checkbox" /> 用自己的經驗套寫 3 題 Part 1（替換 2 個地道片語）</label>
+            <label class="check-item"><input type="checkbox" /> 準備 4 個 Part 2「四階段關鍵字」萬用故事（含 1 個文化題）</label>
+            <label class="check-item"><input type="checkbox" /> 用手機錄音回放一次，檢查時態切換與流暢度</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">NEXT UNIT</div>
+            <div class="card-title">前往 Unit 07：四週啟動路線圖與實戰</div>
+            <p class="card-body">排定 Week 1–4 課表與考前 24 小時檢查清單。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-ghost" href="unit7.html" style="background:var(--klein); color:#FFF; border-color:var(--klein); text-decoration:none; padding:9px 18px;">進入 Unit 07 →</a>
+              <a class="btn-ghost" href="../home.html" style="text-decoration:none; padding:9px 18px;">回單元總覽</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true"><div class="toc-panel"><div class="toc-header"><strong style="font-size:1rem;">Unit 06 目錄（24 頁）</strong><button class="btn-ghost" id="closeTocBtn" type="button">關閉</button></div><div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div></div></div>
+  <script src="assets/toolkit.js"></script>
+</body>
+</html>

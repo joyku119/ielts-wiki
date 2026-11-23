@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 07｜四週啟動路線圖與實戰（24 頁深度版）</title>
+  <link rel="stylesheet" href="assets/gallery.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span><span>UNIT 07 · 四週啟動路線圖與實戰</span><a href="../home.html">← 返回單元總覽</a></div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.1 考前診斷</span>
+      <button class="btn-ghost" id="hintBtn" type="button">簡報工具提示</button>
+      <button class="btn-ghost" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="hint-popover" id="hintPopover">
+    <h4>互動教學工具說明</h4>
+    <ul>
+      <li><strong>查劍橋字典</strong>：在「游標 / 選字」模式下反白任意英文單字，點擊浮動氣泡即可直連劍橋字典。</li>
+      <li><strong>三色螢光筆</strong>：反白重點文字後，點氣泡上的柔黃、薄荷綠或淡藍圓點上色。</li>
+      <li><strong>雷射筆 ＆ 畫筆</strong>：從底部 Dock 切換雷射指示或自由板書，換頁自動清空。</li>
+    </ul>
+  </div>
+  <canvas id="drawCanvas"></canvas><div id="laserDot"></div>
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.25); padding-left:10px;">查劍橋字典：<strong id="cambridgeWord"></strong> ↗</a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.1 考前診斷" data-title="Unit 07 封面：四週啟動路線圖與模考實戰">
+      <div class="slide-inner"><div class="bg-num">01</div>
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div class="slide-kicker">UNIT 07 · 4-WEEK STUDY ROADMAP</div>
+            <h1 class="slide-title">不求一天變強：四週穩穩推進的實戰課表</h1>
+            <p class="slide-lead">把龐大的雅思拆成每週做得到的小任務：從 Week 1 聽力與規則打底，到 Week 4 全真計時模考（Mock Test）與錯題覆盤（Error Log），穩穩上場拿分。</p>
+            <div class="chip-row"><span class="chip blue">Week 1–4 Schedule</span><span class="chip">Mock Test SOP</span><span class="chip">T-24h Checklist</span></div>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 180" width="100%" style="max-width:250px;" fill="none"><rect x="20" y="20" width="240" height="140" stroke="#111111" stroke-width="1.5"/><line x1="44" y1="120" x2="236" y2="120" stroke="#E2E5EB" stroke-width="2"/><line x1="44" y1="120" x2="236" y2="60" stroke="#002FA7" stroke-width="2"/><circle cx="56" cy="116" r="5" fill="#111111"/><circle cx="116" cy="96" r="5" fill="#111111"/><circle cx="176" cy="78" r="5" fill="#002FA7"/><circle cx="230" cy="62" r="6" fill="#002FA7"/><text x="46" y="140" fill="#111111" font-size="9.5" font-weight="700">W1</text><text x="106" y="140" fill="#111111" font-size="9.5" font-weight="700">W2</text><text x="166" y="140" fill="#002FA7" font-size="9.5" font-weight="700">W3</text><text x="220" y="140" fill="#002FA7" font-size="9.5" font-weight="700">W4</text></svg>
+            <div class="art-caption">Foundation → Scanning → Output → Full Simulation</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 考前診斷" data-title="啟動前第一步：設定目標與盤點時數">
+      <div class="slide-inner"><div class="bg-num">02</div>
+        <div class="slide-kicker">CH.1 考前診斷與配時</div>
+        <h2 class="slide-title">先寫下目標分數，再算每天能抽出的時間</h2>
+        <p class="slide-lead">有明確的 <code>Overall Target</code> 與 <code>Sub-score Requirement</code>，才能決定聽讀要衝多高、寫說要穩在幾分。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">Target Score Allocation</div><p class="card-body">目標總分 6.5（小分不低於 6.0）：L 7.0 + R 7.0 + W 6.0 + S 6.0 = <strong>6.5</strong>；若衝 7.0 則為 L 7.5 + R 7.5 + W 6.5 + S 6.5。</p></div>
+          <div class="card"><div class="card-title">Daily Minimum Focus</div><p class="card-body">平日每天至少 <strong>1.5–2 hours</strong> 專注練習（拆成 30m + 35m + 25m），週末安排一次連貫計時測驗。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 考前診斷" data-title="做一回基礎測驗抓起點">
+      <div class="slide-inner"><div class="bg-num">03</div>
+        <div class="slide-kicker">CH.1 考前診斷與配時</div>
+        <h2 class="slide-title">第一天先做一回聽讀診斷，了解自己離目標多遠</h2>
+        <p class="slide-lead">先量出真實的 <code>Baseline Score</code>，才能精準分配四週的準備重心。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Baseline Below Band 5.0</div><p class="card-body">前兩週重心放在語料庫發音辨識（pronunciation recognition）、高頻核心詞彙與簡單句文法正確度。</p></div>
+          <div class="card-accent"><div class="card-title">Baseline at Band 5.5–6.0</div><p class="card-body">直接進入計時定位掃讀（timed scanning）、Task 1 Overview + Task 2 PEEL 骨架與口說雙版本升級。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 考前診斷" data-title="建立電腦考作答與打字習慣">
+      <div class="slide-inner"><div class="bg-num">04</div>
+        <div class="slide-kicker">CH.1 考前診斷與配時</div>
+        <h2 class="slide-title">決定考電腦考的話，第一週就改用電腦練習</h2>
+        <p class="slide-lead">用紙本寫作和在螢幕上打 250 字是兩種完全不同的 <code>muscle memory</code>，越早切換越穩。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Turn Off Auto-Correct</div><p class="card-body">練習寫作時請關閉 Word 拼字紅線與自動修正，強迫自己肉眼抓出拼字錯誤（考場沒有自動修正！）。</p></div>
+          <div class="card-accent"><div class="card-title">Strict 20m + 40m Timer</div><p class="card-body">每次練筆都開倒數計時器，訓練自己在最後 3 分鐘停筆檢查 <code>subject-verb agreement</code>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Week 1 課表" data-title="Week 1 目標：摸清規則與聽力打底">
+      <div class="slide-inner"><div class="bg-num">05</div>
+        <div class="slide-kicker">CH.2 Week 1｜聽力打底與地圖專項</div>
+        <h2 class="slide-title">Week 1 重心：每天 30 分鐘精聽 ＋ 攻克地圖題</h2>
+        <p class="slide-lead">第一週先把最容易建立信心的 <code>Active Listening</code> 與方位追蹤練穩。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Daily Routine</div><ul class="list-clean"><li>完成 1 回王陸語料庫聽寫（目標辨識率 70%–80%+）。</li><li>針對錯題句進行 <code>Intensive Listening</code>（精聽＋跟讀），抓出連音與弱讀。</li></ul></div>
+          <div class="card"><div class="card-label blue">Weekly Focus</div><ul class="list-clean"><li>複習 Unit 02 全部高頻方位詞（<code>adjoin / branch off / circular path</code>）。</li><li>集中刷 3 篇劍橋 Part 2 地圖題（C7-2-2 / C13-1-2 / C16-1-2）。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Week 1 課表" data-title="Week 1 每日 90 分鐘時間配置表">
+      <div class="slide-inner"><div class="bg-num">06</div>
+        <div class="slide-kicker">CH.2 Week 1｜聽力打底與地圖專項</div>
+        <h2 class="slide-title">Week 1 每日 90 分鐘怎麼排最剛好？</h2>
+        <p class="slide-lead">把練習切成三個高專注區塊，不疲勞又能每天看到實質進步。</p>
+        <div class="grid-3">
+          <div class="card-accent"><div class="stat-big">30m</div><div class="card-title">Dictation &amp; Shadowing</div><p class="card-body">高頻語料庫聽寫與錯題跟讀，專治漏聽與連音。</p></div>
+          <div class="card"><div class="stat-big">35m</div><div class="card-title">Listening Part 1–2</div><p class="card-body">練習讀題預判空格詞性（noun / number）與地圖定位。</p></div>
+          <div class="card"><div class="stat-big">25m</div><div class="card-title">Reading Passage 1</div><p class="card-body">不限時讀 1 篇短文，專心圈出 <code>paraphrasing pairs</code>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Week 1 課表" data-title="Week 1 週末檢查點">
+      <div class="slide-inner"><div class="bg-num">07</div>
+        <div class="slide-kicker">CH.2 Week 1｜聽力打底與地圖專項</div>
+        <h2 class="slide-title">Week 1 結束時，檢核這兩項指標</h2>
+        <p class="slide-lead">確認聽力基礎穩固後，再進入第二週的閱讀與小作文。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Checkpoint 1: Map Accuracy</div><p class="card-body">Part 2 地圖題能穩拿 80% 以上正確率，聽到方位詞能即時在腦中移動游標。</p></div>
+          <div class="card-accent"><div class="card-title">Checkpoint 2: Zero Spelling Slips</div><p class="card-body">星期、月份、數字與高頻地點名詞（<code>library, museum, souvenir, accommodation</code>）零拼寫失誤。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 Week 1 課表" data-title="Week 1 常見卡關調整">
+      <div class="slide-inner"><div class="bg-num">08</div>
+        <div class="slide-kicker">CH.2 Week 1｜聽力打底與地圖專項</div>
+        <h2 class="slide-title">如果第一週覺得聽力太快怎麼辦？</h2>
+        <p class="slide-lead">剛起步跟不上原速很正常，用「階梯調速法（Speed Stepping）」過渡就好。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Step 1: 1.0x Exam Speed</div><p class="card-body">第一遍維持 1.0x 原速做題，訓練臨場專注力與跳題果斷度。</p></div>
+          <div class="card-accent"><div class="card-title">Step 2: 0.85x Transcript Check</div><p class="card-body">訂正逐字稿時調慢抓清連音與爆破音，跟讀順暢後再調回 1.0x 甚至 1.1x。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Week 2 課表" data-title="Week 2 目標：閱讀掃讀定位 ＋ 寫作 Task 1">
+      <div class="slide-inner"><div class="bg-num">09</div>
+        <div class="slide-kicker">CH.3 Week 2｜閱讀掃讀與小作文</div>
+        <h2 class="slide-title">Week 2 重心：建立閱讀節奏 ＋ 寫熟 Task 1 四段式</h2>
+        <p class="slide-lead">第二週把「閱讀看題定位法（Skimming &amp; Scanning）」和「小作文 Overview」練成反射動作。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Reading Tasks</div><ul class="list-clean"><li>每兩天計時做 1 回 Passage 1 + 2（限時 35 分鐘）。</li><li>徹底遵守 <code>T/F/NG</code> 不腦補與 <code>NO MORE THAN TWO WORDS</code> 鐵則。</li></ul></div>
+          <div class="card"><div class="card-label blue">Task 1 Writing Tasks</div><ul class="list-clean"><li>熟背趨勢動詞（<code>surge / plummet / overtake</code>）與 <code>with + N + V-ing</code>。</li><li>本週完成 3 篇 Task 1：折線/柱狀、流程圖、地圖變遷各 1 篇。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Week 2 課表" data-title="Week 2 每日練習節奏">
+      <div class="slide-inner"><div class="bg-num">10</div>
+        <div class="slide-kicker">CH.3 Week 2｜閱讀掃讀與小作文</div>
+        <h2 class="slide-title">Week 2 每天交替練：閱讀日 vs. 小作文日</h2>
+        <p class="slide-lead">交替練習能維持新鮮感，讓輸入（Input）與客觀報告（Output）同步成長。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">Mon / Wed / Fri (Reading Focus)</div><p class="card-body">35m 計時做 2 篇閱讀 ＋ 30m 整理同義替換詞對 ＋ 20m 聽力精聽維持手感。</p></div>
+          <div class="card-accent"><div class="card-label blue">Tue / Thu / Sat (Task 1 Focus)</div><p class="card-body">20m 限時寫 1 篇 Task 1 ＋ 25m 對照 2025 範文改寫句子 ＋ 25m 練 Part 3 聽力。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Week 2 課表" data-title="Week 2 小作文自檢清單">
+      <div class="slide-inner"><div class="bg-num">11</div>
+        <div class="slide-kicker">CH.3 Week 2｜閱讀掃讀與小作文</div>
+        <h2 class="slide-title">寫完 Task 1 先自己批改這 4 點</h2>
+        <p class="slide-lead">自己先做一次 <code>Self-Audit</code>，就能抓出 80% 的基本失分點。</p>
+        <div class="grid-2-even">
+          <div class="card"><ul class="list-clean"><li>Intro 段有沒有改寫題目（paraphrase），而非整句照抄？</li><li>Overview 段有沒有寫出總趨勢且<strong>沒放具體數字</strong>？</li></ul></div>
+          <div class="card-accent"><ul class="list-clean"><li>有沒有用出至少 2 個進階趨勢動詞（<code>rocket / halve / surpass</code>）？</li><li>主詞是不是寫成 <code>The proportion / figure of...</code> 而非國家本身？</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 Week 2 課表" data-title="Week 2 週末檢查點">
+      <div class="slide-inner"><div class="bg-num">12</div>
+        <div class="slide-kicker">CH.3 Week 2｜閱讀掃讀與小作文</div>
+        <h2 class="slide-title">Week 2 結束時，檢核這兩項指標</h2>
+        <p class="slide-lead">確保閱讀速度與小作文架構都已經上軌道。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Reading Checkpoint</div><p class="card-body">Passage 1 &amp; 2 能在 35 分鐘內寫完，不再卡在單一難題超過 2 分鐘。</p></div>
+          <div class="card-accent"><div class="card-title">Task 1 Checkpoint</div><p class="card-body">能在 20 分鐘內寫滿 160+ words 且四段結構完整（Intro + Overview + 2 Details）。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Week 3 課表" data-title="Week 3 目標：大作文 Task 2 ＋ 口說 Part 1">
+      <div class="slide-inner"><div class="bg-num">13</div>
+        <div class="slide-kicker">CH.4 Week 3｜大作文與口說 Part 1</div>
+        <h2 class="slide-title">Week 3 重心：主攻大作文 PEEL ＋ 開口練 Part 1</h2>
+        <p class="slide-lead">第三週全面進入「主動輸出（Active Output）」訓練，把邏輯流暢地寫出來、說出來。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Task 2 Writing</div><ul class="list-clean"><li>用 2025 五大母題練習「5 分鐘列 4 行大綱」。</li><li>限時 40 分鐘寫完 2–3 篇完整 Task 2（≥ 260 words）。</li></ul></div>
+          <div class="card"><div class="card-label blue">Speaking Part 1</div><ul class="list-clean"><li>用個人真實經驗整理 6 個高頻話題（家鄉／住處／耳機／科系／作息）。</li><li>套用十大公式，每題錄音講滿 20 秒。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Week 3 課表" data-title="Week 3 大作文五大母題輪練法">
+      <div class="slide-inner"><div class="bg-num">14</div>
+        <div class="slide-kicker">CH.4 Week 3｜大作文與口說 Part 1</div>
+        <h2 class="slide-title">來不及寫 5 篇大作文？用「寫 2 篇 ＋ 列 3 篇大綱」</h2>
+        <p class="slide-lead"><code>Outlining</code> 只需要 5 分鐘，卻能幫你快速熟悉所有 2025 母題的切入角度。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Full Drafts (2 Essays)</div><p class="card-body">挑 1 篇「環保／科技類」＋ 1 篇「教育／職場類」，計時 40 分鐘完整寫完並檢查文法。</p></div>
+          <div class="card-accent"><div class="card-title">5-Minute Outlines (3 Prompts)</div><p class="card-body">把剩下的文化、金錢、都市題拿來練習寫出 Thesis 與 PEEL 論點，累積審題反應速度。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Week 3 課表" data-title="Week 3 口說「自然版 → 高分版」錄音練習法">
+      <div class="slide-inner"><div class="bg-num">15</div>
+        <div class="slide-kicker">CH.4 Week 3｜大作文與口說 Part 1</div>
+        <h2 class="slide-title">口說不要只默念！每天 15 分鐘錄音自聽</h2>
+        <p class="slide-lead">回放錄音（Self-Recording）會立刻揪出自己常犯的 <code>he/she</code> 不分或過去式漏加 <code>-ed</code>。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Round 1: Natural Flow</div><p class="card-body">不看稿直接回答，先求 3–4 句流暢不斷線、不長時間卡頓。</p></div>
+          <div class="card-accent"><div class="card-title">Round 2: Lexical Upgrade</div><p class="card-body">重錄一次並刻意用出 2 個地道片語，如 <code>block out the hustle and bustle</code> 或 <code>a total game-changer</code>。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 Week 3 課表" data-title="Week 3 週末檢查點">
+      <div class="slide-inner"><div class="bg-num">16</div>
+        <div class="slide-kicker">CH.4 Week 3｜大作文與口說 Part 1</div>
+        <h2 class="slide-title">Week 3 結束時，檢核這兩項指標</h2>
+        <p class="slide-lead">確保大作文寫得完，Part 1 問什麼都能自然接話。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-title">Task 2 Checkpoint</div><p class="card-body">能在 40 分鐘內寫滿 260 words，且每個主體段都有清楚的因果解釋與實例。</p></div>
+          <div class="card-accent"><div class="card-title">Speaking Part 1 Checkpoint</div><p class="card-body">聽到隨機生活題能立刻反應套用公式，流暢講出 3–4 句英文。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 Week 4 與模考" data-title="Week 4 目標：Part 2 故事庫 ＋ 全真模擬考">
+      <div class="slide-inner"><div class="bg-num">17</div>
+        <div class="slide-kicker">CH.5 Week 4｜故事庫與全真模考</div>
+        <h2 class="slide-title">Week 4 重心：打造 4 個萬用故事卡 ＋ 全真計時模考</h2>
+        <p class="slide-lead">最後一週把所有學過的技巧串成完整的 2 小時 45 分鐘 <code>Full Mock Simulation</code>。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Part 2 &amp; 3 Sprint</div><ul class="list-clean"><li>備妥 4 個「四階段關鍵字」故事（人／事／地／物各 1 個）。</li><li>練習 Part 3 世代與社會對比應答（Past vs. Present）。</li></ul></div>
+          <div class="card"><div class="card-label blue">Full Mock Test</div><ul class="list-clean"><li>完成 1–2 回完整「Listening → Reading → Writing」連貫模考。</li><li>考後花雙倍時間建立 <code>Error Log</code> 錯題覆盤。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 Week 4 與模考" data-title="如何用 4 個故事卡橫掃 Part 2 題庫？">
+      <div class="slide-inner"><div class="bg-num">18</div>
+        <div class="slide-kicker">CH.5 Week 4｜故事庫與全真模考</div>
+        <h2 class="slide-title">一魚多吃：4 張四階段關鍵字小卡就夠了</h2>
+        <p class="slide-lead">不用準備 30 篇故事，把你最真實的 4 個經歷練熟，考場就能靈活微調套用。</p>
+        <div class="grid-2-even">
+          <div class="card"><ul class="list-clean"><li><strong>People + Event Card</strong>：炒飯小弟 / 咖啡廳 <code>strawberry cake</code> 阿姨</li><li><strong>Object + Habit Card</strong>：降噪耳機（<code>block out the hustle and bustle</code>）</li></ul></div>
+          <div class="card-accent"><ul class="list-clean"><li><strong>Place + Outdoor Card</strong>：高雄／台北對比或台灣 <code>river tracing</code> 溯溪</li><li><strong>Culture + Festival Card</strong>：端午節 <code>Zongzi</code>（四步文化模板）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 Week 4 與模考" data-title="全真模考的「體力與專注力」模擬">
+      <div class="slide-inner"><div class="bg-num">19</div>
+        <div class="slide-kicker">CH.5 Week 4｜故事庫與全真模考</div>
+        <h2 class="slide-title">為什麼一定要連寫 2 小時 30 分鐘？因為最後一科最累</h2>
+        <p class="slide-lead">考場上的 <code>mental stamina</code>（腦力耐力）跟英文實力一樣重要。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-title">Match Your Exam Time Slot</div><p class="card-body">如果報名上午 9:00 場，就選在週末早上 9:00 完整連做「聽＋讀＋寫」，提前調整生理時鐘。</p></div>
+          <div class="card"><div class="card-title">10-Second Mental Reset</div><p class="card-body">閱讀收卷進入寫作時，先閉眼深呼吸 10 秒重置專注力，再看 Task 2 題目。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 Week 4 與模考" data-title="模考後覆盤四科錯題清單">
+      <div class="slide-inner"><div class="bg-num">20</div>
+        <div class="slide-kicker">CH.5 Week 4｜故事庫與全真模考</div>
+        <h2 class="slide-title">模考分數不是重點，「錯題分類表」才是提分關鍵</h2>
+        <p class="slide-lead">把模考錯題分成這三類記錄在 <code>Error Log</code>，考前三天只複習這張表：</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">1. Careless Slips</div><p class="card-body">漏看字數限制、單複數漏 <code>-s</code>、過去式誤寫成現在式（最容易立刻拿回分數）。</p></div>
+          <div class="card-accent"><div class="card-title">2. Strategy Gaps</div><p class="card-body">閱讀 T/F/NG 過度推論、聽力地圖題沒先圈起點與方向。</p></div>
+          <div class="card"><div class="card-title">3. Vocabulary Gaps</div><p class="card-body">記下沒認出的同義替換詞對（paraphrases）與聽力連音單字。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 考前 24 小時" data-title="考前一天（T-24h）做什麼最有效？">
+      <div class="slide-inner"><div class="bg-num">21</div>
+        <div class="slide-kicker">CH.6 考前 24 小時與急救包</div>
+        <h2 class="slide-title">考前一天別再刷全新難題：保持手感與睡眠最重要</h2>
+        <p class="slide-lead">考前一天做 <code>Light Warm-up</code> 就好，寫太難的新題只會動搖自信。</p>
+        <div class="grid-3">
+          <div class="card"><div class="card-title">1. 15-Min Ear Warm-up</div><p class="card-body">播一段做過的 Part 1/2 音檔暖耳，維持英語語速反應。</p></div>
+          <div class="card-accent"><div class="card-title">2. Review Error Log</div><p class="card-body">複習自己常拼錯的單字與 Task 1/2 連接詞架構。</p></div>
+          <div class="card"><div class="card-title">3. Rehearse 2 Stories</div><p class="card-body">開口順一遍 2 個 Part 2 四階段關鍵字故事，晚上早點睡覺。</p></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 考前 24 小時" data-title="四科進考場前的「一句話急救口訣」">
+      <div class="slide-inner"><div class="bg-num">22</div>
+        <div class="slide-kicker">CH.6 考前 24 小時與急救包</div>
+        <h2 class="slide-title">進考場深呼吸：記住四科的最後一句叮嚀</h2>
+        <p class="slide-lead">緊張的時候看看這四句話，把考試節奏拉回自己手上。</p>
+        <div class="grid-2-even">
+          <div class="card"><div class="card-label blue">Listening &amp; Reading</div><ul class="list-clean"><li><strong>Listening</strong>：<code>Let go if you miss one</code> — 漏聽立刻跳下一題，地圖先圈起點。</li><li><strong>Reading</strong>：順序題先拿分，嚴守字數紅線，絕不自己腦補。</li></ul></div>
+          <div class="card-accent"><div class="card-label blue">Writing &amp; Speaking</div><ul class="list-clean"><li><strong>Writing</strong>：20m + 40m 配時，Task 1 必寫 Overview，Task 2 走 PEEL。</li><li><strong>Speaking</strong>：講錯自然修正不卡頓，Part 2 記得給故事轉折。</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 考前 24 小時" data-title="考場物品與證件檢查清單">
+      <div class="slide-inner"><div class="bg-num">23</div>
+        <div class="slide-kicker">CH.6 考前 24 小時與急救包</div>
+        <h2 class="slide-title">出門前核對這四樣，安心進考場</h2>
+        <p class="slide-lead">提早 30–45 分鐘抵達考場，留足 <code>check-in &amp; security</code> 報到安檢時間。</p>
+        <div class="grid-2-even">
+          <div class="card-accent"><div class="card-label blue">Required Documents</div><ul class="list-clean"><li><strong>Valid Passport / National ID</strong>（必須與報名時完全一致的正本）</li><li><strong>Confirmation Email</strong>（確認考場地址與口說時段）</li></ul></div>
+          <div class="card"><div class="card-label">Comfort Essentials</div><ul class="list-clean"><li><strong>Clear Water Bottle</strong>（透明無標籤水瓶，依考場規定攜帶）</li><li><strong>Light Jacket</strong>（電腦教室冷氣通常偏強）</li></ul></div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 考前 24 小時" data-title="全系列總結與祝福">
+      <div class="slide-inner"><div class="bg-num">24</div>
+        <div class="slide-kicker">CH.6 課程圓滿完成</div>
+        <h2 class="slide-title">7 個單元 168 頁全數完成！祝考試一切順利</h2>
+        <p class="slide-lead">隨時可以回到總覽頁挑選想複習的單元，或反白任一英文單字打開劍橋字典複習發音與搭配詞。</p>
+        <div class="grid-2-asym">
+          <div class="card-accent">
+            <div class="card-label blue">FINAL CHECKLIST</div>
+            <label class="check-item"><input type="checkbox" /> 已確認目標分數、組別與考試日期</label>
+            <label class="check-item"><input type="checkbox" /> 已排定 Week 1–4 每日練習時段</label>
+            <label class="check-item"><input type="checkbox" /> 已備妥 4 個 Part 2 故事卡與五大寫作母題語料</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">BACK TO HOME</div>
+            <div class="card-title">回到全科實戰教學手冊首頁</div>
+            <p class="card-body">可隨時重溫任一單元講義或使用隨堂教學工具。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-ghost" href="../home.html" style="background:var(--klein); color:#FFF; border-color:var(--klein); text-decoration:none; padding:9px 18px;">回單元總覽</a>
+              <button class="btn-ghost" type="button" onclick="goToSlide(0)" style="padding:9px 18px;">回到第 01 頁</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true"><div class="toc-panel"><div class="toc-header"><strong style="font-size:1rem;">Unit 07 目錄（24 頁）</strong><button class="btn-ghost" id="closeTocBtn" type="button">關閉</button></div><div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div></div></div>
+  <script src="assets/toolkit.js"></script>
+</body>
+</html>

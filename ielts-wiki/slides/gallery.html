@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS 零基礎全科攻略 — 韓系簡約家教互動簡報</title>
+  <style>
+    :root {
+      --bg-canvas: #F6F7F9;
+      --bg-card: #FFFFFF;
+      --bg-soft: #EEF2F5;
+      --ink-primary: #1F242D;
+      --ink-secondary: #4A5260;
+      --ink-muted: #858E9B;
+      --haze-blue: #5B768A;
+      --haze-tint: rgba(91, 118, 138, 0.11);
+      --shadow-soft: 0 8px 28px rgba(24, 34, 48, 0.045);
+      --shadow-float: 0 12px 34px rgba(24, 34, 48, 0.12);
+      --font-sans: "Plus Jakarta Sans", "Noto Sans TC", "PingFang TC", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg-canvas);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 58px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(246, 247, 249, 0.92);
+      backdrop-filter: blur(10px);
+      z-index: 40;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+
+    .brand a {
+      color: var(--ink-secondary);
+      text-decoration: none;
+      background: var(--bg-card);
+      padding: 6px 14px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-soft);
+      font-size: 12px;
+      transition: color 0.2s;
+    }
+
+    .brand a:hover { color: var(--haze-blue); }
+
+    .brand-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--haze-blue);
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chapter-pill {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--haze-blue);
+      background: var(--haze-tint);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .btn-pill {
+      border: none;
+      background: var(--bg-card);
+      color: var(--ink-primary);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-pill:hover { color: var(--haze-blue); transform: translateY(-1px); }
+
+    .progress-track {
+      position: fixed;
+      top: 58px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(91, 118, 138, 0.12);
+      z-index: 40;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 4.16%;
+      background: var(--haze-blue);
+      border-radius: 0 99px 99px 0;
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .deck {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      padding-top: 61px;
+      padding-bottom: 84px;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 61px 0 84px 0;
+      padding: 36px 64px 24px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide-inner {
+      max-width: 1140px;
+      width: 100%;
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .slide-kicker {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--haze-blue);
+      background: var(--haze-tint);
+      padding: 5px 13px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    .slide-title {
+      font-size: clamp(1.85rem, 3.1vw, 2.55rem);
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--ink-primary);
+      max-width: 26ch;
+      margin-bottom: 12px;
+    }
+
+    .slide-lead {
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--ink-secondary);
+      max-width: 66ch;
+      margin-bottom: 28px;
+    }
+
+    .grid-2-asym { display: grid; grid-template-columns: 1.2fr 0.95fr; gap: 24px; align-items: stretch; }
+    .grid-2-even { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+
+    .card {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-soft {
+      position: relative;
+      background: var(--bg-soft);
+      border-radius: 20px;
+      padding: 26px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-memo {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 30px 28px 26px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .washi-tape {
+      position: absolute;
+      top: -9px;
+      left: 28px;
+      width: 78px;
+      height: 18px;
+      background: rgba(91, 118, 138, 0.24);
+      border-radius: 4px;
+      transform: rotate(-1.8deg);
+      pointer-events: none;
+    }
+
+    .card-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+    }
+
+    .card-label.blue { color: var(--haze-blue); }
+
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: var(--ink-primary);
+    }
+
+    .card-body {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--ink-secondary);
+    }
+
+    .stat-big {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--haze-blue);
+    }
+
+    .list-clean {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .list-clean li {
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--ink-secondary);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .list-clean li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--haze-blue);
+    }
+
+    .quote-en {
+      font-size: 0.96rem;
+      line-height: 1.65;
+      color: var(--ink-primary);
+      background: var(--bg-soft);
+      border-radius: 14px;
+      padding: 16px 18px;
+      font-weight: 500;
+    }
+
+    .quote-zh {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--ink-muted);
+      margin-top: 6px;
+    }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--bg-card);
+      color: var(--ink-secondary);
+      box-shadow: var(--shadow-soft);
+    }
+    .chip.blue {
+      background: var(--haze-tint);
+      color: var(--haze-blue);
+      box-shadow: none;
+    }
+
+    .art-frame {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .art-caption {
+      font-size: 12px;
+      color: var(--ink-muted);
+      text-align: center;
+    }
+
+    .slide-foot {
+      max-width: 1140px;
+      width: 100%;
+      margin: 16px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+
+    .source-tag {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px;
+      color: var(--haze-blue);
+    }
+
+    .dock-wrap {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 60;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      padding: 8px 14px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-float);
+    }
+
+    .dock-btn {
+      border: none;
+      background: transparent;
+      color: var(--ink-secondary);
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 7px 13px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+
+    .dock-btn:hover:not(:disabled) {
+      background: var(--bg-soft);
+      color: var(--ink-primary);
+    }
+
+    .dock-btn.active {
+      background: var(--haze-blue);
+      color: #FFFFFF;
+    }
+
+    .dock-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .dock-sep {
+      width: 1px;
+      height: 18px;
+      background: #E2E6EC;
+      margin: 0 2px;
+    }
+
+    .dock-page {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-muted);
+      padding: 0 6px;
+      min-width: 54px;
+      text-align: center;
+    }
+
+    #drawCanvas {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    #drawCanvas.drawing-mode {
+      pointer-events: auto;
+      cursor: crosshair;
+    }
+
+    #laserDot {
+      position: fixed;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(235, 87, 87, 0.92);
+      box-shadow: 0 0 14px 5px rgba(235, 87, 87, 0.45);
+      pointer-events: none;
+      z-index: 70;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+    #selectionBubble {
+      position: fixed;
+      z-index: 80;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      background: #1F242D;
+      color: #FFFFFF;
+      padding: 6px 10px;
+      border-radius: 999px;
+      box-shadow: var(--shadow-float);
+      transform: translate(-50%, -100%);
+      margin-top: -10px;
+    }
+
+    .bubble-btn {
+      border: none;
+      background: transparent;
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 0.15s;
+    }
+
+    .bubble-btn:hover { background: rgba(255, 255, 255, 0.15); }
+
+    .hl-swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.6);
+      cursor: pointer;
+    }
+
+    mark.hl-yellow { background: #FFF0A6; color: inherit; padding: 0 3px; border-radius: 4px; }
+    mark.hl-mint { background: #D2F1E4; color: inherit; padding: 0 3px; border-radius: 4px; }
+    mark.hl-blue { background: #DCE7F0; color: inherit; padding: 0 3px; border-radius: 4px; }
+
+    .toc-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(31, 36, 45, 0.28);
+      backdrop-filter: blur(4px);
+      z-index: 90;
+      display: none;
+      justify-content: flex-end;
+    }
+
+    .toc-overlay.open { display: flex; }
+
+    .toc-panel {
+      width: min(420px, 92vw);
+      height: 100%;
+      background: var(--bg-card);
+      padding: 28px 26px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.08);
+    }
+
+    .toc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #EEF1F5;
+    }
+
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: left;
+      background: transparent;
+      width: 100%;
+      font-family: var(--font-sans);
+      transition: background 0.15s;
+    }
+
+    .toc-item:hover { background: var(--bg-canvas); }
+    .toc-item.current { background: var(--haze-tint); }
+    .toc-num { font-size: 12px; font-weight: 800; color: var(--haze-blue); min-width: 24px; }
+    .toc-title { font-size: 0.9rem; font-weight: 600; color: var(--ink-primary); }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: var(--ink-secondary);
+      cursor: pointer;
+    }
+
+    .check-item input {
+      margin-top: 4px;
+      accent-color: var(--haze-blue);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 960px) {
+      .slide { padding: 24px 20px 20px; }
+      .grid-2-asym, .grid-2-even, .grid-3 { grid-template-columns: 1fr; }
+      .topbar { padding: 0 18px; }
+      .dock-wrap { max-width: 95vw; overflow-x: auto; padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span>IELTS 零基礎全科家教簡報</span>
+      <a href="../home.html">← 返回單元總覽</a>
+    </div>
+    <div class="topbar-right">
+      <span class="chapter-pill" id="chapterPill">CH.0 封面導覽</span>
+      <button class="btn-pill" id="tocBtn" type="button">目錄 24 頁</button>
+    </div>
+  </header>
+
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <canvas id="drawCanvas"></canvas>
+  <div id="laserDot"></div>
+
+  <div id="selectionBubble">
+    <span style="font-size:11px; color:#9CA3AF; padding-left:4px;">螢光筆</span>
+    <button class="hl-swatch" style="background:#FFF0A6;" data-hl="hl-yellow" title="柔黃螢光筆"></button>
+    <button class="hl-swatch" style="background:#D2F1E4;" data-hl="hl-mint" title="薄荷螢光筆"></button>
+    <button class="hl-swatch" style="background:#DCE7F0;" data-hl="hl-blue" title="霧霾藍螢光筆"></button>
+    <a id="cambridgeLink" class="bubble-btn" href="#" target="_blank" rel="noopener noreferrer" style="display:none; border-left:1px solid rgba(255,255,255,0.2); padding-left:10px;">
+      查劍橋字典：<strong id="cambridgeWord"></strong> ↗
+    </a>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide active" data-ch="CH.0 封面導覽" data-title="雅思零基礎全科入門攻略">
+      <div class="slide-inner">
+        <div class="grid-2-asym">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <span class="slide-kicker">IELTS 零基礎教學簡報 · LLM Wiki 編譯版</span>
+            <h1 class="slide-title" style="font-size:clamp(2.1rem, 3.8vw, 3.1rem);">從零開始看懂雅思：<br>聽讀寫說全科實戰指南</h1>
+            <p class="slide-lead">把 8 份筆記、2025 真題彙編與官方考情整理成 24 頁白話教學講義。上課時可直接反白英文單字查詢劍橋字典，或用下方工具畫記重點。</p>
+            <div class="chip-row">
+              <span class="chip blue">聽讀寫說 4 科全拆解</span>
+              <span class="chip">2025 真題實例</span>
+              <span class="chip">自然版 vs. 高分版對比</span>
+            </div>
+          </div>
+          <div class="art-frame">
+            <div class="washi-tape"></div>
+            <svg viewBox="0 0 300 230" width="100%" style="max-width:280px;" fill="none" aria-label="Korean Minimal Compass">
+              <rect x="24" y="20" width="252" height="190" rx="20" fill="#F6F7F9"/>
+              <circle cx="150" cy="115" r="64" stroke="#5B768A" stroke-width="1.75"/>
+              <circle cx="150" cy="115" r="36" stroke="#858E9B" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <polygon points="150,64 162,115 150,166 138,115" fill="rgba(91,118,138,0.16)" stroke="#5B768A" stroke-width="1.5"/>
+              <circle cx="150" cy="115" r="4.5" fill="#5B768A"/>
+              <text x="145" y="44" fill="#1F242D" font-size="11" font-weight="700">L</text>
+              <text x="224" y="119" fill="#1F242D" font-size="11" font-weight="700">R</text>
+              <text x="145" y="196" fill="#1F242D" font-size="11" font-weight="700">W</text>
+              <text x="68" y="119" fill="#1F242D" font-size="11" font-weight="700">S</text>
+            </svg>
+            <div class="art-caption">四項全能定位圖：Listening · Reading · Writing · Speaking</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>01 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 初學者基礎" data-title="雅思到底在考什麼？（四科時間與題數）">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.1 雅思初學者必清楚的基礎知識</span>
+        <h2 class="slide-title">2 小時 45 分鐘的四項全能體檢</h2>
+        <p class="slide-lead">雅思把英文能力拆成「聽、讀、寫、說」四張獨立成績單，總計約 2 小時 45 分鐘。先看懂每科時間與規則，進考場就不會慌張。</p>
+        <div class="grid-2-even">
+          <div class="card">
+            <div class="card-label blue">INPUT 接收能力（各 40 題）</div>
+            <div class="card-title">Listening 聽力（約 30 分）＋ Reading 閱讀（60 分）</div>
+            <ul class="list-clean">
+              <li><strong>聽力 4 Parts / 40 題</strong>：音檔只播一次，含英澳紐北美多國口音，每答對 1 題得 1 分。</li>
+              <li><strong>閱讀 3 篇 / 40 題</strong>：總長約 2,150–2,750 字，考驗快速定位與細節判斷。</li>
+            </ul>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">OUTPUT 輸出能力（真人評分）</div>
+            <div class="card-title">Writing 寫作（60 分）＋ Speaking 口說（11–14 分）</div>
+            <ul class="list-clean">
+              <li><strong>寫作 2 Tasks</strong>：Task 1 圖表（20 分）＋ Task 2 申論（40 分），<strong>Task 2 佔分是 Task 1 的兩倍</strong>。</li>
+              <li><strong>口說 3 Parts</strong>：與真人考官一對一面談，從日常聊天一路延伸到抽象討論。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>02 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 初學者基礎" data-title="0–9 分制（Band Score）怎麼看懂？">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.1 雅思初學者必清楚的基礎知識</span>
+        <h2 class="slide-title">不是 100 分制：0–9 分（Band）白話對照</h2>
+        <p class="slide-lead">雅思總分是四科平均後四捨五入到「整數或 0.5 分」（例如 6.5 或 7.0）。看懂目標分數代表什麼程度，準備才更有方向。</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="stat-big">5.5</div>
+            <div class="card-title">Modest 基礎可用</div>
+            <p class="card-body">在熟悉的日常情境能聽懂大意、表達基本想法，但文法與用字仍會出現較多明顯失誤。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="stat-big">6.5</div>
+            <div class="card-title">Competent 有效溝通</div>
+            <p class="card-body">多數大學與部分碩士的入門門檻。偶爾有小錯或不精準，但整體溝通順暢、能看懂複雜文章。</p>
+          </div>
+          <div class="card">
+            <div class="stat-big">7.0+</div>
+            <div class="card-title">Good 研究所常見目標</div>
+            <p class="card-body">能流暢處理複雜論證與精細語意，偶有小失誤不影響理解，是申請頂尖研究所的黃金目標線。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>03 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 初學者基礎" data-title="Academic 學術組 vs. General Training 一般組">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.1 雅思初學者必清楚的基礎知識</span>
+        <h2 class="slide-title">要報哪一組？先看考試目的</h2>
+        <p class="slide-lead">兩組別的「聽力」與「口說」考題完全一樣，差別只在「閱讀」和「寫作」的題材方向。</p>
+        <div class="grid-2-asym">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">多數學生與留學首選</div>
+            <div class="card-title">IELTS Academic（學術組）</div>
+            <ul class="list-clean">
+              <li><strong>適用對象</strong>：申請國外大學、研究所或專業執照（如醫護）。</li>
+              <li><strong>閱讀取材</strong>：學術期刊、報章雜誌與研究文章。</li>
+              <li><strong>寫作 Task 1</strong>：客觀分析統計圖表、流程圖或地圖變遷。</li>
+            </ul>
+          </div>
+          <div class="card-soft">
+            <div class="card-label">移民與海外工作</div>
+            <div class="card-title">General Training（一般訓練組）</div>
+            <ul class="list-clean">
+              <li><strong>適用對象</strong>：技術移民（澳、加、紐、英）或海外工作簽證。</li>
+              <li><strong>閱讀取材</strong>：生活公告、租屋合約、公司手冊與日常文章。</li>
+              <li><strong>寫作 Task 1</strong>：依情境撰寫一封書信（投訴、邀請或申請信）。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>04 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.1 初學者基礎" data-title="電腦考 vs. 紙筆考 vs. 線上考">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.1 雅思初學者必清楚的基礎知識</span>
+        <h2 class="slide-title">考試形式怎麼選？電腦考最快 1–2 天出分</h2>
+        <p class="slide-lead">無論選哪一種方式，計分標準與考題難度都完全一致；差別在於作答手感與成績出爐速度。</p>
+        <div class="grid-3">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">最推薦主流</div>
+            <div class="card-title">IELTS on computer（考場電腦考）</div>
+            <p class="card-body">聽讀寫用電腦作答（可用 <strong>Ctrl+C / Ctrl+V</strong> 與螢幕畫記、寫作自動算字數），口說仍為考場真人面談，<strong>1–2 天出分</strong>。</p>
+          </div>
+          <div class="card">
+            <div class="card-label">手寫習慣選項</div>
+            <div class="card-title">Paper / Writing on Paper</div>
+            <p class="card-body">官方正逐步全面轉向電腦化；部分考區提供「電腦讀題＋紙筆手寫寫作」過渡選項，成績效度完全相同。</p>
+          </div>
+          <div class="card">
+            <div class="card-label">居家遠端</div>
+            <div class="card-title">IELTS Online（線上考）</div>
+            <p class="card-body">僅限 Academic，口說改為與真人考官視訊，<strong>6–8 天出分</strong>。報名前務必先確認目標學校是否採認線上成績。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>05 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 聽力地圖攻略" data-title="為什麼聽力要先攻「地圖題」？">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.2 聽力地圖題攻略</span>
+        <h2 class="slide-title">出題率 29.17% 的送分門票：Part 2 地圖題</h2>
+        <p class="slide-lead">地圖題就像「拿著空白的園遊會平面圖，邊聽廣播導覽邊填空」。只要先抓到起點與轉彎方向，就能穩拿一整組分數。</p>
+        <div class="grid-2-asym">
+          <div class="card">
+            <div class="card-label blue">劍橋 C4–C15 統計實證</div>
+            <div class="stat-big">14 / 48</div>
+            <div class="card-title">每 3–4 場考試就出現 1 次，集中於 Part 2</div>
+            <ul class="list-clean">
+              <li><strong>室內型</strong>：鎖定左右上下（L/R/U/D）、參照物與門的朝向。</li>
+              <li><strong>區域 / 街區型</strong>：鎖定東南西北方向標、路名、交叉點與 Starting Point。</li>
+            </ul>
+          </div>
+          <div class="art-frame">
+            <div class="washi-tape"></div>
+            <svg viewBox="0 0 280 200" width="100%" style="max-width:250px;" fill="none" aria-label="Map Route SVG">
+              <rect x="16" y="16" width="248" height="168" rx="16" fill="#F6F7F9"/>
+              <rect x="40" y="38" width="58" height="40" rx="8" fill="#FFFFFF" stroke="#858E9B" stroke-width="1.2"/>
+              <rect x="180" y="38" width="58" height="40" rx="8" fill="rgba(91,118,138,0.14)" stroke="#5B768A" stroke-width="1.5"/>
+              <path d="M69 156 L69 108 L209 108 L209 78" stroke="#5B768A" stroke-width="2" stroke-dasharray="5 4"/>
+              <circle cx="69" cy="156" r="4.5" fill="#1F242D"/>
+              <circle cx="209" cy="78" r="4.5" fill="#5B768A"/>
+              <text x="42" y="172" fill="#1F242D" font-size="9.5" font-weight="700">MAIN ENTRANCE</text>
+              <text x="195" y="62" fill="#5B768A" font-size="9.5" font-weight="700">SHOP</text>
+            </svg>
+            <div class="art-caption">開播前先圈出「起點」與「方向標」，動線就不會迷路</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>06 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 聽力地圖攻略" data-title="考官固定句型與高頻方位詞庫">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.2 聽力地圖題攻略</span>
+        <h2 class="slide-title">聽懂考官的「三段式報路公式」</h2>
+        <p class="slide-lead">地圖題音檔幾乎都照著 <strong>「目標名稱 ＋ 方位動線 ＋ 補充介紹」</strong> 的節奏唸給你聽，最後一句的補充常是用來確認答案的雙重保險。</p>
+        <div class="grid-2-even">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">課堂真題原句拆解（試著反白英文單字查字典）</div>
+            <div class="quote-en">"And finally the shop. It’s actually inside one of the towers, but the way in is from the outside. Just take the first left after the main entrance, go down the path and take the first right. It’s got some lovely gifts and souvenirs."</div>
+            <p class="quote-zh">先點出目標（the shop）→ 給動線（大門後第一個左轉 → 沿路第一個右轉）→ 用禮物紀念品收尾確認。</p>
+          </div>
+          <div class="card">
+            <div class="card-label blue">必背高頻方位詞庫</div>
+            <ul class="list-clean">
+              <li><strong>行進動詞</strong>：go straight / along / towards / across / through / past</li>
+              <li><strong>位置關係</strong>：opposite / face（對面）、adjoin（緊鄰）</li>
+              <li><strong>轉彎與通道</strong>：sharp bend（急轉彎）、corridor（走廊）、side entrance（側門）</li>
+              <li><strong>道路名詞</strong>：branch off / lead to、footpath / pavement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>07 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.2 聽力地圖攻略" data-title="為什麼總是漏聽？精聽訓練與三大失分拆解">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.2 聽力地圖題攻略</span>
+        <h2 class="slide-title">聽力不是聽越多越有效：精聽才抓得出盲點</h2>
+        <p class="slide-lead">很多新手每天播英文 Podcast 卻沒進步，因為「泛聽」只會讓你習慣背景音。要針對失分原因做「精聽」才能真正提分。</p>
+        <div class="grid-2-even">
+          <div class="card-soft">
+            <div class="card-label">NG 做法：盲目刷題與泛聽</div>
+            <div class="card-title">聽不懂就看解答，下次依然漏聽</div>
+            <p class="card-body">漏聽通常來自三大原因：<strong>(1) 單字發音不熟</strong>（看懂字但聽不出來）、<strong>(2) 連音與弱讀</strong>、<strong>(3) 長難句反應不及</strong>。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">高分做法：精聽 ＋ 語料庫</div>
+            <div class="card-title">王陸語料庫目標辨識率 70%–80%+</div>
+            <p class="card-body">反覆聽寫錯題句，專門抓出連音與拼字反應速度；搭配考前 30 秒先圈圖上地標，把被動聽音檔變成主動等答案。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/listening-map.md</span><span>08 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 閱讀入門概覽" data-title="60 分鐘 3 篇長文怎麼寫得完？">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.3 閱讀入門概覽</span>
+        <h2 class="slide-title">閱讀不是從頭唸到尾：60 分鐘節奏分配</h2>
+        <p class="slide-lead">學術組閱讀總長超過 2,150 字、共 40 題，平均每篇只有 20 分鐘。新手一定要用「先看題、再掃讀定位」取代逐字精讀。</p>
+        <div class="grid-2-asym">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">考場實戰節奏</div>
+            <div class="card-title">三篇文章難度遞增：15 + 20 + 25 分鐘</div>
+            <ul class="list-clean">
+              <li><strong>Passage 1（約 15 分）</strong>：題材最親民，搶分必拿穩。</li>
+              <li><strong>Passage 2（約 20 分）</strong>：開始出現段落配對與推論。</li>
+              <li><strong>Passage 3（約 25 分）</strong>：學術論證最密集，預留較多時間。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-label">新手破題鐵則</div>
+            <div class="card-title">細節題多數「依文章順序出現」</div>
+            <p class="card-body">填空題與是非題的答案通常照段落順序排列！找到第 1 題的位置後，第 2 題一定在它後面，不用整篇重頭找。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>09 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.3 閱讀入門概覽" data-title="新手最常踩雷的閱讀題型與字數鐵則">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.3 閱讀入門概覽</span>
+        <h2 class="slide-title">看懂三種高頻題型＋字數紅線</h2>
+        <p class="slide-lead">閱讀答案「必須直接來自原文單字」，千萬不要自己改寫同義詞填進空格，也別忽略粗體字數上限。</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-label blue">是非判斷</div>
+            <div class="card-title">True / False / Not Given</div>
+            <p class="card-body"><strong>False</strong> 是「原文明確相反」；<strong>Not Given</strong> 是「原文根本沒提」，切忌自己腦補常識判斷。</p>
+          </div>
+          <div class="card">
+            <div class="card-label blue">大意配對</div>
+            <div class="card-title">Matching Headings</div>
+            <p class="card-body">替每段選小標題。重點讀每一段的<strong>第一句與最後一句</strong>，以及轉折詞（However）後的主旨。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">填空字數鐵則</div>
+            <div class="card-title">NO MORE THAN TWO WORDS</div>
+            <p class="card-body">多寫一個字直接零分！注意：連字號單字如 <strong>check-in 算 1 個字</strong>，數字可寫阿拉伯數字。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-beginner-basics.md</span><span>10 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 寫作 Task 1" data-title="20 分鐘 150 字：不寫個人意見的客觀圖表報告">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.4 寫作 Task 1 小作文攻略</span>
+        <h2 class="slide-title">Task 1 就像幫主管寫一份「150 字圖表快報」</h2>
+        <p class="slide-lead">小作文佔寫作總分 1/3，建議嚴格控制在 <strong>20 分鐘內寫完</strong>。它不考你「為什麼」，只考你能不能客觀挑出最大趨勢與關鍵數字。</p>
+        <div class="grid-2-asym">
+          <div class="card">
+            <div class="card-label blue">2025 實考六大圖表類型</div>
+            <ul class="list-clean">
+              <li><strong>數據類</strong>：折線圖（Line）、柱狀圖（Bar）、表格（Table）、混合圖（Bar + Pie）。</li>
+              <li><strong>非數據類</strong>：流程圖（Process，如製作果醬 6 步）、平面地圖變遷（Map，如宿舍改建）。</li>
+            </ul>
+          </div>
+          <div class="art-frame">
+            <div class="washi-tape"></div>
+            <svg viewBox="0 0 280 170" width="100%" style="max-width:250px;" fill="none" aria-label="Task 1 Chart SVG">
+              <rect x="12" y="12" width="256" height="146" rx="14" fill="#F6F7F9"/>
+              <line x1="34" y1="136" x2="246" y2="136" stroke="#858E9B" stroke-width="1.3"/>
+              <line x1="34" y1="30" x2="34" y2="136" stroke="#858E9B" stroke-width="1.3"/>
+              <polyline points="46,118 96,98 146,104 196,54 236,40" stroke="#5B768A" stroke-width="2.2"/>
+              <polyline points="46,78 96,86 146,68 196,90 236,110" stroke="#858E9B" stroke-width="1.5" stroke-dasharray="4 4"/>
+              <circle cx="236" cy="40" r="4" fill="#5B768A"/>
+              <text x="184" y="32" fill="#5B768A" font-size="9.5" font-weight="700">OVERVIEW</text>
+            </svg>
+            <div class="art-caption">只寫「誰最高、誰暴漲、誰反轉」，不猜測背後原因</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>11 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 寫作 Task 1" data-title="四段式骨幹＋全篇靈魂 Overview">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.4 寫作 Task 1 小作文攻略</span>
+        <h2 class="slide-title">沒有 Overview（總趨勢段），寫作很難過 6 分</h2>
+        <p class="slide-lead">考官批改 Task 1 第一眼會找你的 Overview。把「總結大趨勢」放在第二段，就能確保結構清晰不失分。</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-label">第 1 段 · 1–2 句</div>
+            <div class="card-title">Introduction 改寫題目</div>
+            <p class="card-body">用 illustrate / demonstrate / reflect 替換題目的 show，並改寫時間與對象，切忌整句照抄。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">第 2 段 · 全篇靈魂</div>
+            <div class="card-title">Overview 整體總覽</div>
+            <p class="card-body"><strong>不放具體數字！</strong>只用兩句話點出：整體誰最高／最低，以及前後期間最明顯的上升或下降趨勢。</p>
+          </div>
+          <div class="card">
+            <div class="card-label">第 3–4 段 · 數據證據</div>
+            <div class="card-title">Details 分組比較</div>
+            <p class="card-body">將數據分成「高組 vs. 低組」或「前半段 vs. 後半段」，挑出極值與交叉點精準引用數字。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>12 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 寫作 Task 1" data-title="2025 動態圖表高分替換詞與對比句型">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.4 寫作 Task 1 小作文攻略</span>
+        <h2 class="slide-title">告別萬年 increase：讓數據描述瞬間升級</h2>
+        <p class="slide-lead">2025 真題如「1961–2013 肉類消耗」或「2006–2013 醫療支出」，只要換掉單調的上升下降動詞，字彙分數立刻拉開。</p>
+        <div class="grid-2-even">
+          <div class="card-soft">
+            <div class="card-label">NG 寫法：流水帳＋單調動詞</div>
+            <div class="quote-en" style="background:#FFFFFF;">"Meat consumption increased a lot from 1961 to 2013. Health spending also increased. Train delays decreased."</div>
+            <p class="quote-zh">動詞重複 increase / decrease，且缺乏程度副詞與高低組對比。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">高分寫法：精準動詞 ＋ 伴隨對比</div>
+            <ul class="list-clean">
+              <li><strong>劇烈上升</strong>：rocket / surge / soar / double</li>
+              <li><strong>劇烈下降</strong>：plummet / plunge / slip dramatically / halve</li>
+              <li><strong>高級對比</strong>：conversely、far outweighs、with + N + V-ing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>13 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.4 寫作 Task 1" data-title="2025 流程圖與平面地圖變遷真題拆解">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.4 寫作 Task 1 小作文攻略</span>
+        <h2 class="slide-title">沒數字怎麼寫？2025 流程圖與宿舍地圖真題</h2>
+        <p class="slide-lead">遇到沒百分比的非數據題別慌張！2025 年考出「水泥帆布 / 果醬製作」與「學生宿舍改造」，解法就是<strong>順序詞＋被動語態</strong>。</p>
+        <div class="grid-2-even">
+          <div class="card">
+            <div class="card-label blue">2025 流程圖實戰（Process）</div>
+            <div class="card-title">Concrete Canvas (8 步) &amp; Making Jam (6 步)</div>
+            <ul class="list-clean">
+              <li><strong>順序連接詞</strong>：preliminary stage → in the subsequent stage → the final stage</li>
+              <li><strong>必用文法</strong>：大量使用現在簡單式被動語態（如 is heated / is mixed）。</li>
+            </ul>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">2025 地圖變遷實戰（Floor Plan）</div>
+            <div class="card-title">學生宿舍改造（2010 vs. Now）</div>
+            <ul class="list-clean">
+              <li><strong>聚焦空間變化</strong>：原本的客廳與花園被改建為額外臥室、套房衛浴（en-suite）與停車位。</li>
+              <li><strong>關鍵動詞</strong>：was converted into / was replaced by / expanded。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task1.md</span><span>14 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 寫作 Task 2" data-title="40 分鐘 250 字：決定寫作分數 2/3 的主戰場">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.5 寫作 Task 2 大作文申論題攻略</span>
+        <h2 class="slide-title">Task 2 佔寫作 2/3 總分：40 分鐘先寫它也行</h2>
+        <p class="slide-lead">大作文是一篇至少 250 字的英文議論文。根據 2025 上半年範文統計，穩拿高分的黃金字數落在 <strong>258–375 字</strong>之間，重點在邏輯清楚而非盲目飆字數。</p>
+        <div class="grid-3">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="stat-big">2x</div>
+            <div class="card-title">雙倍計分權重</div>
+            <p class="card-body">官方規定 Task 2 佔寫作總分比重為 Task 1 的兩倍，沒寫完 Task 2 會直接重傷總分。</p>
+          </div>
+          <div class="card">
+            <div class="stat-big">40m</div>
+            <div class="card-title">黃金時間分配</div>
+            <p class="card-body">前 5 分鐘審題列大綱、中間 30 分鐘寫作、最後 5 分鐘檢查主詞動詞與拼字。</p>
+          </div>
+          <div class="card">
+            <div class="stat-big">260+</div>
+            <div class="card-title">2025 範文字數區間</div>
+            <p class="card-body">2025 真題範文多在 258–375 字之間，超過 250 字門檻後，論證深度比長度更重要。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task2.md</span><span>15 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 寫作 Task 2" data-title="最穩定的四段式結構＋PEEL 論證推進法">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.5 寫作 Task 2 大作文申論題攻略</span>
+        <h2 class="slide-title">四段式結構＋每段只講透一個論點（PEEL）</h2>
+        <p class="slide-lead">新手最常犯的錯是「一段塞進三個理由，每個都只有一句話」。用 <strong>PEEL 公式</strong>把一個理由寫深，字數自然輕鬆超過 260 字。</p>
+        <div class="grid-2-asym">
+          <div class="card">
+            <div class="card-label blue">四段式標準配置</div>
+            <ul class="list-clean">
+              <li><strong>Intro 開頭</strong>：改寫題目背景 ＋ 直接亮出你的立場。</li>
+              <li><strong>Body 1 主體一</strong>：支持立場的核心論點（套用 PEEL）。</li>
+              <li><strong>Body 2 主體二</strong>：第二個論點，或回應反方觀點再轉折。</li>
+              <li><strong>Conclusion 結論</strong>：換句話說重申立場（不拋新論點）。</li>
+            </ul>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">主體段四步推進：PEEL</div>
+            <ul class="list-clean">
+              <li><strong>P — Point</strong>：第一句直接講清楚這段的核心主張。</li>
+              <li><strong>E — Explain</strong>：為什麼會這樣？解釋因果連鎖。</li>
+              <li><strong>E — Example</strong>：舉一個具體社會現象或生活案例。</li>
+              <li><strong>L — Link</strong>：收尾扣回題目立場，不偏題。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task2.md</span><span>16 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 寫作 Task 2" data-title="2025 五大高頻母題地圖">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.5 寫作 Task 2 大作文申論題攻略</span>
+        <h2 class="slide-title">2025 上半年都在考這五大母題</h2>
+        <p class="slide-lead">分析 2025 年 1–7 月大作文真題，題目雖然千變萬化，但背後其實集中在五個反覆出現的核心議題，先備好這五類例子就能以一擋十。</p>
+        <div class="grid-2-even">
+          <div class="card">
+            <div class="card-label blue">社會與生活類</div>
+            <ul class="list-clean">
+              <li><strong>環保與都市</strong>：快時尚污染（344 字）、都市人口膨脹（301 字）、野生動物保護。</li>
+              <li><strong>文化與政策</strong>：古蹟保存（258 字）、美術館參觀下降、發展中國家旅遊。</li>
+              <li><strong>職場與金錢</strong>：頻繁換工作（375 字）、高薪導向工作、金錢 vs. 禮物。</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-label blue">教育與科技類</div>
+            <ul class="list-clean">
+              <li><strong>教育與教養</strong>：商科 vs. 歷史（269 字）、道德 vs. 學科、電腦技能與兒童自由度。</li>
+              <li><strong>科技與媒體</strong>：現代通訊科技（335 字）、暴力電玩電影、媒體好消息比例。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task2.md</span><span>17 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.5 寫作 Task 2" data-title="實戰對比：空泛口號 NG 版 vs. PEEL 高分版">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.5 寫作 Task 2 大作文申論題攻略</span>
+        <h2 class="slide-title">實戰對比：以 2025「快時尚與環境」真題為例</h2>
+        <p class="slide-lead">同樣要表達「快時尚傷害環境」，看看空泛口號和 PEEL 邏輯推演在考官眼裡的差距。</p>
+        <div class="grid-2-even">
+          <div class="card-soft">
+            <div class="card-label">NG 寫法：空泛口號（只有結論沒有推論）</div>
+            <div class="quote-en" style="background:#FFFFFF;">"Fast fashion is very bad for the environment because people buy too many clothes. Therefore, governments and companies should stop it immediately."</div>
+            <p class="quote-zh">問題：沒有說明「怎麼傷害環境」，也沒有具體機制或例子，論證薄弱難過 6 分。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">高分寫法：PEEL 因果鏈（344 字範文邏輯）</div>
+            <ul class="list-clean">
+              <li><strong>Point</strong>：低價快時尚加速衣物汰換，製造巨量資源浪費。</li>
+              <li><strong>Explain</strong>：合成纖維難以自然分解，且染整過程消耗大量水資源。</li>
+              <li><strong>Example</strong>：每季過時即被丟棄的平價服飾最終大量進入掩埋場。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/writing-task2.md</span><span>18 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 口說全攻略" data-title="Part 1 日常閒聊（4–5 分鐘）十大題型萬用公式">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.6 口說 Part 1–3 全攻略</span>
+        <h2 class="slide-title">Part 1 不用背稿：辨識問句就套「3–4 句公式」</h2>
+        <p class="slide-lead">Part 1 就像跟新朋友聊生活（家鄉、宿舍、耳機）。最怕只答 Yes/No 就冷場，只要抓出題型開頭，照模組接 3–4 句就穩了。</p>
+        <div class="grid-3">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">喜好型 Preference</div>
+            <div class="card-title">Do you like...?</div>
+            <p class="card-body">直接回答 + 原因 + 頻率 + 共同對象/地點 + 小回憶。順著講滿 20 秒不卡頓。</p>
+          </div>
+          <div class="card">
+            <div class="card-label blue">比較型 Compare</div>
+            <div class="card-title">A vs. B（如高雄 vs 台北）</div>
+            <p class="card-body">整體結論 + 講 A 的特色 + 轉折講 B 的對比。用個人真實經驗最有說服力。</p>
+          </div>
+          <div class="card">
+            <div class="card-label blue">假設型 Prediction</div>
+            <div class="card-title">Would you...?</div>
+            <p class="card-body">直接表態 + If it happened（如果真的發生會怎樣），自然帶出假設語氣加分。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>19 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 口說全攻略" data-title="Part 1 實戰升級對比：耳機題「自然版 vs. 高分版」">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.6 口說 Part 1–3 全攻略</span>
+        <h2 class="slide-title">不用背艱深單字：換 3 個地道片語就升級</h2>
+        <p class="slide-lead">以 <strong>Part 1 耳機題（Headphones）</strong>為例，保留原本自然的想法，只替換關鍵片語就能讓考官眼睛一亮（試著反白 fatigued 查劍橋字典）。</p>
+        <div class="grid-2-even">
+          <div class="card-soft">
+            <div class="card-label">自然順口版（入門好記）</div>
+            <div class="quote-en" style="background:#FFFFFF;">"I wear headphones every day because it is quiet and helps me focus on studying, and soft ear pads feel comfortable."</div>
+            <p class="quote-zh">意思完全清楚，但 quiet / helps me / comfortable 屬於基礎字彙。</p>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">高分進階版（地道片語替換）</div>
+            <ul class="list-clean">
+              <li><strong>it is quiet</strong> → block out the hustle and bustle of the city</li>
+              <li><strong>helps me</strong> → a total game-changer / boosts my mood</li>
+              <li><strong>comfortable</strong> → well-padded，避免耳朵感到 fatigued</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>20 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 口說全攻略" data-title="Part 2 獨白：三段式故事弧＋六大細節擴寫器">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.6 口說 Part 1–3 全攻略</span>
+        <h2 class="slide-title">Part 2 別講流水帳：用「轉折故事弧」撐滿 2 分鐘</h2>
+        <p class="slide-lead">考官會給你一張主題卡（人物/事件/地點/物品），準備 1 分鐘後獨白 1–2 分鐘。有「反差轉折」的故事比平鋪直敘更容易拿高分。</p>
+        <div class="grid-2-asym">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">三段式故事弧＋教材經典反差案例</div>
+            <div class="card-title">Beginning → Plot（轉折）→ Ending</div>
+            <p class="card-body">教材示範「咖啡廳阿姨」：開頭先寫她表情嚴肅、讓人緊張（Background）；轉折是她最後卻悄悄多送你一塊<strong>草莓蛋糕（strawberry cake）</strong>；收尾講自己的感動與收穫（Summary + Feeling + Gain）。</p>
+          </div>
+          <div class="art-frame">
+            <svg viewBox="0 0 280 170" width="100%" style="max-width:250px;" fill="none" aria-label="Story Arc SVG">
+              <rect x="12" y="12" width="256" height="146" rx="14" fill="#F6F7F9"/>
+              <path d="M28 130 Q95 126 140 58 T252 44" stroke="#5B768A" stroke-width="2.2" fill="none"/>
+              <circle cx="28" cy="130" r="4.5" fill="#1F242D"/>
+              <circle cx="140" cy="58" r="5" fill="#5B768A"/>
+              <circle cx="252" cy="44" r="4.5" fill="#1F242D"/>
+              <text x="20" y="146" fill="#1F242D" font-size="9.5" font-weight="700">BEGINNING</text>
+              <text x="112" y="44" fill="#5B768A" font-size="9.5" font-weight="700">PLOT TWIST</text>
+              <text x="208" y="30" fill="#1F242D" font-size="9.5" font-weight="700">ENDING</text>
+            </svg>
+            <div class="art-caption">六大細節擴寫器：背景、環境、對話、心理、動作、表情</div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>21 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.6 口說全攻略" data-title="Part 2 四階段記憶關鍵字＋Part 3 抽象延伸">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.6 口說 Part 1–3 全攻略</span>
+        <h2 class="slide-title">考場 1 分鐘寫 4 個字，接著順進 Part 3 討論</h2>
+        <p class="slide-lead">準備時間只有 60 秒，千萬別寫完整句子！只寫 4 個觸發詞就能講完 Part 2；講完後 Part 3 會把話題拉高到社會與世代層面。</p>
+        <div class="grid-2-even">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">Part 2 四階段關鍵字（炒飯小弟案例）</div>
+            <ul class="list-clean">
+              <li><strong>Where</strong>：巷口常去的炒飯店</li>
+              <li><strong>Contrast</strong>：只是國中生卻超熟練甩鍋</li>
+              <li><strong>Action</strong>：專注控制火候與節奏</li>
+              <li><strong>Ending</strong>：被他的敬業精神深深打動</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-label blue">Part 3 抽象延伸問答</div>
+            <div class="quote-en">"Have things changed since your parents' time?"</div>
+            <p class="quote-zh">應答公式：<strong>過去 vs. 現在對比 ＋ 1 個社會原因</strong>（例如科技或生活步調改變），不用講太深奧的哲理，邏輯清楚即可。</p>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/speaking-part1-part2.md</span><span>22 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.7 四週啟動計畫" data-title="四週新手啟動路線圖">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.7 四週新手啟動計畫</span>
+        <h2 class="slide-title">不求一天變強，照這 4 週節奏穩穩推進</h2>
+        <p class="slide-lead">把龐大的雅思拆成四個每週小任務，先從最容易建立成就感的聽力與基礎規則開始，最後再計時模擬。</p>
+        <div class="grid-2-even">
+          <div class="card">
+            <div class="card-label blue">WEEK 1 &amp; WEEK 2 · 打底期</div>
+            <ul class="list-clean">
+              <li><strong>Week 1</strong>：搞懂考場規則，每天 30 分鐘精聽＋王陸語料庫，先把地圖題方位詞練熟。</li>
+              <li><strong>Week 2</strong>：練習閱讀「看題掃讀定位法」，並寫 3 篇 Task 1 練熟 20 分鐘配時與 Overview。</li>
+            </ul>
+          </div>
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">WEEK 3 &amp; WEEK 4 · 輸出實戰期</div>
+            <ul class="list-clean">
+              <li><strong>Week 3</strong>：用 PEEL 四段式練習 Task 2 五大母題，同步用 Part 1 公式開口錄音練習。</li>
+              <li><strong>Week 4</strong>：準備 4 個 Part 2 萬用「四階段關鍵字」故事（如文化粽子、生活人物），完成 1–2 回全真計時模考。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>23 / 24</span></footer>
+    </section>
+
+    <section class="slide" data-ch="CH.7 四週啟動計畫" data-title="結語與行動檢核表">
+      <div class="slide-inner">
+        <span class="slide-kicker">CH.7 結語與課後檢核表</span>
+        <h2 class="slide-title">今天就可以開始的三個小動作</h2>
+        <p class="slide-lead">這份簡報背後的所有重點都持續收錄在 LLM Wiki 知識庫裡。每次練習新題目，都可以繼續把心得 `/ingest` 進來！</p>
+        <div class="grid-2-asym">
+          <div class="card-memo">
+            <div class="washi-tape"></div>
+            <div class="card-label blue">START TODAY · 課後行動檢核表</div>
+            <label class="check-item"><input type="checkbox" /> 確認目標分數與組別（留學選 Academic，建議電腦考）</label>
+            <label class="check-item"><input type="checkbox" /> 挑 1 篇劍橋 Part 2 地圖題，先圈出起點與方位詞再播音檔</label>
+            <label class="check-item"><input type="checkbox" /> 用四階段關鍵字（Where → Contrast → Action → Ending）寫下第一個口說故事</label>
+          </div>
+          <div class="card" style="justify-content:center; align-items:flex-start;">
+            <div class="card-label">EXPLORE WIKI</div>
+            <div class="card-title">想切換其他教學單元或看目錄？</div>
+            <p class="card-body">回到入口頁即可直接選擇六大考科單元，或開啟右側目錄跳轉至任意一頁。</p>
+            <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn-pill" href="../home.html" style="background:var(--haze-blue); color:#FFFFFF; text-decoration:none; padding:10px 18px;">前往單元總覽</a>
+              <button class="btn-pill" type="button" onclick="goToSlide(0)" style="padding:10px 18px;">回到第 01 頁</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="slide-foot"><span class="source-tag">Source: wiki/topics/ielts-overview.md</span><span>24 / 24</span></footer>
+    </section>
+  </main>
+
+  <div class="dock-wrap" id="dock">
+    <button class="dock-btn active" id="modeCursor" type="button" title="選字查劍橋字典與螢光標記">游標 / 選字</button>
+    <button class="dock-btn" id="modeLaser" type="button" title="滑鼠變為雷射指示點">雷射筆</button>
+    <button class="dock-btn" id="modePen" type="button" title="自由畫筆板書">畫筆</button>
+    <button class="dock-btn" id="clearAllBtn" type="button" title="清空畫筆與本頁螢光標記">清空</button>
+    <div class="dock-sep"></div>
+    <button class="dock-btn" id="prevBtn" type="button">←</button>
+    <span class="dock-page" id="pageCounter">01 / 24</span>
+    <button class="dock-btn" id="nextBtn" type="button">→</button>
+  </div>
+
+  <div class="toc-overlay" id="tocOverlay" aria-hidden="true">
+    <div class="toc-panel">
+      <div class="toc-header">
+        <strong style="font-size:1rem;">簡報目錄（24 頁）</strong>
+        <button class="btn-pill" id="closeTocBtn" type="button">關閉</button>
+      </div>
+      <div id="tocList" style="display:flex; flex-direction:column; gap:4px;"></div>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const total = slides.length;
+    let current = 0;
+
+    const chapterPill = document.getElementById('chapterPill');
+    const progressFill = document.getElementById('progressFill');
+    const pageCounter = document.getElementById('pageCounter');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const tocOverlay = document.getElementById('tocOverlay');
+    const tocList = document.getElementById('tocList');
+
+    const canvas = document.getElementById('drawCanvas');
+    const ctx = canvas.getContext('2d');
+    const laserDot = document.getElementById('laserDot');
+    const selectionBubble = document.getElementById('selectionBubble');
+    const cambridgeLink = document.getElementById('cambridgeLink');
+    const cambridgeWord = document.getElementById('cambridgeWord');
+
+    const modeCursorBtn = document.getElementById('modeCursor');
+    const modeLaserBtn = document.getElementById('modeLaser');
+    const modePenBtn = document.getElementById('modePen');
+    const clearAllBtn = document.getElementById('clearAllBtn');
+
+    let toolMode = 'cursor';
+    let isDrawing = false;
+    let savedRange = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function clearAnnotations() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      document.querySelectorAll('mark.hl-mark').forEach((m) => {
+        const parent = m.parentNode;
+        while (m.firstChild) parent.insertBefore(m.firstChild, m);
+        parent.removeChild(m);
+        parent.normalize();
+      });
+    }
+
+    function setMode(mode) {
+      toolMode = mode;
+      [modeCursorBtn, modeLaserBtn, modePenBtn].forEach((b) => b.classList.remove('active'));
+      canvas.classList.remove('drawing-mode');
+      laserDot.style.display = 'none';
+      hideBubble();
+
+      if (mode === 'cursor') modeCursorBtn.classList.add('active');
+      if (mode === 'laser') {
+        modeLaserBtn.classList.add('active');
+        laserDot.style.display = 'block';
+      }
+      if (mode === 'pen') {
+        modePenBtn.classList.add('active');
+        canvas.classList.add('drawing-mode');
+      }
+    }
+
+    modeCursorBtn.addEventListener('click', () => setMode('cursor'));
+    modeLaserBtn.addEventListener('click', () => setMode('laser'));
+    modePenBtn.addEventListener('click', () => setMode('pen'));
+    clearAllBtn.addEventListener('click', clearAnnotations);
+
+    document.addEventListener('mousemove', (e) => {
+      if (toolMode === 'laser') {
+        laserDot.style.left = e.clientX + 'px';
+        laserDot.style.top = e.clientY + 'px';
+      }
+    });
+
+    canvas.addEventListener('pointerdown', (e) => {
+      if (toolMode !== 'pen') return;
+      isDrawing = true;
+      ctx.beginPath();
+      ctx.moveTo(e.clientX, e.clientY);
+      ctx.strokeStyle = '#5B768A';
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+    });
+
+    canvas.addEventListener('pointermove', (e) => {
+      if (!isDrawing || toolMode !== 'pen') return;
+      ctx.lineTo(e.clientX, e.clientY);
+      ctx.stroke();
+    });
+
+    window.addEventListener('pointerup', () => { isDrawing = false; });
+
+    function hideBubble() {
+      selectionBubble.style.display = 'none';
+      savedRange = null;
+    }
+
+    document.addEventListener('mouseup', (e) => {
+      if (toolMode !== 'cursor') return;
+      if (selectionBubble.contains(e.target)) return;
+
+      setTimeout(() => {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed || !sel.toString().trim()) {
+          hideBubble();
+          return;
+        }
+        const activeSlide = slides[current];
+        if (!activeSlide.contains(sel.anchorNode)) {
+          hideBubble();
+          return;
+        }
+
+        const text = sel.toString().trim();
+        savedRange = sel.getRangeAt(0).cloneRange();
+        const rect = savedRange.getBoundingClientRect();
+
+        const match = text.match(/[A-Za-z]+(?:-[A-Za-z]+)*/);
+        if (match) {
+          const word = match[0].toLowerCase();
+          cambridgeWord.textContent = word;
+          cambridgeLink.href = `https://dictionary.cambridge.org/dictionary/english/${encodeURIComponent(word)}`;
+          cambridgeLink.style.display = 'inline-flex';
+        } else {
+          cambridgeLink.style.display = 'none';
+        }
+
+        const leftPos = Math.min(Math.max(rect.left + rect.width / 2, 130), window.innerWidth - 130);
+        const topPos = Math.max(rect.top, 76);
+        selectionBubble.style.left = `${leftPos}px`;
+        selectionBubble.style.top = `${topPos}px`;
+        selectionBubble.style.display = 'flex';
+      }, 10);
+    });
+
+    document.querySelectorAll('.hl-swatch').forEach((btn) => {
+      btn.addEventListener('mousedown', (e) => e.preventDefault());
+      btn.addEventListener('click', () => {
+        if (!savedRange) return;
+        const cls = btn.dataset.hl;
+        try {
+          const mark = document.createElement('mark');
+          mark.className = `hl-mark ${cls}`;
+          savedRange.surroundContents(mark);
+        } catch (err) {
+          const frag = savedRange.extractContents();
+          const mark = document.createElement('mark');
+          mark.className = `hl-mark ${cls}`;
+          mark.appendChild(frag);
+          savedRange.insertNode(mark);
+        }
+        window.getSelection().removeAllRanges();
+        hideBubble();
+      });
+    });
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function buildToc() {
+      tocList.innerHTML = '';
+      slides.forEach((s, idx) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'toc-item' + (idx === current ? ' current' : '');
+        btn.innerHTML = `<span class="toc-num">${pad(idx + 1)}</span><span class="toc-title">${s.dataset.title}</span>`;
+        btn.addEventListener('click', () => { goToSlide(idx); closeToc(); });
+        tocList.appendChild(btn);
+      });
+    }
+
+    function goToSlide(index) {
+      if (index < 0 || index >= total) return;
+      clearAnnotations();
+      hideBubble();
+      slides[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      slides[current].scrollTop = 0;
+
+      const s = slides[current];
+      chapterPill.textContent = s.dataset.ch;
+      pageCounter.textContent = `${pad(current + 1)} / ${pad(total)}`;
+      progressFill.style.width = `${((current + 1) / total) * 100}%`;
+
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current === total - 1;
+      history.replaceState(null, '', `#s=${current + 1}`);
+      buildToc();
+    }
+
+    function openToc() { tocOverlay.classList.add('open'); tocOverlay.setAttribute('aria-hidden', 'false'); }
+    function closeToc() { tocOverlay.classList.remove('open'); tocOverlay.setAttribute('aria-hidden', 'true'); }
+
+    prevBtn.addEventListener('click', () => goToSlide(current - 1));
+    nextBtn.addEventListener('click', () => goToSlide(current + 1));
+    document.getElementById('tocBtn').addEventListener('click', openToc);
+    document.getElementById('closeTocBtn').addEventListener('click', closeToc);
+    tocOverlay.addEventListener('click', (e) => { if (e.target === tocOverlay) closeToc(); });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown') goToSlide(current + 1);
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') goToSlide(current - 1);
+      if (e.key === 'Escape') { closeToc(); hideBubble(); }
+    });
+
+    function initFromHash() {
+      const m = window.location.hash.match(/s=(\d+)/);
+      const target = m ? Math.max(0, Math.min(total - 1, parseInt(m[1], 10) - 1)) : 0;
+      goToSlide(target);
+    }
+    window.addEventListener('hashchange', initFromHash);
+    initFromHash();
+  </script>
+</body>
+</html>
